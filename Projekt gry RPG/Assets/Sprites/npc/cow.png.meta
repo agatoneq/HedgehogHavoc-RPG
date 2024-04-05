@@ -100,8 +100,8 @@ TextureImporter:
       name: cow_0
       rect:
         serializedVersion: 2
-        x: 28
-        y: 757
+        x: 10
+        y: 830
         width: 420
         height: 160
       alignment: 0
@@ -121,8 +121,8 @@ TextureImporter:
       name: cow_1
       rect:
         serializedVersion: 2
-        x: 555
-        y: 718
+        x: 556
+        y: 785
         width: 310
         height: 140
       alignment: 0
