@@ -266,6 +266,8 @@ GameObject:
   - component: {fileID: 5507934773542408593}
   - component: {fileID: 6250451743493710048}
   - component: {fileID: 7062770211637952223}
+  - component: {fileID: 1189924866797233494}
+  - component: {fileID: 6298200803080935563}
   m_Layer: 0
   m_Name: chameleon
   m_TagString: Untagged
@@ -402,6 +404,31 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &1189924866797233494
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5804838445384357129}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f4d493d74e48094390a4a598e965b49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 8616685848737228372, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
+--- !u!114 &6298200803080935563
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5804838445384357129}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1eb15aa412b0c54fa85a5259ad6ce63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6053589490115331688
 GameObject:
   m_ObjectHideFlags: 0

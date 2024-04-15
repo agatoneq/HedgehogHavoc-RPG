@@ -14,6 +14,8 @@ GameObject:
   - component: {fileID: 2079326229495515338}
   - component: {fileID: 5151680255852963333}
   - component: {fileID: 6997335363925307065}
+  - component: {fileID: 3398877168060822948}
+  - component: {fileID: 8280593563198301402}
   m_Layer: 0
   m_Name: Rabbit
   m_TagString: Untagged
@@ -156,6 +158,31 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &3398877168060822948
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1081701847504365508}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f4d493d74e48094390a4a598e965b49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 8616685848737228372, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
+--- !u!114 &8280593563198301402
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1081701847504365508}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1eb15aa412b0c54fa85a5259ad6ce63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1947496179811809812
 GameObject:
   m_ObjectHideFlags: 0
