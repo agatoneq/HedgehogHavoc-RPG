@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class NPCDetect : MonoBehaviour
 {
+
+// PlayerInteract
+
 private void Update() {
     
     if(Input.GetKeyDown(KeyCode.E))
