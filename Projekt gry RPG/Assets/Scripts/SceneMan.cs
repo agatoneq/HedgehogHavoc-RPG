@@ -7,17 +7,17 @@ public class SceneMan : MonoBehaviour
 {
     public void ClickPlayButton()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(2);
     }
     
     public void ClickContinueButton()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(2);
     }
 
     public void ClickSettingsButton()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(1);
     }
 
     public void ClickQuitButton()
