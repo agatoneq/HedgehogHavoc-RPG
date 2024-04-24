@@ -24,4 +24,9 @@ public class SceneMan : MonoBehaviour
     {
         Application.Quit();
     }
+
+    public void ClickGoBackButton()
+    {
+        SceneManager.LoadScene(0);
+    }
 }
