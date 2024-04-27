@@ -4,11 +4,16 @@ using System.ComponentModel;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using System.Diagnostics;
 
 public class SceneMan : MonoBehaviour
 {
     public GameObject loadingScreen;
     public Slider loadingSlider;
+
+    private int previousSceneIndex;
+
+
 
     public void ClickPlayButton()
     {
@@ -34,7 +39,7 @@ public class SceneMan : MonoBehaviour
     
     public void ClickContinueButton()
     {
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene(3);
     }
 
     public void ClickSettingsButton()
@@ -48,6 +53,20 @@ public class SceneMan : MonoBehaviour
     }
 
     public void ClickGoBackButton()
+    {
+        UnityEngine.Debug.Log(previousSceneIndex);
+        SceneManager.LoadScene(previousSceneIndex);
+    }
+
+    public void ClickPauseButton()
+    {
+        previousSceneIndex = SceneManager.GetActiveScene().buildIndex;
+        UnityEngine.Debug.Log(previousSceneIndex);
+        Time.timeScale = 0;
+        SceneManager.LoadScene(4);
+    }
+
+    public void ClickMenuButton()
     {
         SceneManager.LoadScene(0);
     }
