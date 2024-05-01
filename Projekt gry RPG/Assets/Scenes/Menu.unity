@@ -777,7 +777,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6512f2486c532140ba7a2a43d829a53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  loadingScreen: {fileID: 965431876}
+  loadingPanel: {fileID: 965431876}
   loadingSlider: {fileID: 109737106}
 --- !u!4 &784069762
 Transform:
@@ -1898,6 +1898,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PauseMenuUI: {fileID: 0}
+  SettingsMenuUI: {fileID: 0}
+  MainPanel: {fileID: 0}
 --- !u!1 &1922616547
 GameObject:
   m_ObjectHideFlags: 0

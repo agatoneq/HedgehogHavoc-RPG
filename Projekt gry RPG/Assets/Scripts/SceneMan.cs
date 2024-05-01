@@ -8,24 +8,21 @@ using System.Diagnostics;
 
 public class SceneMan : MonoBehaviour
 {
-    public GameObject loadingScreen;
+    public GameObject loadingPanel;
     public Slider loadingSlider;
 
     private int previousSceneIndex;
 
-
-
     public void ClickPlayButton()
     {
         StartCoroutine(LoadAsynchronously(2));
-
     }
 
     IEnumerator LoadAsynchronously(int sceneIndex)
     {
         UnityEngine.AsyncOperation operation = SceneManager.LoadSceneAsync(sceneIndex);
 
-        loadingScreen.SetActive(true);
+        loadingPanel.SetActive(true);
 
         while (!operation.isDone)
         {
