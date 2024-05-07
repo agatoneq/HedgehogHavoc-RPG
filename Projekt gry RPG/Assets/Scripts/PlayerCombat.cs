@@ -61,7 +61,7 @@ public class PlayerCombat : MonoBehaviour
         currentHealth -= damage;
 
         //hurt animation
-        animator.SetTrigger("Hurt");
+       // animator.SetTrigger("Hurt");
 
         if (currentHealth <= 0)
         {
@@ -73,6 +73,6 @@ public class PlayerCombat : MonoBehaviour
         Debug.Log("Player died");
         
         //die animation
-        animator.SetBool("IsDead", true);
+        //animator.SetBool("IsDead", true);
     }
 }

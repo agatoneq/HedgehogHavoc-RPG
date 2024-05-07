@@ -22,13 +22,13 @@ public class EnemyCombat : MonoBehaviour
         currentHealth = maxHealth;
     }
     //dodanie atakowania gracza przez przeciwnika
-    void Update()
-    {
+   // void Update()
+   // {
         //ustalenie czêstotliwoœci ataków
         //wywo³anie funkcji Attack po podejœciu do gracza
-            Attack();
+           // Attack();
 
-    }
+   // }
     void Attack()
     {
         //attack animation
@@ -53,7 +53,7 @@ public class EnemyCombat : MonoBehaviour
     {
         currentHealth -= damage;
         //hurt animation
-        animator.SetTrigger("Hurt");
+       // animator.SetTrigger("Hurt");
 
         if(currentHealth <= 0)
         {
@@ -65,7 +65,7 @@ public class EnemyCombat : MonoBehaviour
         Debug.Log("Enemy died");
 
         //die animation
-        animator.SetBool("IsDead", true);
+       // animator.SetBool("IsDead", true);
 
         //disable enemy
         GetComponent<CapsuleCollider>().enabled = false;
