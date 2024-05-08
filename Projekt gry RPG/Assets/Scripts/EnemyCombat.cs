@@ -2,24 +2,25 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(CharacterStats))]
+
 public class EnemyCombat : MonoBehaviour
 {
+    CharacterStats myStats;
+
     public Animator animator;
     public Transform attackPoint;
     public LayerMask enemyLayers;
 
-    public float attackRange = 0.5f;
-    public int attackDamage = 10;
-    public float attackRate = 2f;
-    float nextAttackTime = 0;
+    float attackRange;
 
-    public int maxHealth = 100;
-    int currentHealth;
+    float nextAttackTime = 0;
 
     // Start is called before the first frame update
     void Start()
     {
-        currentHealth = maxHealth;
+        myStats = GetComponent<CharacterStats>();
+        attackRange = (float)myStats.attackRange.getValue();
     }
     //dodanie atakowania gracza przez przeciwnika
    // void Update()
@@ -41,7 +42,7 @@ public class EnemyCombat : MonoBehaviour
         foreach (Collider player in hitPlayer)
         {
             Debug.Log(player.name + "was hit");
-            player.GetComponent<PlayerCombat>().TakeDamage(attackDamage);
+           player.GetComponent<PlayerStats>().TakeDamage(myStats.damage.getValue());
         }
     }
     void OnDrawGizmosSelected()
@@ -49,26 +50,5 @@ public class EnemyCombat : MonoBehaviour
         if (attackPoint == null) return;
         Gizmos.DrawWireSphere(attackPoint.position, attackRange);
     }
-    public void TakeDamage(int damage)
-    {
-        currentHealth -= damage;
-        //hurt animation
-       // animator.SetTrigger("Hurt");
 
-        if(currentHealth <= 0)
-        {
-            Die();
-        }
-    }
-    void Die()
-    {
-        Debug.Log("Enemy died");
-
-        //die animation
-       // animator.SetBool("IsDead", true);
-
-        //disable enemy
-        GetComponent<CapsuleCollider>().enabled = false;
-        this.enabled = false;
-    }
 }

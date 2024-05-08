@@ -2,10 +2,6 @@ using UnityEngine;
 
 public class CharacterStats : MonoBehaviour
 {
-    public Animator animator;
-    public Transform attackPoint;
-    public LayerMask enemyLayers;
-
     public Stat damage;
     public Stat maxhealth;
     public double currentHealth {get; private set;}
