@@ -2,35 +2,36 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(CharacterStats))]
+
 public class PlayerCombat : MonoBehaviour
 {
+    CharacterStats myStats;
+
     public Animator animator;
     public Transform attackPoint;
     public LayerMask enemyLayers;
-    
-    
-    public float attackRange = 0.5f;
-    public int attackDamage = 20;
-    public float attackRate = 2f;
-    float nextAttackTime = 0;
 
-    public int maxHealth = 100;
-    int currentHealth;
+
+    float attackRange;
+    double nextAttackTime = 0;
 
     // Start is called before the first frame update
     void Start()
     {
-        currentHealth = maxHealth;
+        myStats = GetComponent<CharacterStats>();
+        attackRange = (float)myStats.attackRange.getValue();
     }
     // Update is called once per frame
     void Update()
+
     {
         if (Time.time >= nextAttackTime)
         {
             if (Input.GetMouseButtonDown(0))
             {
                 Attack();
-                nextAttackTime = Time.time + 1f / attackRate;
+                nextAttackTime = Time.time + 1f / myStats.attackRate.getValue();
             }
 
         }
@@ -41,13 +42,12 @@ public class PlayerCombat : MonoBehaviour
         animator.SetTrigger("Attack");
 
         //detect enemies in range
-        Collider[] hitEnemies = Physics.OverlapSphere(attackPoint.position, attackRange, enemyLayers);
+        Collider[] hitEnemies = Physics.OverlapSphere(attackPoint.position, (float) myStats.attackRate.getValue(), enemyLayers);
         
         //damage to enemies
         foreach (Collider enemy in hitEnemies)
         {
-            Debug.Log(enemy.name + "was hit");
-            enemy.GetComponent<EnemyCombat>().TakeDamage(attackDamage);
+            enemy.GetComponent<EnemyStats>().TakeDamage(myStats.damage.getValue());
         }
     }
 
@@ -55,24 +55,5 @@ public class PlayerCombat : MonoBehaviour
     {
         if (attackPoint == null) return;
         Gizmos.DrawWireSphere(attackPoint.position,attackRange);
-    }
-    public void TakeDamage(int damage)
-    {
-        currentHealth -= damage;
-
-        //hurt animation
-        animator.SetTrigger("Hurt");
-
-        if (currentHealth <= 0)
-        {
-            Die();
-        }
-    }
-    void Die()
-    {
-        Debug.Log("Player died");
-        
-        //die animation
-        animator.SetBool("IsDead", true);
     }
 }
