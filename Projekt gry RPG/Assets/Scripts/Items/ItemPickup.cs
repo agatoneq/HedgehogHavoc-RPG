@@ -9,6 +9,7 @@ using UnityEngine;
 class ItemPickup : Interactable
 {
     public Item item;
+    public string Name { get { return item.name; } set { item.name = value; } }
     public override void Interact()
     {
         base.Interact();
