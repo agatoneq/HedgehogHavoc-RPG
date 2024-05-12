@@ -789,6 +789,7 @@ MonoBehaviour:
   evilModeItems:
   - {fileID: 5883698363107488533}
   - {fileID: 2632684423826166754}
+  animator: {fileID: 4548639115224464493}
 --- !u!136 &7581117186960931008
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -835,7 +836,7 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0

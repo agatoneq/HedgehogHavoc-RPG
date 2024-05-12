@@ -4,29 +4,32 @@ using UnityEngine;
 
 public class Enemie_GoodToBad : MonoBehaviour
 {
-    public bool EvilMode
-    {
-        get { return EvilMode; }
-        set
-        {
-            HidingItems(value);
-        }
-    }
     public GameObject[] goodModeItems; //items that should be show only in good mode
     public GameObject[] evilModeItems; //items that should be show only in evil mode
-    private Animator animator;
+    public Animator animator;
 
     // Start is called before the first frame update
     void Start()
     {
-        animator = GetComponent<Animator>();
-        animator.SetBool("Evil", false);
-        HidingItems(false); //shows items of good mode and hides items of evil mode
+        if (animator != null)
+        {
+            animator.SetBool("Evil", false);
+            HidingItems(false); //shows items of good mode and hides items of evil mode
+        }
+       else
+            Debug.LogError("Animator is not assigned");
     }
-    
+
+    bool prevEvil = false;
     // Update is called once per frame
     void Update()
     {
+        if (prevEvil != animator.GetBool("Evil"))
+        {
+            prevEvil = animator.GetBool("Evil");
+            HidingItems(prevEvil);
+        }
+      
     }
     void HidingItems(bool mode) //hide/shown items in case of mode
     {
