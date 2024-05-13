@@ -8,6 +8,7 @@ public class PlayerManager : MonoBehaviour
 
     public static PlayerManager instance;
 
+
     private void Awake()
     {
        instance = this;
@@ -15,4 +16,5 @@ public class PlayerManager : MonoBehaviour
     #endregion
 
     public GameObject player;
+    public List<GameObject> characterLook; //aktualnie zalozone rzeczy/ubrania
 }

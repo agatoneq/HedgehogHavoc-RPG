@@ -39,10 +39,11 @@ public class HedgehogClothes : MonoBehaviour
     }
     public void OkButton()
     {
-        //TO DO
+        PlayerManager.instance.characterLook.Add(Items[currentItem]); //dodaj do aktualnie zalozonych rzeczy
+        //tu: zmiana sceny
     }
     public void CancelButton()
     {
-        //TO DO
+        //tu: zmiana sceny
     }
 }
