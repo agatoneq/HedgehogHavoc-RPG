@@ -29,4 +29,5 @@ public class PlayerStats : CharacterStats
     }
     */
     //implementacja metody Die()
+    //implementacja metody Hurt()
 }

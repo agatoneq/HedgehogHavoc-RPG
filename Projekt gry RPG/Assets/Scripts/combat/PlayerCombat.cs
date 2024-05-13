@@ -26,12 +26,13 @@ public class PlayerCombat : MonoBehaviour
     void Update()
 
     {
-        if (Time.time >= nextAttackTime)
+        nextAttackTime -= Time.deltaTime;
+        if (nextAttackTime <= 0)
         {
             if (Input.GetMouseButtonDown(0))
             {
                 Attack();
-                nextAttackTime = Time.time + 1f / myStats.attackRate.getValue();
+                nextAttackTime = 1f / myStats.attackRate.getValue();
             }
 
         }

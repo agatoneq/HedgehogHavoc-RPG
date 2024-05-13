@@ -8,7 +8,7 @@ public class EnemyCombat : MonoBehaviour
 {
     CharacterStats myStats;
 
-    public Animator animator;
+    Animator animator;
     public Transform attackPoint;
     public LayerMask enemyLayers;
 
@@ -21,16 +21,9 @@ public class EnemyCombat : MonoBehaviour
     {
         myStats = GetComponent<CharacterStats>();
         attackRange = (float)myStats.attackRange.getValue();
+        animator = GetComponent<Animator>();
     }
-    //dodanie atakowania gracza przez przeciwnika
-   // void Update()
-   // {
-        //ustalenie czêstotliwoœci ataków
-        //wywo³anie funkcji Attack po podejœciu do gracza
-           // Attack();
-
-   // }
-    void Attack()
+    public void Attack()
     {
         //attack animation
         animator.SetTrigger("Attack");
@@ -42,7 +35,7 @@ public class EnemyCombat : MonoBehaviour
         foreach (Collider player in hitPlayer)
         {
             Debug.Log(player.name + "was hit");
-           player.GetComponent<PlayerStats>().TakeDamage(myStats.damage.getValue());
+            player.GetComponent<PlayerStats>().TakeDamage(myStats.damage.getValue());
         }
     }
     void OnDrawGizmosSelected()

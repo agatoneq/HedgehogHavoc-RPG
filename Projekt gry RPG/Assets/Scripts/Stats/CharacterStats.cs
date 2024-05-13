@@ -26,8 +26,7 @@ public class CharacterStats : MonoBehaviour
 
         currentHealth -= damage;
         Debug.Log(transform.name + "takes "+ damage + "damage.");
-        //hurt animation
-        // animator.SetTrigger("Hurt");
+        Hurt();
 
         if (currentHealth <= 0)
         {
@@ -39,10 +38,10 @@ public class CharacterStats : MonoBehaviour
         //to be overwitten
         //dying depends on character
         Debug.Log(transform.name + "died.");
-
-        //die animation
-        // animator.SetBool("IsDead", true);
-
     }
-
+    public virtual void Hurt()
+    {
+        //to be overwitten
+        //depends on character
+    }
 }
