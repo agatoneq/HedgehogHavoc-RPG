@@ -1,14 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Assets.Scripts.Player;
 
 public class PlayerStats : CharacterStats
 {
+    Player player;
     // Start is called before the first frame update
     void Start()
     {
-        //players stats change based on equipment
-        //EquipmentManager.instance.onEquipmentChanged += onEquipmentChanged;
+        player = Player.Instance;
+        foreach (var i in player.Equipment)
+        {
+            //players stats change based on equipment
+        }
     }
 
     //when equipment is implemented
