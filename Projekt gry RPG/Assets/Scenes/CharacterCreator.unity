@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028355, g: 0.22571374, b: 0.30692255, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -668,7 +668,6 @@ GameObject:
   - component: {fileID: 432407887}
   - component: {fileID: 432407886}
   - component: {fileID: 432407885}
-  - component: {fileID: 432407888}
   m_Layer: 5
   m_Name: Ok
   m_TagString: Untagged
@@ -690,10 +689,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1174083570}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.259, y: 0.039355014}
-  m_AnchorMax: {x: 0.40310174, y: 0.177645}
-  m_AnchoredPosition: {x: -0.81274414, y: -0.17700195}
-  m_SizeDelta: {x: -50.887207, y: -65.7948}
+  m_AnchorMin: {x: 0.45089832, y: 0.09112989}
+  m_AnchorMax: {x: 0.5481797, y: 0.15900001}
+  m_AnchoredPosition: {x: 0.5619316, y: 0}
+  m_SizeDelta: {x: -34.045197, y: -28.0597}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &432407885
 MonoBehaviour:
@@ -769,7 +768,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 432407888}
+      - m_Target: {fileID: 1032115020}
         m_TargetAssemblyTypeName: HedgehogClothes, Assembly-CSharp
         m_MethodName: OkButton
         m_Mode: 1
@@ -789,19 +788,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 432407883}
   m_CullTransparentMesh: 1
---- !u!114 &432407888
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 432407883}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 47477207a9ed1a344ae1f0b74ba60703, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Items: []
 --- !u!1 &440181960
 GameObject:
   m_ObjectHideFlags: 0
@@ -1497,7 +1483,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &977160959
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1716,7 +1702,7 @@ PrefabInstance:
     - target: {fileID: 7879915140194871038, guid: f56c6ef1f63efc6479bcec167e089f62,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 84.7
+      value: 38
       objectReference: {fileID: 0}
     - target: {fileID: 7879915140194871038, guid: f56c6ef1f63efc6479bcec167e089f62,
         type: 3}
@@ -1790,6 +1776,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1032115018}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1032115020 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2186778923983931215, guid: f56c6ef1f63efc6479bcec167e089f62,
+    type: 3}
+  m_PrefabInstance: {fileID: 1032115018}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47477207a9ed1a344ae1f0b74ba60703, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1112765881
 GameObject:
   m_ObjectHideFlags: 0

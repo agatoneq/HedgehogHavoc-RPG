@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class HedgehogClothes : MonoBehaviour
 {
@@ -39,9 +41,10 @@ public class HedgehogClothes : MonoBehaviour
     }
     public void OkButton()
     {
-        PlayerManager.instance.characterLook.Add(Items[currentItem]); //dodaj do aktualnie zalozonych rzeczy
-        //tu: zmiana sceny
+       // PlayerManager.instance.characterLook.Add(Items[currentItem]); //dodaj do aktualnie zalozonych rzeczy
+        SceneManager.LoadScene("MainTown");
     }
+
     public void CancelButton()
     {
         //tu: zmiana sceny
