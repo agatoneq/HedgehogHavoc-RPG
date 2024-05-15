@@ -6,6 +6,7 @@ using Assets.Scripts.Player;
 public class PlayerStats : CharacterStats
 {
     Player player;
+    public event System.Action<double, double> OnHealthChanged;
     // Start is called before the first frame update
     void Start()
     {
@@ -35,4 +36,15 @@ public class PlayerStats : CharacterStats
     */
     //implementacja metody Die()
     //implementacja metody Hurt()
+    public override void Hurt()
+    {
+        base.Hurt();
+
+        //hurt animation
+        // animator.SetTrigger("Hurt");
+        if (OnHealthChanged != null)
+        {
+            OnHealthChanged(MaxHealth, currentHealth);
+        }
+    }
 }

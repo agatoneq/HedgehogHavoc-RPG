@@ -13,29 +13,41 @@ public class EnemyCombat : MonoBehaviour
     public LayerMask enemyLayers;
 
     float attackRange;
-
-    float nextAttackTime = 0;
+    double nextAttackTime = 0;
 
     // Start is called before the first frame update
     void Start()
     {
-        myStats = GetComponent<CharacterStats>();
-        attackRange = (float)myStats.attackRange.getValue();
+        myStats = GetComponent<EnemyStats>();
+        attackRange = (float)myStats.AttackRange;
         animator = GetComponent<Animator>();
+    }
+    void Update()
+
+    {
+        nextAttackTime -= Time.deltaTime;
     }
     public void Attack()
     {
-        //attack animation
-        animator.SetTrigger("Attack");
-
-        //detect enemies in range
-        Collider[] hitPlayer = Physics.OverlapSphere(attackPoint.position, attackRange, enemyLayers);
-
-        //damage to enemies
-        foreach (Collider player in hitPlayer)
+        if (nextAttackTime <= 0)
         {
-            Debug.Log(player.name + "was hit");
-            player.GetComponent<PlayerStats>().TakeDamage(myStats.damage.getValue());
+            //attack animation
+            animator.SetTrigger("Attack");
+
+            //detect enemies in range
+            Collider[] hitPlayer = Physics.OverlapSphere(attackPoint.position, attackRange, enemyLayers);
+
+            //damage to enemies
+            foreach (Collider player in hitPlayer)
+            {
+                Debug.Log(player.name + " was hit");
+                PlayerStats playerStats = player.GetComponent<PlayerStats>();
+                if (playerStats != null)
+                {
+                    playerStats.TakeDamage(myStats.Damage);
+                }
+            }
+                nextAttackTime = 1f / myStats.AttackRate;
         }
     }
     void OnDrawGizmosSelected()

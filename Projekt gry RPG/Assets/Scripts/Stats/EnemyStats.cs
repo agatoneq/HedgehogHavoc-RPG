@@ -20,16 +20,16 @@ public class EnemyStats : CharacterStats
         // animator.SetTrigger("Hurt");
         if (OnHealthChanged != null)
         {
-            OnHealthChanged(maxhealth.getValue(), currentHealth);
+            OnHealthChanged(MaxHealth, currentHealth);
         }
     }
     public override void Die()
     {
         base.Die();
-
+        
         //ragdoll efect / death animation
         animator.SetTrigger("IsDead");
-        Invoke("DestroyObj", 0.3f);
+        Invoke("DestroyObj", 0.5f);
 
     }
     private void DestroyObj()
