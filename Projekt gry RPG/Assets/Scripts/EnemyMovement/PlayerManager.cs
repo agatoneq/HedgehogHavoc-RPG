@@ -16,5 +16,12 @@ public class PlayerManager : MonoBehaviour
         player = GameObject.Find("PlayerCapsule");
     }
     #endregion
-    //public List<GameObject> characterLook; //aktualnie zalozone rzeczy/ubrania
+    /**
+     * 0 - uszy 
+     * 1 - oczy
+     * 2 - pyszczek
+     * 3 - rêce
+     * 4 - akcesoria
+     */
+    public static GameObject[] characterLook = new GameObject[5]; //aktualnie zalozone rzeczy/ubrania
 }
