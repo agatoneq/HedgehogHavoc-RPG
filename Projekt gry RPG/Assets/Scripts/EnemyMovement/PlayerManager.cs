@@ -16,5 +16,5 @@ public class PlayerManager : MonoBehaviour
         player = GameObject.Find("PlayerCapsule");
     }
     #endregion
-    public List<GameObject> characterLook; //aktualnie zalozone rzeczy/ubrania
+    //public List<GameObject> characterLook; //aktualnie zalozone rzeczy/ubrania
 }

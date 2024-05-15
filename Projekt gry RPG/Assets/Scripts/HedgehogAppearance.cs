@@ -20,7 +20,7 @@ public class HedgehogClothes : MonoBehaviour
         if (currentItem < Items.Length)
         {
             Items[currentItem].SetActive(true);
-            PlayerManager.characterLook[nrTab] = Items[currentItem];
+            //PlayerManager.characterLook[nrTab] = Items[currentItem];
         }
     }
     public void Change(bool next) //next: true -> przycisk w przod, false -> w tyl
@@ -40,7 +40,7 @@ public class HedgehogClothes : MonoBehaviour
             else
                 currentItem = Items.Length - 1;
         }
-        PlayerManager.characterLook[nrTab] = Items[currentItem];  //tablica z wybranymi elementami
+        //PlayerManager.characterLook[nrTab] = Items[currentItem];  //tablica z wybranymi elementami
         
         Items[currentItem].SetActive(true); //pokazanie wybranego itemku
     }
