@@ -8,6 +8,7 @@ public class HedgehogClothes : MonoBehaviour
 {
     public GameObject[] Items;
     private int currentItem = 0;
+    public int nrTab;
 
     // Start is called before the first frame update
     void Start()
@@ -16,9 +17,11 @@ public class HedgehogClothes : MonoBehaviour
         {
             item.SetActive(false);
         }
-        if(currentItem < Items.Length)
+        if (currentItem < Items.Length)
+        {
             Items[currentItem].SetActive(true);
-        
+            PlayerManager.characterLook[nrTab] = Items[currentItem];
+        }
     }
     public void Change(bool next) //next: true -> przycisk w przod, false -> w tyl
     {
@@ -37,16 +40,17 @@ public class HedgehogClothes : MonoBehaviour
             else
                 currentItem = Items.Length - 1;
         }
-        Items[currentItem].SetActive(true);
+        PlayerManager.characterLook[nrTab] = Items[currentItem];  //tablica z wybranymi elementami
+        
+        Items[currentItem].SetActive(true); //pokazanie wybranego itemku
     }
     public void OkButton()
     {
-       // PlayerManager.instance.characterLook.Add(Items[currentItem]); //dodaj do aktualnie zalozonych rzeczy
         SceneManager.LoadScene("MainTown");
     }
 
     public void CancelButton()
     {
-        //tu: zmiana sceny
+        
     }
 }
