@@ -1,19 +1,33 @@
 using UnityEngine;
+using System.Collections.Generic;
 
 public class CharacterStats : MonoBehaviour
 {
-    public Stat damage;
+    public Stat damage ;
     public double Damage { get { return damage.getValue(); }}
-    public Stat maxhealth;
+    public Stat maxhealth ;
     public double MaxHealth { get { return maxhealth.getValue(); } }
     public double currentHealth {get; private set;}
     //armor not implemented yet
-    //public Stat armor;
+    public Stat armor ;
+    public double Armor { get { return armor.getValue(); } }
     public Stat attackRange;
     public double AttackRange { get { return attackRange.getValue(); } }
-    public Stat attackRate;
+    public Stat attackRate ;
     public double AttackRate { get { return attackRate.getValue(); } }
+    public Dictionary<StatType,Stat> Stats;
 
+    public CharacterStats()
+    {
+        Stats = new Dictionary<StatType, Stat>()
+        {
+            {StatType.AttackRange, attackRange },
+            {StatType.AttackRate, attackRate },
+            {StatType.Armour, armor },
+            {StatType.MaxHealth, maxhealth },
+            {StatType.Damage, damage }
+        };
+    }
     private void Awake()
     {
         currentHealth = maxhealth.getValue();
@@ -47,4 +61,12 @@ public class CharacterStats : MonoBehaviour
         //to be overwitten
         //depends on character
     }
+}
+public enum StatType
+{
+    Damage,
+    Armour,
+    MaxHealth,
+    AttackRange,
+    AttackRate
 }

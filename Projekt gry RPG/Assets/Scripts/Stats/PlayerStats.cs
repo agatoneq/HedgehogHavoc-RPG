@@ -11,29 +11,33 @@ public class PlayerStats : CharacterStats
     void Start()
     {
         player = Player.Instance;
-        foreach (var i in player.Equipment)
-        {
-            //players stats change based on equipment
-        }
+        armor = player.armor;
+        damage = player.damage;
+        attackRange = player.attackRange;
+        attackRate = player.attackRate;
+        maxhealth = player.maxhealth;
+        player.Equipment.onEquipmentChanged += EquipmentChanged;
     }
 
-    //when equipment is implemented
-    //changing current player's items
-    /*void onEquipmentChanged(Equipment newItem, Equipment oldItem)
+    void EquipmentChanged(EquipmentItem newItem, EquipmentItem oldItem)
     {
         if (newItem != null)
         {
-            armor.addModifier(newItem.armorModifier);
-            damage.AddModifier(newItem.damageModifier);
-         }
+            foreach (var m in newItem.ModifierList)
+            {
+                Stats[m.AffectedStatType].addModifier(m);
+            }
+        }
         
         if (oldItem != null)
         {
-            armor.removeModifier(newItem.armorModifier);
-            damage.removeModifier(newItem.damageModifier);
-         }
+            foreach (var m in newItem.ModifierList)
+            {
+                Stats[m.AffectedStatType].removeModifier(m);
+            }
+        }
     }
-    */
+    
     //implementacja metody Die()
     //implementacja metody Hurt()
     public override void Hurt()

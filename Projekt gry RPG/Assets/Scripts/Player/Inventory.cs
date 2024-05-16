@@ -9,20 +9,29 @@ namespace Assets.Scripts.Player
 {
     public class Inventory
     {
+
+        public event Action onInventoryChanged;
         public int Capacity { get; private set; } = 20;
         public int UsedSpace { get; private set; } = 0;
-        List<Item> Items  = new List<Item>();
-        public bool AddItem(Item item)
+        public List<Item> Items { get; private set; }
+
+        public Inventory()
         {
+            Items = new List<Item>(Capacity);
+        }
+        public bool AddItemToInv(Item item)
+        {
+            Debug.Log(item.name + " added to inventory");
             if (UsedSpace >= Capacity)
             {
                 return false;
             }
             else
             {
-                Debug.Log( item.name+ " added to inventory" );
                 Items.Add(item);
                 UsedSpace++;
+                onInventoryChanged();
+                Debug.Log(item.name + " added succesfully");
                 return true;
             }
         }
@@ -35,7 +44,9 @@ namespace Assets.Scripts.Player
         {
             var item = Items.First(x => x.name == name);
             Items.Remove(item);
+            onInventoryChanged();
             return item;
         }
+
     }
 }

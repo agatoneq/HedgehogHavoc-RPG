@@ -8,15 +8,18 @@ namespace Assets.Scripts.Player
 {
     public class Player
     {
+        //dać wartości bazowe!!
+        public Stat damage = new Stat(20);
+        public Stat maxhealth = new Stat(100);
+        public double currentHealth { get; private set; }
+        //armor not implemented yet
+        public Stat armor = new Stat(0);
+        public Stat attackRange = new Stat(3);
+        public Stat attackRate = new Stat(1);
         private static Player instance;
         public Inventory Inventory { get; }
-        public Dictionary<EquipmentSlot, Item> Equipment { get; }
-        public enum EquipmentSlot
-        {
-            MainHand,
-            Armour,
-            SecondHand
-        }
+        public Equipment Equipment { get; }
+        
         public static Player Instance
         {
             get
@@ -27,18 +30,13 @@ namespace Assets.Scripts.Player
                 }
                 return instance;
             }
+       
         }
 
         private Player() 
         {
             Inventory = new Inventory();
-            Equipment = new Dictionary<EquipmentSlot, Item>()
-            {
-                { EquipmentSlot.MainHand, null },
-                { EquipmentSlot.Armour, null },
-                //{ EquipmentSlot.Weapon, null }, //pomysły na więcej?
-                { EquipmentSlot.SecondHand, null }
-            };
+            Equipment = new Equipment();
         }
 
     }

@@ -10,6 +10,7 @@ class PlayerController: MonoBehaviour
 {
     Camera camera;
     Player player;
+    public GameObject  inventory;
     //public Interactable interactItem; //could be useful later
     public LayerMask items;
     private void Start()
@@ -32,6 +33,13 @@ class PlayerController: MonoBehaviour
                     Interact(interactable);
                 }
             }
+        }
+        if (Input.GetKeyDown(KeyCode.I))
+        {         
+            if (inventory.activeSelf)
+                inventory.SetActive(false);
+            else
+                inventory.SetActive(true);
         }
     }
     void Interact(Interactable newInteract)
