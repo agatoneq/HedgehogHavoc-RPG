@@ -9,7 +9,7 @@ public class PlayerHealthBar : MonoBehaviour
 {
     Transform UI;
     Transform healthBar;
-    Slider healthSlider;
+    public Slider healthSlider;
 
     // Start is called before the first frame update
     void Start()
@@ -18,8 +18,6 @@ public class PlayerHealthBar : MonoBehaviour
         UI = GameObject.Find("PlayerUI").transform;
         if (UI != null)
         {
-            //slider inside healthbar
-            healthSlider = UI.GetChild(2).GetComponent<Slider>();
         }
         else
         {

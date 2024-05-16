@@ -26,7 +26,7 @@ private void Update()
         visualCue.SetActive(true);
         if(Input.GetKeyDown(KeyCode.P))
         {
-            Debug.Log(inkJSON);
+            DialogueManager.GetInstance().EnterDialogueMode(inkJSON);
         }
     }
     else
@@ -35,7 +35,7 @@ private void Update()
     }
 }
 
-public void OnTriggerEnter3D(Collider collider)
+public void OnTriggerEnter(Collider collider)
 {
   if(collider.gameObject.tag == "Player")
   {
@@ -43,9 +43,14 @@ public void OnTriggerEnter3D(Collider collider)
   }
 }
 
-private void OnTriggerExit3D(Collider collider)
+private void OnTriggerExit(Collider collider)
 {
 
-}  
+  if(collider.gameObject.tag == "Player")
+  {
+    playerInRange = false;
+  }
+
+}
 
 }
