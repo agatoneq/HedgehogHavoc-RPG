@@ -1,1 +1,3 @@
 ﻿Test TEST TO JEST TEEEEEEEEST
+Dalej Test
+DAlej
