@@ -43,6 +43,7 @@ public class CharacterStats : MonoBehaviour
 
         currentHealth -= damage;
         Debug.Log(transform.name + "takes "+ damage + "damage.");
+        Debug.Log(transform.name + "life " + currentHealth / maxhealth.getValue() + ".");
         Hurt();
 
         if (currentHealth <= 0)
