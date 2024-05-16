@@ -211,6 +211,7 @@ MonoBehaviour:
     baseValue: 2
   attackRate:
     baseValue: 1
+  DeathPanel: {fileID: 0}
 --- !u!114 &8914573156029827808
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -223,6 +224,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6456ae79363f5514495033b97e73171b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  healthSlider: {fileID: 0}
 --- !u!1 &8616685848737228372
 GameObject:
   m_ObjectHideFlags: 0
@@ -240,6 +242,7 @@ GameObject:
   - component: {fileID: 2475222997579963192}
   - component: {fileID: 5008669073496266418}
   - component: {fileID: 7436297375904737504}
+  - component: {fileID: 6681500496521663231}
   m_Layer: 8
   m_Name: PlayerCapsule
   m_TagString: Player
@@ -494,4 +497,17 @@ MonoBehaviour:
   inventory: {fileID: 0}
   items:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 8
+--- !u!114 &6681500496521663231
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8616685848737228372}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81437e381e7f16547bcdb4a13cfba632, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 8616685848737228372}
