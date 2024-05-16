@@ -5,6 +5,7 @@ using Assets.Scripts.Player;
 
 public class PlayerStats : CharacterStats
 {
+    [SerializeField] private GameObject DeathPanel;
     Player player;
     public event System.Action<double, double> OnHealthChanged;
     // Start is called before the first frame update
@@ -39,6 +40,11 @@ public class PlayerStats : CharacterStats
     }
     
     //implementacja metody Die()
+public override void Die()
+{
+    DeathPanel.SetActive(true);
+}
+
     //implementacja metody Hurt()
     public override void Hurt()
     {
