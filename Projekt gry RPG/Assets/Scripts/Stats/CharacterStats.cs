@@ -3,13 +3,16 @@ using UnityEngine;
 public class CharacterStats : MonoBehaviour
 {
     public Stat damage;
+    public double Damage { get { return damage.getValue(); }}
     public Stat maxhealth;
+    public double MaxHealth { get { return maxhealth.getValue(); } }
     public double currentHealth {get; private set;}
     //armor not implemented yet
     //public Stat armor;
     public Stat attackRange;
+    public double AttackRange { get { return attackRange.getValue(); } }
     public Stat attackRate;
-    private double nextAttackTime = 0;
+    public double AttackRate { get { return attackRate.getValue(); } }
 
     private void Awake()
     {

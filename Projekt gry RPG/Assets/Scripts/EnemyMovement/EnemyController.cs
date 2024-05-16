@@ -12,7 +12,6 @@ public class EnemyController : MonoBehaviour
     
     public float lookRadius = 10f;
 
-
     // Start is called before the first frame update
     void Start()
     {
@@ -25,17 +24,19 @@ public class EnemyController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //always face the target
+        //starting the Evil animation
         animator.ResetTrigger("Evil");
+        //always face the target
         faceTarget();
+        //distance between enemy and player
         float distance = Vector3.Distance(target.position, transform.position);
-
+        //if smaller then lookRadius enemy moves towards player
         if (distance <= lookRadius) 
         {
             animator.SetTrigger("Evil");
             agent.SetDestination(target.position);
         }
-
+        //enemy attacks when it's standing near player
         if (distance <= agent.stoppingDistance)
         {
             //attack the player
@@ -45,7 +46,9 @@ public class EnemyController : MonoBehaviour
 
     void faceTarget()
     {
+            //getting player position
             Vector3 direction = (target.position - transform.position).normalized;
+            //rotating enemy towards player
             Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
             transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 5f);
     }

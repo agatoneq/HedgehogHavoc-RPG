@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -23,13 +24,17 @@ public class EnemyHealthBar : MonoBehaviour
         {
             if(c.renderMode == RenderMode.WorldSpace)
             {
+                //creating healthbar object
                 healthBar = Instantiate(healthBarPrefab, c.transform).transform;
+                //getting healthbar slider
                 healthSlider = healthBar.GetChild(0).GetComponent<Image>();
+                //healthbar not visible
                 healthBar.gameObject.SetActive(false);
                 break;
             }
         
         }
+        //this.OnHealthChange is called when enemy takes damage
         GetComponent<EnemyStats>().OnHealthChanged += OnHealthChanged;
     }
 
@@ -37,11 +42,11 @@ public class EnemyHealthBar : MonoBehaviour
     {
         if (healthBar != null)
         {
+            //healthbar is visible
             healthBar.gameObject.SetActive(true);
-
+            //calculating healthbar fill based on percentage
             double healthPercent = currentHealth / maxHealth;
             healthSlider.fillAmount = (float)healthPercent;
-
             if (currentHealth <= 0)
             {
                 Destroy(healthBar.gameObject);
@@ -53,16 +58,18 @@ public class EnemyHealthBar : MonoBehaviour
     {
         if (healthBar != null)
         {
+            //setting healthbar above enemy
             healthBar.position = target.position;
             healthBar.forward = cam.forward;
-        }
-
-        if (GetComponent<Animator>().GetBool("Evil") == true)
-        {
-            healthBar.gameObject.SetActive(true);
-        }else
-        {
-            healthBar.gameObject.SetActive(false);
+            //healthbar is visible only when enemy is in evil mode
+            if (GetComponent<Animator>().GetBool("Evil") == true)
+            {
+                healthBar.gameObject.SetActive(true);
+            }
+            else
+            {
+                healthBar.gameObject.SetActive(false);
+            }
         }
     }
 }

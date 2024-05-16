@@ -7,14 +7,21 @@ public class PlayerManager : MonoBehaviour
     #region Singleton
 
     public static PlayerManager instance;
+    public GameObject player;
 
 
     private void Awake()
     {
        instance = this;
+        player = GameObject.Find("PlayerCapsule");
     }
     #endregion
-
-    public GameObject player;
-    public List<GameObject> characterLook; //aktualnie zalozone rzeczy/ubrania
+    /**
+     * 0 - uszy 
+     * 1 - oczy
+     * 2 - pyszczek
+     * 3 - rêce
+     * 4 - akcesoria
+     */
+    public static GameObject[] characterLook = new GameObject[5]; //aktualnie zalozone rzeczy/ubrania
 }

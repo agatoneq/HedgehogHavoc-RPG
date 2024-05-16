@@ -10,22 +10,35 @@ namespace Assets.Scripts.Player
     {
         private static Player instance;
         public Inventory Inventory { get; }
-
-    public static Player Instance
-    {
-        get
+        public Dictionary<EquipmentSlot, Item> Equipment { get; }
+        public enum EquipmentSlot
         {
-            if (instance == null)
-            {
-                instance = new Player();
-            }
-            return instance;
+            MainHand,
+            Armour,
+            SecondHand
         }
-    }
+        public static Player Instance
+        {
+            get
+            {
+                if (instance == null)
+                {
+                    instance = new Player();
+                }
+                return instance;
+            }
+        }
 
         private Player() 
         {
             Inventory = new Inventory();
+            Equipment = new Dictionary<EquipmentSlot, Item>()
+            {
+                { EquipmentSlot.MainHand, null },
+                { EquipmentSlot.Armour, null },
+                //{ EquipmentSlot.Weapon, null }, //pomysły na więcej?
+                { EquipmentSlot.SecondHand, null }
+            };
         }
 
     }

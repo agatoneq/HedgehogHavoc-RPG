@@ -7,6 +7,7 @@ using UnityEngine;
 public class PlayerCombat : MonoBehaviour
 {
     CharacterStats myStats;
+    Camera cam;
 
     public Animator animator;
     public Transform attackPoint;
@@ -19,36 +20,42 @@ public class PlayerCombat : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        myStats = GetComponent<CharacterStats>();
-        attackRange = (float)myStats.attackRange.getValue();
+        cam = Camera.main;
+        myStats = GetComponent<PlayerStats>();
+        attackRange = (float)myStats.AttackRange;
     }
     // Update is called once per frame
     void Update()
-
     {
         nextAttackTime -= Time.deltaTime;
         if (nextAttackTime <= 0)
-        {
-            if (Input.GetMouseButtonDown(0))
-            {
-                Attack();
-                nextAttackTime = 1f / myStats.attackRate.getValue();
-            }
-
+        { //Attack() called when player pressed left mouse button
+                if (Input.GetMouseButtonDown(0))
+                {
+                    Attack();
+                    nextAttackTime = 1f / myStats.AttackRate;
+                }
         }
     }
     void Attack()
     {
         //attack animation
         animator.SetTrigger("Attack");
-
-        //detect enemies in range
-        Collider[] hitEnemies = Physics.OverlapSphere(attackPoint.position, (float) myStats.attackRate.getValue(), enemyLayers);
-        
-        //damage to enemies
-        foreach (Collider enemy in hitEnemies)
+        Ray ray = cam.ScreenPointToRay(Input.mousePosition);
+        RaycastHit hit;
+        //checking if player is looking at the enemy
+        if (Physics.Raycast(ray, out hit, 150))
         {
-            enemy.GetComponent<EnemyStats>().TakeDamage(myStats.damage.getValue());
+            if (hit.collider.GetComponent<EnemyStats>()) {
+                //detect enemies in range
+                Collider[] hitEnemies = Physics.OverlapSphere(attackPoint.position, attackRange, enemyLayers);
+
+                //deal damage to enemies
+                foreach (Collider enemy in hitEnemies)
+                {
+                    enemy.GetComponent<EnemyStats>().TakeDamage(myStats.Damage);
+                }
+            }
         }
     }
 

@@ -1,14 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Assets.Scripts.Player;
 
 public class PlayerStats : CharacterStats
 {
+    Player player;
+    public event System.Action<double, double> OnHealthChanged;
     // Start is called before the first frame update
     void Start()
     {
-        //players stats change based on equipment
-        //EquipmentManager.instance.onEquipmentChanged += onEquipmentChanged;
+        player = Player.Instance;
+        foreach (var i in player.Equipment)
+        {
+            //players stats change based on equipment
+        }
     }
 
     //when equipment is implemented
@@ -30,4 +36,15 @@ public class PlayerStats : CharacterStats
     */
     //implementacja metody Die()
     //implementacja metody Hurt()
+    public override void Hurt()
+    {
+        base.Hurt();
+
+        //hurt animation
+        // animator.SetTrigger("Hurt");
+        if (OnHealthChanged != null)
+        {
+            OnHealthChanged(MaxHealth, currentHealth);
+        }
+    }
 }
