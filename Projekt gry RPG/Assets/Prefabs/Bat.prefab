@@ -692,7 +692,7 @@ MonoBehaviour:
   armor:
     baseValue: 0
   attackRange:
-    baseValue: 0.5
+    baseValue: 2
   attackRate:
     baseValue: 0.6
 --- !u!114 &2104135600189617787
