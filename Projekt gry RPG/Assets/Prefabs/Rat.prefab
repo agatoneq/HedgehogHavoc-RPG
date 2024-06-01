@@ -925,8 +925,10 @@ MonoBehaviour:
     baseValue: 10
   maxhealth:
     baseValue: 100
+  armor:
+    baseValue: 0
   attackRange:
-    baseValue: 0.5
+    baseValue: 2
   attackRate:
     baseValue: 0.5
 --- !u!114 &7445600199798247124

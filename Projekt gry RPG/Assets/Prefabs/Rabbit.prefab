@@ -25,7 +25,7 @@ Transform:
   m_GameObject: {fileID: 517065576518539866}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.12}
+  m_LocalPosition: {x: 0, y: 0, z: -0.008}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -237,6 +237,8 @@ MonoBehaviour:
     baseValue: 0
   maxhealth:
     baseValue: 0
+  armor:
+    baseValue: 0
   attackRange:
     baseValue: 0
   attackRate:
@@ -273,10 +275,12 @@ MonoBehaviour:
     baseValue: 10
   maxhealth:
     baseValue: 100
+  armor:
+    baseValue: 0
   attackRange:
-    baseValue: 0.6
+    baseValue: 2
   attackRate:
-    baseValue: 0.6
+    baseValue: 0.5
 --- !u!114 &7682095786488870049
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -307,6 +311,8 @@ MonoBehaviour:
   damage:
     baseValue: 0
   maxhealth:
+    baseValue: 0
+  armor:
     baseValue: 0
   attackRange:
     baseValue: 0

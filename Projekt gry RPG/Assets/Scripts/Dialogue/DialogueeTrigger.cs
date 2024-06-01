@@ -21,11 +21,12 @@ private void Awake()
 
 private void Update()
 {
-    if(playerInRange)
+    if(playerInRange && !DialogueManager.GetInstance().dialogueIsPlaying)
     {
         visualCue.SetActive(true);
-        if(Input.GetKeyDown(KeyCode.P))
+        if(Input.GetKeyDown(KeyCode.Space))
         {
+           Debug.Log("czy to się włącza ?");
             DialogueManager.GetInstance().EnterDialogueMode(inkJSON);
         }
     }
