@@ -14,8 +14,10 @@ public class TeleportTownToCave : MonoBehaviour
 
     public void OnTriggerEnter(Collider other)
     {
-
-        StartCoroutine(LoadAsynchronously(3));
+        if (other.CompareTag("Player"))
+        {
+            StartCoroutine(LoadAsynchronously(3));
+        }
     }
 
     IEnumerator LoadAsynchronously(int sceneIndex)
