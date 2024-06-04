@@ -35,6 +35,12 @@ public class BookInputController : MonoBehaviour
             {
                 OpenBook();
             }
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+            if (IsBookOpened)
+            {
+                CloseBook();
+            }
     }
 
 
