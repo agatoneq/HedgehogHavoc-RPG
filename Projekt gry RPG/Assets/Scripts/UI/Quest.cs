@@ -1,12 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
-public class Quest : MonoBehaviour
+[System.Serializable] 
+public class Quest
 {
     public bool isActive;
 
     public string title;
     public string description;
-    public string newTaskInfo;
+    public string newQuestInfo;
+
+    public int itemsToCollect;
+    public int itemsCollected;
 }

@@ -1,0 +1,6 @@
+﻿Witam, witam, panie Jerzy! Ach, zawsze miło zobaczyć bohatera w naszym małym miasteczku. Jestem Mopsisław Mopszyn, wójt tego uroczego miejsca – Kudłogrodu. Ale do rzeczy! Nie przyjechałeś tu przecież na herbatkę, prawda?
+Nie będę ukrywał, sytuacja jest poważna. Ostatnio mamy tu istne cyrki. Przedmioty znikają, mieszkańcy też. W lesie zadomowiły się jakieś duchy czy inne licho..
+Na początku proponuję abyś rozejrzał się po Kudłogrodzie i znalazł kilka przedmiotów. Znajdziesz je tu i tam, poukrywane w różnych zakamarkach. Będą Ci one potrzebne na początku twojej misji. Wiesz, takie podstawowe wyposażenie.
+Ale to nie wszystko! Musisz też poznać nasze miasteczko. To miejsce może wyglądać jak z bajki, ale uwierz mi, że nie brakuje tu niebezpieczeństw. Spotkasz tu mieszkańców, którzy chętnie podzielą się swoimi historiami i... no, może jednym czy dwoma kawałami. Hehehe!
+A, i jeszcze jedno! Bądź ostrożny. Wrogowie, których kiedyś musiałem wygnać z Kudłogrodu, mogą chcieć się zemścić. Musisz być przygotowany na wszystko. Ale wiem, że sobie poradzisz. W końcu jesteś najlepszy w tym, co robisz!
+Powodzenia, panie Jerzy. Cały Kudłogród liczy na ciebie.

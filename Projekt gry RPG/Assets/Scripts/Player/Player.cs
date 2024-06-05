@@ -19,7 +19,8 @@ namespace Assets.Scripts.Player
         private static Player instance;
         public Inventory Inventory { get; }
         public Equipment Equipment { get; }
-        
+        public Quest quest;
+
         public static Player Instance
         {
             get

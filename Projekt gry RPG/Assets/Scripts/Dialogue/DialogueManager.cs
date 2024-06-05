@@ -22,7 +22,11 @@ public bool dialogueIsPlaying {get; private set;}
 
 private static DialogueManager instance;
 
-private void Awake()
+    
+
+    //_scr.enabled = true;
+
+    private void Awake()
 {
     if(instance != null)
     {

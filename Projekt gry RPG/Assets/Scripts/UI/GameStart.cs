@@ -6,11 +6,10 @@ using UnityEngine.SceneManagement;
 
 public class GameStart : MonoBehaviour
 {
-    public GameObject QuestPanel;
     private bool executed = false;
     private int x = 0;
 
-    void Update()
+/*    void Update()
     {
         if (!executed && SceneManager.GetActiveScene().name == "MainTown")
         {
@@ -22,8 +21,8 @@ public class GameStart : MonoBehaviour
     {
         if (SceneManager.GetActiveScene().name == "MainTown")
         {
-            QuestPanel.SetActive(false);
+            questGiver.setQuestActive();
             executed = true;
         }
-    }
+    }*/
 }
