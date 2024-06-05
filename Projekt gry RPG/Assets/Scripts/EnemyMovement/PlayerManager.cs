@@ -23,5 +23,6 @@ public class PlayerManager : MonoBehaviour
      * 3 - rêce
      * 4 - akcesoria
      */
-    public static GameObject[] characterLook = new GameObject[5]; //aktualnie zalozone rzeczy/ubrania
+    public static string[] characterLook = new string[5]; //aktualnie zalozone rzeczy/ubrania
+    public static bool armor = false; //czy ma zbroje
 }

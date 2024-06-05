@@ -52,6 +52,7 @@ GameObject:
   - component: {fileID: 6125843872681601040}
   - component: {fileID: 7682095786488870049}
   - component: {fileID: 6559870720211453171}
+  - component: {fileID: -5855443694856635749}
   m_Layer: 10
   m_Name: Rabbit
   m_TagString: Untagged
@@ -318,6 +319,18 @@ MonoBehaviour:
     baseValue: 0
   attackRate:
     baseValue: 0
+--- !u!210 &-5855443694856635749
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1081701847504365508}
+  m_Enabled: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortAtRoot: 0
 --- !u!1 &1940850050584441750
 GameObject:
   m_ObjectHideFlags: 0
