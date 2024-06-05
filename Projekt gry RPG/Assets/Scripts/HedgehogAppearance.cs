@@ -25,13 +25,11 @@ public class HedgehogClothes : MonoBehaviour
             {
                 Items[currentItem].SetActive(true);
                 PlayerManager.characterLook[nrTab] = Items[currentItem].name;
-                Debug.Log("Apperence: Start() -> kreator: set active: " + Items[currentItem].name + "\n");
                 
             }
         }
         else if(this.gameObject.scene.name != "CharacterCreator") //jesli Jezy jest na scenie
         {
-            Debug.Log("Apperance: Start() -> na scenie, ilosc w liscie: "+ PlayerManager.characterLook.Length);
             foreach (var c in PlayerManager.characterLook)
             {
                 Transform obj = transform.Find(c);
