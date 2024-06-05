@@ -32,7 +32,7 @@ public class QuestGiver : MonoBehaviour
     private IEnumerator ActivatePanelWithDelay()
     {
         ShowPanel();
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(6f);
         HidePanel();
     }
 
@@ -47,10 +47,27 @@ public class QuestGiver : MonoBehaviour
 
     public void finishQuest()
     {
+        x++;
         Debug.Log("Ukoñczono zadanie: " + quest.newQuestInfo);
         quest.isActive = false;
         TitleText.text = "Gratulacje!";
         ContentText.text = "Ukoñczy³eœ zadanie: " + quest.title + "!";
         StartCoroutine(ActivatePanelWithDelay());
+
+        // Aktywacja skryptu DialogueTrigger o wartoœci questGiverId równej x
+        ActivateDialogueTrigger(x);
+    }
+
+    private void ActivateDialogueTrigger(int id)
+    {
+        DialogueTrigger[] allTriggers = FindObjectsOfType<DialogueTrigger>();
+        foreach (DialogueTrigger trigger in allTriggers)
+        {
+            if (trigger.questGiverId == id)
+            {
+                trigger.enabled = true; // Aktywowanie skryptu
+                Debug.Log("Aktywowano DialogueTrigger z ID: " + id);
+            }
+        }
     }
 }

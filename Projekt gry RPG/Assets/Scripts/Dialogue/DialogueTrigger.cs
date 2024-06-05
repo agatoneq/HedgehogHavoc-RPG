@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class DialogueTrigger : MonoBehaviour
 {
@@ -11,12 +12,11 @@ public class DialogueTrigger : MonoBehaviour
     [SerializeField] private TextAsset inkJSON;
 
     [Header("Quest Giver ID")]
-    [SerializeField] private int questGiverId; // Unikalny identyfikator dla parowania z QuestGiver
+    [SerializeField] public int questGiverId;
 
     private QuestGiver questGiver;
     private bool playerInRange;
-
-    private static DialogueTrigger activeDialogueTrigger; // Statyczna zmienna śledząca aktywny DialogueTrigger
+    private StarterAssets.FirstPersonController firstPersonController;
 
     void Start()
     {
@@ -39,6 +39,18 @@ public class DialogueTrigger : MonoBehaviour
             Debug.Log("Nie znaleziono QuestGiver z ID: " + questGiverId);
         }
 
+        // Znalezienie FirstPersonController
+        firstPersonController = FindObjectOfType<StarterAssets.FirstPersonController>();
+
+        if (firstPersonController != null)
+        {
+            Debug.Log("Znaleziono FirstPersonController");
+        }
+        else
+        {
+            Debug.Log("Nie znaleziono FirstPersonController");
+        }
+
         DialogueManager.GetInstance().OnDialogueEnd += OnDialogueEnd;
     }
 
@@ -56,14 +68,17 @@ public class DialogueTrigger : MonoBehaviour
         {
             questGiver.setQuestActive(questGiverId);
         }
-        
-        visualCue.SetActive(false);
-        activeDialogueTrigger = null; // Resetujemy aktywny DialogueTrigger po zakończeniu dialogu
 
-        // Dezaktywacja skryptu o questGiverId równym 0
+        visualCue.SetActive(false);
+
         if (questGiverId == 0)
         {
             this.enabled = false;
+        }
+
+        if (firstPersonController != null)
+        {
+            firstPersonController.enabled = true;
         }
     }
 
@@ -75,44 +90,19 @@ public class DialogueTrigger : MonoBehaviour
 
     private void Update()
     {
-        // Sprawdzenie, czy ten DialogueTrigger jest aktywny
-        if (activeDialogueTrigger != null && activeDialogueTrigger != this)
+        if (playerInRange && !DialogueManager.GetInstance().dialogueIsPlaying)
+        {
+            visualCue.SetActive(true);
+            DialogueManager.GetInstance().EnterDialogueMode(inkJSON);
+            if (firstPersonController != null)
+            {
+                firstPersonController.enabled = false;
+            }
+
+        }
+        else if (!DialogueManager.GetInstance().dialogueIsPlaying)
         {
             visualCue.SetActive(false);
-            return;
-        }
-
-        if (questGiverId==0)
-        {
-            if (playerInRange && !DialogueManager.GetInstance().dialogueIsPlaying)
-            {
-                visualCue.SetActive(true);
-                Debug.Log("TAK TO 0");
-                DialogueManager.GetInstance().EnterDialogueMode(inkJSON);
-                activeDialogueTrigger = this; // Ustawiamy aktywny DialogueTrigger
-            }
-            else if (!DialogueManager.GetInstance().dialogueIsPlaying)
-            {
-                visualCue.SetActive(false);
-             
-            }
-        }
-        else
-        {
-            if (playerInRange && !DialogueManager.GetInstance().dialogueIsPlaying)
-            {
-                visualCue.SetActive(true);
-                if (Input.GetKeyDown(KeyCode.P))
-                {
-                    Debug.Log("to nie jest 0");
-                    DialogueManager.GetInstance().EnterDialogueMode(inkJSON);
-                    activeDialogueTrigger = this; // Ustawiamy aktywny DialogueTrigger
-                }
-            }
-            else
-            {
-                visualCue.SetActive(false);
-            }
         }
     }
 
@@ -129,10 +119,6 @@ public class DialogueTrigger : MonoBehaviour
         if (collider.gameObject.tag == "Player")
         {
             playerInRange = false;
-            if (activeDialogueTrigger == this)
-            {
-                activeDialogueTrigger = null; // Resetujemy aktywny DialogueTrigger po wyjściu z zasięgu
-            }
         }
     }
 }

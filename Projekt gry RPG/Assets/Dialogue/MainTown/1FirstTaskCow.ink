@@ -1,4 +1,4 @@
 ﻿Jerzy, nareszcie! Mamy tu niezłe bagno. Moja kosa zniknęła! Rozumiesz?? Ktoś ją bezczelnie ukradł! To nie jest zwykłe narzędzie, to moje życie – bez niej nie mogę zebrać plonów!
 Widziałam tego parszywego złodziejaszka, jak uciekał w stronę jaskiń. Gdyby nie to, że mam tu roboty po łokcie, już dawno bym go dopadła i nauczyła, co to znaczy kraść od krowy Wiesławy!
-erzy, muuuuusisz mi pomóc. Odnajdź moją kosę i przynieś ją z powrotem. Bez niej cała praca pójdzie na marne, a my wszyscy zostaniemy bez jedzenia. Masz zadanie do wykonania, i to teraz!
+Jerzy, muuuuusisz mi pomóc. Odnajdź moją kosę i przynieś ją z powrotem. Bez niej cała praca pójdzie na marne, a my wszyscy zostaniemy bez jedzenia. Masz zadanie do wykonania, i to teraz!
 Nie zawiedź mnie, Jerzy. Ja tu nie mam czasu na zabawy. Wiesz, gdzie szukać. Ruszaj natychmiast i przynieś mi tę kosę!
