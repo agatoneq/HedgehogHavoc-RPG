@@ -754,6 +754,7 @@ GameObject:
   - component: {fileID: 7445600199798247124}
   - component: {fileID: 120109376022788583}
   - component: {fileID: 1383922219218741937}
+  - component: {fileID: 2668659900885161606}
   m_Layer: 10
   m_Name: Rat
   m_TagString: Untagged
@@ -975,3 +976,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lookRadius: 10
+--- !u!210 &2668659900885161606
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8756656115914220974}
+  m_Enabled: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortAtRoot: 0

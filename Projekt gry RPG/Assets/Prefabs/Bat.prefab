@@ -482,6 +482,7 @@ GameObject:
   - component: {fileID: 6313456520489238556}
   - component: {fileID: 2104135600189617787}
   - component: {fileID: 1770331114330631082}
+  - component: {fileID: 113438537622695103}
   m_Layer: 10
   m_Name: Bat
   m_TagString: Untagged
@@ -726,6 +727,18 @@ MonoBehaviour:
   healthBarPrefab: {fileID: 6664340421089592978, guid: 2081abffef3e67e45be1dd8bbbcc7e84,
     type: 3}
   target: {fileID: 1212439414313625714}
+--- !u!210 &113438537622695103
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7707602404002531702}
+  m_Enabled: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortAtRoot: 0
 --- !u!1 &7901421757250097772
 GameObject:
   m_ObjectHideFlags: 0

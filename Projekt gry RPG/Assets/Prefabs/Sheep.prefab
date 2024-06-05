@@ -350,6 +350,7 @@ GameObject:
   - component: {fileID: 3235332354807227148}
   - component: {fileID: 188186038815984505}
   - component: {fileID: 2838251990383761972}
+  - component: {fileID: 6153153173725568219}
   m_Layer: 0
   m_Name: Sheep
   m_TagString: Untagged
@@ -473,6 +474,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d45ea0c5bd455d488ce5970c5286bb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!210 &6153153173725568219
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4171703128074290040}
+  m_Enabled: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortAtRoot: 0
 --- !u!1 &5112658731135936397
 GameObject:
   m_ObjectHideFlags: 0
