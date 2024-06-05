@@ -14,13 +14,23 @@ class ItemPickup : Interactable
 
     void Start()
     {
-        if (questGiver == null)
+        QuestGiver[] allQuestGivers = FindObjectsOfType<QuestGiver>();
+        foreach (QuestGiver qg in allQuestGivers)
         {
-            questGiver = FindObjectOfType<QuestGiver>();
-            if (questGiver == null)
+            if (qg.questGiverId == 0)
             {
-                Debug.LogError("QuestGiver not found in the scene. Please assign it manually.");
+                questGiver = qg;
+                break;
             }
+        }
+
+        if (questGiver != null)
+        {
+            Debug.Log("Znaleziono QuestGiver z ID: 0");
+        }
+        else
+        {
+            Debug.Log("Nie znaleziono QuestGiver z ID: 0");
         }
     }
     
@@ -39,6 +49,10 @@ class ItemPickup : Interactable
         {
             questGiver.quest.itemsCollected++;
             Debug.Log("Item Collected: " + questGiver.quest.itemsCollected + "/" + questGiver.quest.itemsToCollect);
+            if(questGiver.quest.itemsCollected == questGiver.quest.itemsToCollect)
+            {
+                questGiver.finishQuest();
+            }
         }
         else
         {

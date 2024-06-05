@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,141 +8,133 @@ using UnityEngine.EventSystems;
 
 public class DialogueManager : MonoBehaviour
 {
+    [Header("Dialogue UI")]
+    [SerializeField] private GameObject dialoguePanel;
+    [SerializeField] private TextMeshProUGUI dialogueText;
 
-[Header("Dialogue UI")]
-[SerializeField] private GameObject dialoguePanel;
-[SerializeField] private TextMeshProUGUI dialogueText;
+    [Header("Choices UI")]
+    [SerializeField] private GameObject[] choices;
+    private TextMeshProUGUI[] choicesText;
 
-[Header("Choices UI")]
-[SerializeField] private GameObject[] choices;
-private TextMeshProUGUI[] choicesText;
+    private Story currentStory;
 
-private Story currentStory;
+    public bool dialogueIsPlaying { get; private set; }
 
-public bool dialogueIsPlaying {get; private set;}
+    private static DialogueManager instance;
 
-private static DialogueManager instance;
-
-    
-
-    //_scr.enabled = true;
+    public event Action OnDialogueEnd;
 
     private void Awake()
-{
-    if(instance != null)
     {
-        Debug.LogWarning("więcej dialogów błąd");
-
-    }
-    instance = this;
-}
-
-public static DialogueManager GetInstance()
-{
-    return instance;
-}
-
-private void Start()
-{
-    dialogueIsPlaying = false;
-    dialoguePanel.SetActive(false);
-
-    //get all text for choices
-choicesText = new TextMeshProUGUI[choices.Length];
-int index = 0;
-foreach (GameObject choice in choices)
-{
-choicesText[index]=choice.GetComponentInChildren<TextMeshProUGUI>();
-index++;
-}
-
-
-}
-
-private void Update()
-{
-    if(!dialogueIsPlaying)
-    {
-        return;
+        if (instance != null)
+        {
+            Debug.LogWarning("więcej dialogów błąd");
+        }
+        instance = this;
     }
 
-    if(Input.GetKeyDown(KeyCode.Space))
+    public static DialogueManager GetInstance()
     {
-
-      ContinueStory();
+        return instance;
     }
-}
 
-public void EnterDialogueMode(TextAsset inkJSON)
-{
-    currentStory = new Story(inkJSON.text);
-    dialogueIsPlaying = true;
-    dialoguePanel.SetActive(true);
-
-ContinueStory();
-}
-
-private void ExitDialogueMode()
-{
-dialogueIsPlaying = false;
-dialoguePanel.SetActive(false);
-dialogueText.text = "";
-
-}
-
-private void ContinueStory()
-{
-        if(currentStory.canContinue)
+    private void Start()
     {
-        dialogueText.text = currentStory.Continue();
+        dialogueIsPlaying = false;
+        dialoguePanel.SetActive(false);
 
-        DispalyChoices();
+        // get all text for choices
+        choicesText = new TextMeshProUGUI[choices.Length];
+        int index = 0;
+        foreach (GameObject choice in choices)
+        {
+            choicesText[index] = choice.GetComponentInChildren<TextMeshProUGUI>();
+            index++;
+        }
     }
-    else
+
+    private void Update()
     {
-        ExitDialogueMode();
+        if (!dialogueIsPlaying)
+        {
+            return;
+        }
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            ContinueStory();
+        }
     }
-}
 
-private void DispalyChoices()
-{
-List<Choice> currentChoices = currentStory.currentChoices;
+    public void EnterDialogueMode(TextAsset inkJSON)
+    {
+        currentStory = new Story(inkJSON.text);
+        dialogueIsPlaying = true;
+        dialoguePanel.SetActive(true);
 
-// sprawdzenie defensywne, aby upewnić się, że nasz UI może obsłużyć liczbę nadchodzących wyborów
-if (currentChoices.Count > choices.Length)
-{
-    Debug.LogError("Podano więcej wyborów, niż UI może obsłużyć. Liczba podanych wyborów: "+ currentChoices.Count);
-}
+        ContinueStory();
+    }
 
-int index = 0;
-// włącz i zainicjuj wybory do ilości wyborów dla tej linii dialogowej
-foreach (Choice choice in currentChoices)
-{
-    choices[index].gameObject.SetActive(true);
-    choicesText[index].text = choice.text;
-    index++;
-}
-for (int i = index; i<choices.Length; i++)
-{
-    choices[i].gameObject.SetActive(false);
-}
+    private void ExitDialogueMode()
+    {
+        dialogueIsPlaying = false;
+        dialoguePanel.SetActive(false);
+        dialogueText.text = "";
 
-StartCoroutine(SelectFirstChoice());
+        OnDialogueEnd?.Invoke(); // Wywołaj zdarzenie po zakończeniu dialogu
+    }
 
-}
+    private void ContinueStory()
+    {
+        if (currentStory.canContinue)
+        {
+            dialogueText.text = currentStory.Continue();
+            DisplayChoices();
+        }
+        else
+        {
+            ExitDialogueMode();
+        }
+    }
 
-private IEnumerator SelectFirstChoice()
-{
-    // System zdarzeń wymaga, aby najpierw go wyczyścić, a następnie poczekać
-    // co najmniej jedną klatkę przed ustawieniem
-    EventSystem.current.SetSelectedGameObject(null);
-    yield return new WaitForEndOfFrame();
-    EventSystem.current.SetSelectedGameObject(choices[0].gameObject);
-}
+    private void DisplayChoices()
+    {
+        List<Choice> currentChoices = currentStory.currentChoices;
 
-public void MakeChoice(int choiceIndex)
-{
-    currentStory.ChooseChoiceIndex(choiceIndex);
-}
+        // sprawdzenie defensywne, aby upewnić się, że nasz UI może obsłużyć liczbę nadchodzących wyborów
+        if (currentChoices.Count > choices.Length)
+        {
+            Debug.LogError("Podano więcej wyborów, niż UI może obsłużyć. Liczba podanych wyborów: " + currentChoices.Count);
+        }
 
+        int index = 0;
+        // włącz i zainicjuj wybory do ilości wyborów dla tej linii dialogowej
+        foreach (Choice choice in currentChoices)
+        {
+            choices[index].gameObject.SetActive(true);
+            choicesText[index].text = choice.text;
+            index++;
+        }
+        for (int i = index; i < choices.Length; i++)
+        {
+            choices[i].gameObject.SetActive(false);
+        }
+
+        StartCoroutine(SelectFirstChoice());
+    }
+
+    private IEnumerator SelectFirstChoice()
+    {
+        // System zdarzeń wymaga, aby najpierw go wyczyścić, a następnie poczekać
+        // co najmniej jedną klatkę przed ustawieniem
+        EventSystem.current.SetSelectedGameObject(null);
+        yield return new WaitForEndOfFrame();
+        EventSystem.current.SetSelectedGameObject(choices[0].gameObject);
+    }
+
+    public void MakeChoice(int choiceIndex)
+    {
+        currentStory.ChooseChoiceIndex(choiceIndex);
+        ContinueStory();
+    }
 }
