@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using Assets.Scripts.Player;
 
 public class DialogueTrigger : MonoBehaviour
 {
@@ -12,11 +13,12 @@ public class DialogueTrigger : MonoBehaviour
     [SerializeField] private TextAsset inkJSON;
 
     [Header("Quest Giver ID")]
-    [SerializeField] public int questGiverId;
+    [SerializeField] public double questGiverId;
 
     private QuestGiver questGiver;
     private bool playerInRange;
     private StarterAssets.FirstPersonController firstPersonController;
+    private double currentQuest = Player.Instance.currentQuest;
 
     void Start()
     {
@@ -71,7 +73,7 @@ public class DialogueTrigger : MonoBehaviour
 
         visualCue.SetActive(false);
 
-        if (questGiverId == 0)
+        if (questGiverId != null)
         {
             this.enabled = false;
         }

@@ -12,6 +12,7 @@ namespace Assets.Scripts.Player
         public Stat damage = new Stat(20);
         public Stat maxhealth = new Stat(100);
         public double currentHealth { get; private set; }
+        public double currentQuest = 0;
         //armor not implemented yet
         public Stat armor = new Stat(0);
         public Stat attackRange = new Stat(3);
