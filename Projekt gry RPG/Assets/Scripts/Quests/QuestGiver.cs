@@ -46,7 +46,6 @@ public class QuestGiver : MonoBehaviour
         Player.Instance.currentQuest = id;
         Debug.Log(" zadanie z player po przypisaniu: " + Player.Instance.currentQuest);
         quest.isActive = true;
-        TitleText.text = "Nowe zadanie!";
         ContentText.text = quest.newQuestInfo;
         BookTitleText.text = quest.title;
         BookContentText.text = quest.description;

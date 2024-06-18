@@ -347,7 +347,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 5}
+  m_AnchoredPosition: {x: 11.9, y: 5}
   m_SizeDelta: {x: 128.6342, y: 127.678}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1873669874597594239
@@ -3559,7 +3559,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e52ae460ac0c6645a506a0f3b7f4356, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BookPanel: {fileID: 2741937454604359419}
+  BookPanel: {fileID: 92258737934231084}
   QuestsPanel: {fileID: 8233199447446722674}
   CharactersPanel: {fileID: 6669418453865769934}
 --- !u!114 &4899090476207507440
@@ -13740,7 +13740,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &6143377438650594530
 RectTransform:
   m_ObjectHideFlags: 0
@@ -16970,7 +16970,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1184804361303609157
 RectTransform:
   m_ObjectHideFlags: 0
@@ -19178,10 +19178,10 @@ RectTransform:
   - {fileID: 2938982866173345860}
   m_Father: {fileID: 225000637353126868}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.024263624, y: 0.017}
-  m_AnchorMax: {x: 0.18614577, y: 0.07876948}
-  m_AnchoredPosition: {x: 0.8253174, y: 0.09613037}
-  m_SizeDelta: {x: 1.907301, y: 0.19210005}
+  m_AnchorMin: {x: 0.034842618, y: 0.017}
+  m_AnchorMax: {x: 0.19822843, y: 0.08037958}
+  m_AnchoredPosition: {x: 0.7000122, y: -0.40386963}
+  m_SizeDelta: {x: -0.09269905, y: -0.80789995}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &8348616867989810606
 MonoBehaviour:
