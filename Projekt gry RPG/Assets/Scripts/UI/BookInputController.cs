@@ -20,7 +20,11 @@ public class BookInputController : MonoBehaviour
     }
 
     public GameObject BookPanel;
+    public GameObject QuestsPanel;
+    public GameObject CharactersPanel;
     public static bool IsBookOpened = false;
+    public static bool IsQPOpened = true;
+    public static bool IsChPOpened = false;
     public static bool IsMouseActive = false;
 
     // Update is called once per frame
@@ -58,5 +62,21 @@ public class BookInputController : MonoBehaviour
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
 
+    }
+
+    public void ShowQuestsPanel()
+    {
+        CharactersPanel.SetActive(false);
+        QuestsPanel.SetActive(true);
+        IsQPOpened = true;
+        IsChPOpened = false;
+    }
+
+    public void ShowCharactersPanel()
+    {
+        CharactersPanel.SetActive(true);
+        QuestsPanel.SetActive(false);
+        IsQPOpened = false;
+        IsChPOpened = true;
     }
 }
