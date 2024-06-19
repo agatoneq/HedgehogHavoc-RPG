@@ -20,7 +20,7 @@ namespace Assets.Scripts.Player
         private static Player instance;
         public Inventory Inventory { get; }
         public Equipment Equipment { get; }
-        public Quest quest;
+        public List<Character> characters = new List<Character>();
 
         public static Player Instance
         {

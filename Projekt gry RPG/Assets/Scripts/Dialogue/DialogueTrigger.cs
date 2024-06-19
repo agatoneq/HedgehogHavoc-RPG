@@ -15,10 +15,12 @@ public class DialogueTrigger : MonoBehaviour
     [Header("Quest Giver ID")]
     [SerializeField] public double questGiverId;
 
+    public Character character;
     private QuestGiver questGiver;
     private bool playerInRange;
     private StarterAssets.FirstPersonController firstPersonController;
     private double currentQuest = Player.Instance.currentQuest;
+    private List<Character> characters = Player.Instance.characters;
 
     void Start()
     {
@@ -94,6 +96,13 @@ public class DialogueTrigger : MonoBehaviour
     {
         if (playerInRange && !DialogueManager.GetInstance().dialogueIsPlaying)
         {
+            if(questGiverId == character.id && character.isAvailable == false)
+            {
+                character.isAvailable = true;
+                Debug.Log("to jest" + character.name);
+                characters.Add(character);
+            }
+
             visualCue.SetActive(true);
             DialogueManager.GetInstance().EnterDialogueMode(inkJSON);
             if (firstPersonController != null)

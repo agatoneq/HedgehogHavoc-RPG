@@ -6,7 +6,8 @@ using UnityEngine;
 public class Character
 {
     public bool isAvailable;
+    public double id;
     public string name;
     public string description;
-    public double availableAfterQuestId;
+    public Sprite image;
 }
