@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using UnityEngine;
+using UnityEngine.UI;
 
 namespace Assets.Scripts.Player
 {
@@ -21,6 +23,7 @@ namespace Assets.Scripts.Player
         public Inventory Inventory { get; }
         public Equipment Equipment { get; }
         public List<Character> characters = new List<Character>();
+        public List<GameObject> charactersPanels = new List<GameObject>();
 
         public static Player Instance
         {

@@ -17,7 +17,7 @@ TagManager:
   - Character
   - Ground
   - enemies
-  - 
+  - CharacterView
   - 
   - 
   - 
@@ -41,4 +41,7 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: ui
+    uniqueID: 2793776515
     locked: 0

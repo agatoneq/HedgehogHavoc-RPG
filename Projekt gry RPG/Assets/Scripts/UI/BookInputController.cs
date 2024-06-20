@@ -1,8 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Diagnostics;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
+using TMPro;
+using Assets.Scripts.Player;
 
 public class BookInputController : MonoBehaviour
 {
@@ -26,6 +28,15 @@ public class BookInputController : MonoBehaviour
     public static bool IsQPOpened = true;
     public static bool IsChPOpened = false;
     public static bool IsMouseActive = false;
+
+    private int currentCharacter = 0;
+
+    public TMP_Text TitleText;
+    public TMP_Text ContentText;
+    public Image image;
+    //public GameObject pref;
+
+    private List<Character> characters = Player.Instance.characters;
 
     // Update is called once per frame
     void Update()
@@ -78,5 +89,48 @@ public class BookInputController : MonoBehaviour
         QuestsPanel.SetActive(false);
         IsQPOpened = false;
         IsChPOpened = true;
+    }
+
+    public void ChangeCharacterPanel(bool next)
+    {
+        if (next)
+        {
+            Debug.Log($"next: {currentCharacter}, count listy: {characters.Count}");
+
+            
+            if (currentCharacter < characters.Count-1)
+            {
+                currentCharacter++;
+
+                Debug.Log($"next w if: {currentCharacter}, count listy: {characters.Count}");
+
+                Character character = characters[currentCharacter];
+
+                TitleText.text = character.name;
+                ContentText.text = character.description;
+                //pref = character.pref;
+                image.sprite = character.image;
+            }
+
+        }
+        else
+        {
+            Debug.Log($"pre: {currentCharacter}, count listy: {characters.Count}");
+
+
+            if (currentCharacter > 0)
+            {
+                currentCharacter--;
+
+                Debug.Log($"pre w if: {currentCharacter}, count listy: {characters.Count}");
+
+                Character character = characters[currentCharacter];
+
+                TitleText.text = character.name;
+                ContentText.text = character.description;
+                //pref = character.pref;
+                image.sprite = character.image;
+            }
+        }
     }
 }

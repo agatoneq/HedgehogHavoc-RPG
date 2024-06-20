@@ -21,6 +21,7 @@ public class DialogueTrigger : MonoBehaviour
     private StarterAssets.FirstPersonController firstPersonController;
     private double currentQuest = Player.Instance.currentQuest;
     private List<Character> characters = Player.Instance.characters;
+    
 
     void Start()
     {
@@ -99,8 +100,22 @@ public class DialogueTrigger : MonoBehaviour
             if(questGiverId == character.id && character.isAvailable == false)
             {
                 character.isAvailable = true;
-                Debug.Log("to jest" + character.name);
-                characters.Add(character);
+                Debug.Log("Rozmawiasz z: " + character.name);
+                bool characterExists = characters.Exists(c => c.id == character.id);
+
+                if (!characterExists)
+                {
+                    characters.Add(character);
+                }
+                else
+                {
+                    Debug.Log($"Postaæ z ID: {character.id} ju¿ istnieje w liœcie.");
+                }
+
+                foreach (Character c in characters)
+                {
+                    Debug.Log($"ID: {c.id}, Name: {c.name}");
+                }
             }
 
             visualCue.SetActive(true);
