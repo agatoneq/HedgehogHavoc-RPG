@@ -47,12 +47,17 @@ class ItemPickup : Interactable
 
         if (questGiver != null && questGiver.quest != null)
         {
-            questGiver.quest.itemsCollected++;
-            Debug.Log("Item Collected: " + questGiver.quest.itemsCollected + "/" + questGiver.quest.itemsToCollect);
-            if(questGiver.quest.itemsCollected == questGiver.quest.itemsToCollect)
+
+            if(Player.Instance.currentQuest == 0)
             {
-                questGiver.finishQuest();
+                questGiver.quest.itemsCollected++;
+                Debug.Log("Item Collected: " + questGiver.quest.itemsCollected + "/" + questGiver.quest.itemsToCollect);
+                if (questGiver.quest.itemsCollected == questGiver.quest.itemsToCollect)
+                {
+                    questGiver.finishQuest();
+                }
             }
+
         }
         else
         {

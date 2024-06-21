@@ -2,15 +2,37 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
+using Assets.Scripts.Player;
 
 public class EnemyStats : CharacterStats
 {
     Animator animator;
+    public QuestGiver questGiver;
 
     public event System.Action<double,double> OnHealthChanged;
     private void Start()
     {
         animator = GetComponent<Animator>();
+
+        QuestGiver[] allQuestGivers = FindObjectsOfType<QuestGiver>();
+        foreach (QuestGiver qg in allQuestGivers)
+        {
+            if (qg.questGiverId == 11)
+            {
+                questGiver = qg;
+                break;
+            }
+        }
+
+        if (questGiver != null)
+        {
+            Debug.Log("Znaleziono QuestGiver z ID: 11");
+        }
+        else
+        {
+            Debug.Log("Nie znaleziono QuestGiver z ID: 11");
+        }
+
     }
     public override void Hurt()
     {
@@ -30,6 +52,26 @@ public class EnemyStats : CharacterStats
         //ragdoll efect / death animation
         animator.SetTrigger("IsDead");
         Invoke("DestroyObj", 0.5f);
+
+        if (questGiver != null && questGiver.quest != null)
+        {
+
+            if (Player.Instance.currentQuest == 11)
+            {
+                questGiver.quest.itemsCollected++;
+                Debug.Log("Zabici przeciwnicy: " + questGiver.quest.itemsCollected + "/" + questGiver.quest.itemsToCollect);
+                if (questGiver.quest.itemsCollected == questGiver.quest.itemsToCollect)
+                {
+                    questGiver.finishQuest();
+                }
+            }
+
+        }
+        else
+        {
+            Debug.LogError("QuestGiver or quest is not set.");
+        }
+
 
     }
     private void DestroyObj()

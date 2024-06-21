@@ -22,6 +22,9 @@ public class QuestGiver : MonoBehaviour
     public TMP_Text BookTitleText;
     public TMP_Text BookContentText;
 
+    public GameObject wall;
+    public GameObject remy;
+
     void ShowPanel()
     {
         newQuestPanel.SetActive(true);
@@ -62,15 +65,22 @@ public class QuestGiver : MonoBehaviour
         TitleText.text = "Gratulacje!";
         ContentText.text = "Ukoñczy³eœ zadanie: " + quest.title + "!";
         BookTitleText.text = "ZnajdŸ zadanie";
-        switch(x)
+        switch(Player.Instance.currentQuest)
         {
-            case 1:
+            case 0:
                 BookContentText.text = "Nie masz obecnie ¿adnych aktywnych zadañ. Spróbuj porozmawiaæ z Krow¹ Wies³aw¹.";
+                ActivateDialogueTrigger(10);
                 break;
-            case 2:
+            case 11:
+                wall.SetActive(false);
+                remy.SetActive(false);
+                quest = new Quest("Sprawa zaginionej kosy", "Có¿… to chyba nie by³a osoba, która chcia³a dla Ciebie dobrze. Oby nastêpnym razem by³o lepiej. Eksploruj dalej jaskiniê i odnajdŸ prawdziwego sojusznika.", "OdnajdŸ kreciego in¿yniera", 0, 0);
+                setQuestActive(12);
+                break;
+            case 18:
                 BookContentText.text = "Nie masz obecnie ¿adnych aktywnych zadañ. Spróbuj porozmawiaæ z Mam¹ Owc¹.";
                 break; 
-            case 3:
+            case 28:
                 BookContentText.text = "Nie masz obecnie ¿adnych aktywnych zadañ. Spróbuj porozmawiaæ z Kameleonem Zakonnikiem.";
                 break;
             default:
@@ -81,7 +91,7 @@ public class QuestGiver : MonoBehaviour
         StartCoroutine(ActivatePanelWithDelay());
 
         // Aktywacja skryptu DialogueTrigger o wartoœci questGiverId równej x
-        ActivateDialogueTrigger(x);
+        
     }
 
     private void ActivateDialogueTrigger(double id)

@@ -4,7 +4,6 @@ using System.ComponentModel;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-using System.Diagnostics;
 
 public class SceneMan : MonoBehaviour
 {
@@ -15,7 +14,7 @@ public class SceneMan : MonoBehaviour
 
     public void ClickPlayButton()
     {
-        StartCoroutine(LoadAsynchronously(5));
+        StartCoroutine(LoadAsynchronously(4));
     }
 
     IEnumerator LoadAsynchronously(int sceneIndex)

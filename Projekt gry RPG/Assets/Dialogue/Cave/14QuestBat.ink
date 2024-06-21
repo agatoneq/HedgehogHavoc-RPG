@@ -1,0 +1,3 @@
+﻿Ach, proszę, proszę, kogo my tu mamy? Odważny jeż Jerzy! HAHA! Nie sądziłem, że odważysz się zapuścić tak głęboko. 
+Nie mogłem pozwolić, aby Bogdan Ci zdradził nasze sekrety. Już od dawna mi się nie podobał ten inżynierek…  Miałeś szanse się jeszcze wycofać, ale nie skorzystałeś! Jakieś ostatnie życzenie? 
+HAHAHA! Chcesz ze mną stoczyć walkę!? Urocza kuleczka z Ciebie. Nikt mnie nigdy nie pokonał! Ale proszę bardzo, skoro chcesz pożegnać się z życiem w takim sposób, to cała przyjemność po mojej stronie!

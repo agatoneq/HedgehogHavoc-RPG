@@ -1,0 +1,2 @@
+﻿Witaj! Jestem Remy, strażnik tego miejsca. Pilnuję żeby nie wszedł tu nikt nieproszony. Jesteś tu nowy, prawda? Czegoś szukasz?
+Hmm.. kosy mówisz.. Raczej jej tutaj nie znajdziesz. Ale jeśli chcesz iść dalej, mogę Ci na to pozwolić. Musisz iść w lewo, tam jest bezpiecznie.

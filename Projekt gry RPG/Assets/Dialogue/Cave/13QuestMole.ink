@@ -1,0 +1,6 @@
+﻿Oho, kogo my tu mamy? Wyglądasz na nieco zagubionego, młody jeżu. Nazywam się Bogdan Kretołamacz. Mogę ci pomóc, jeśli powiesz mi, czego szukasz.
+A, kosa Wiesławy. To niełatwe zadanie, ale dobrze trafiłeś. Te jaskinie mogą być zdradliwe, ale znam je jak własną łapę. Pokażę ci drogę przez te tunele, ale musisz uważać. W tych częściach jaskini mogą czaić się różne niebezpieczeństwa.
+Wiesz, zawsze ceniłem współpracę z wójtem Mopszynem. Dzięki jego wsparciu mogłem realizować wiele skomplikowanych projektów. Ale... nie wszystko w mojej przeszłości było tak jasne. Były czasy, kiedy budowałem nielegalne tunele. Takie życie przynosi uznanie, ale i problemy.
+Co powiedziałeś!? Remy Ci już pomaga w odnalezieniu kosy?? Hmmm, coś mi tu nie gra, daj mi pomyśleć.
+…
+Już wiem! Koniecznie muszę Cię ostrzec! Uważam, że…
