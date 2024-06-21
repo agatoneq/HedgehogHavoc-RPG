@@ -76,6 +76,7 @@ public class QuestGiver : MonoBehaviour
                 remy.SetActive(false);
                 quest = new Quest("Sprawa zaginionej kosy", "Có¿… to chyba nie by³a osoba, która chcia³a dla Ciebie dobrze. Oby nastêpnym razem by³o lepiej. Eksploruj dalej jaskiniê i odnajdŸ prawdziwego sojusznika.", "OdnajdŸ kreciego in¿yniera", 0, 0);
                 setQuestActive(12);
+                ActivateDialogueTrigger(13);
                 break;
             case 18:
                 BookContentText.text = "Nie masz obecnie ¿adnych aktywnych zadañ. Spróbuj porozmawiaæ z Mam¹ Owc¹.";

@@ -97,7 +97,15 @@ public class DialogueTrigger : MonoBehaviour
     {
         if (playerInRange && !DialogueManager.GetInstance().dialogueIsPlaying)
         {
-            if(questGiverId == character.id && character.isAvailable == false)
+                if (Player.Instance.currentQuest == 12 && questGiverId == 13)
+                {
+                        questGiver.finishQuest();
+                }
+
+
+
+
+            if (questGiverId == character.id && character.isAvailable == false)
             {
                 character.isAvailable = true;
                 Debug.Log("Rozmawiasz z: " + character.name);
