@@ -1,5 +1,10 @@
-using UnityEngine;
+using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using Assets.Scripts.Player;
+using UnityEngine;
 
 public class CharacterStats : MonoBehaviour
 {
@@ -56,6 +61,7 @@ public class CharacterStats : MonoBehaviour
         //to be overwitten
         //dying depends on character
         Debug.Log(transform.name + "died.");
+
     }
     public virtual void Hurt()
     {

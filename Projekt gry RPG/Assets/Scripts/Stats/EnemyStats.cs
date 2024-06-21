@@ -17,7 +17,7 @@ public class EnemyStats : CharacterStats
         QuestGiver[] allQuestGivers = FindObjectsOfType<QuestGiver>();
         foreach (QuestGiver qg in allQuestGivers)
         {
-            if (qg.questGiverId == 11)
+            if (qg.questGiverId == 11 || qg.questGiverId == 15)
             {
                 questGiver = qg;
                 break;
@@ -65,12 +65,20 @@ public class EnemyStats : CharacterStats
                     questGiver.finishQuest();
                 }
             }
+            else if(Player.Instance.currentQuest == 15)
+            {
+                if (transform.name == "BatEvil")
+                    Debug.Log("Zginal: " + transform.name);
+                questGiver.finishQuest();
+            }
 
         }
         else
         {
             Debug.LogError("QuestGiver or quest is not set.");
         }
+
+
 
 
     }

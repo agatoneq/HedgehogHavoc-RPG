@@ -19,6 +19,7 @@ public class DialogueTrigger : MonoBehaviour
     private QuestGiver questGiver;
     private bool playerInRange;
     private StarterAssets.FirstPersonController firstPersonController;
+    private KidnappedMole kidnappedMole;
     private double currentQuest = Player.Instance.currentQuest;
     private List<Character> characters = Player.Instance.characters;
     
@@ -56,6 +57,17 @@ public class DialogueTrigger : MonoBehaviour
             Debug.Log("Nie znaleziono FirstPersonController");
         }
 
+        kidnappedMole = FindObjectOfType<KidnappedMole>();
+
+        if (kidnappedMole != null)
+        {
+            Debug.Log("Znaleziono KidnappedMole");
+        }
+        else
+        {
+            Debug.Log("Nie znaleziono KidnappedMole");
+        }
+
         DialogueManager.GetInstance().OnDialogueEnd += OnDialogueEnd;
     }
 
@@ -69,7 +81,16 @@ public class DialogueTrigger : MonoBehaviour
 
     private void OnDialogueEnd()
     {
-        if (questGiver != null)
+        if (questGiver != null && questGiverId == 13)
+        {
+            if (kidnappedMole != null)
+            {
+                kidnappedMole.enabled = true;
+            }
+        }
+
+
+        if (questGiver != null && questGiverId != 13)
         {
             questGiver.setQuestActive(questGiverId);
         }
@@ -101,6 +122,11 @@ public class DialogueTrigger : MonoBehaviour
                 {
                         questGiver.finishQuest();
                 }
+
+            if (Player.Instance.currentQuest == 13 && questGiverId == 14)
+            {
+                questGiver.finishQuest();
+            }
 
 
 

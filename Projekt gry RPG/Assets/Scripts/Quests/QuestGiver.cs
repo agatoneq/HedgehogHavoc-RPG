@@ -72,11 +72,24 @@ public class QuestGiver : MonoBehaviour
                 ActivateDialogueTrigger(10);
                 break;
             case 11:
-                wall.SetActive(false);
-                remy.SetActive(false);
-                quest = new Quest("Sprawa zaginionej kosy", "Có¿… to chyba nie by³a osoba, która chcia³a dla Ciebie dobrze. Oby nastêpnym razem by³o lepiej. Eksploruj dalej jaskiniê i odnajdŸ prawdziwego sojusznika.", "OdnajdŸ kreciego in¿yniera", 0, 0);
+                quest = new Quest("Œladem krecich korytarzy", "Có¿… to chyba nie by³a osoba, która chcia³a dla Ciebie dobrze. Oby nastêpnym razem by³o lepiej. Eksploruj dalej jaskiniê i odnajdŸ prawdziwego sojusznika.", "OdnajdŸ kreciego in¿yniera", 0, 0);
                 setQuestActive(12);
                 ActivateDialogueTrigger(13);
+                wall.SetActive(false);
+                Vector3 remyPosition = remy.transform.position;
+                remyPosition.y = -5;
+                break;
+            case 12:
+                ActivateDialogueTrigger(14);
+                break;
+            case 13:
+                wall.SetActive(true);
+                remy.SetActive(false);
+                break;
+            case 14:
+                quest = new Quest("Wybawiciel", "Bat Wuhan przerwa³ Bogdanowi w momencie, gdy ten chcia³ przekazaæ Ci wa¿ne informacje. Teraz, gdy nietoperz zosta³ pokonany, musisz porozmawiaæ z Bogdanem i dowiedzieæ siê, co wa¿nego chcia³ Ci powiedzieæ.", "Porozmawiaj z Bogdanem", 0, 0);
+                setQuestActive(15);
+                ActivateDialogueTrigger(16);
                 break;
             case 18:
                 BookContentText.text = "Nie masz obecnie ¿adnych aktywnych zadañ. Spróbuj porozmawiaæ z Mam¹ Owc¹.";
