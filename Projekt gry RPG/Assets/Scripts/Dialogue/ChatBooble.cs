@@ -32,7 +32,7 @@ private void Setup (string text) {
 textMeshPro.SetText(text);
 textMeshPro.transform.Rotate(0f, 0f, 0f);
 textMeshPro.ForceMeshUpdate();
-textMeshPro.transform.localPosition = new Vector3(0.0f, -4.5f, 0f);
+textMeshPro.transform.localPosition = new Vector3(1.0f, -4.5f, 0f);
 
 Vector2 textSize = textMeshPro.GetRenderedValues (false);
 
