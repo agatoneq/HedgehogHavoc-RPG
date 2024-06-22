@@ -46,7 +46,7 @@ public class SettingsManager : MonoBehaviour
 
     public void SetVolume (float volume)
     {
-        audioMixer.SetFloat("volume", volume);
+        //audioMixer.SetFloat("volume", volume);
         AudioManager.Instance.SFXSource.volume = volume;
         AudioManager.Instance.musicSource.volume = volume;
     }
