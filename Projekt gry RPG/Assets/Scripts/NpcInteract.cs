@@ -15,7 +15,7 @@ public void Interact()
 {
      Debug.Log("YEZZ BOYYYYY");
 
-     ChatBooble.Create(transform.transform, new Vector3(-.3f,1.7f,0f),"Say Cheeeze");
+     ChatBooble.Create(transform.transform, new Vector3(-.3f,1.7f,0f),"Cześć");
 
 
 }
