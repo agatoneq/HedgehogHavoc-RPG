@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.5784543, g: 0.6157293, b: 0.6087265, a: 1}
+  m_IndirectSpecularColor: {r: 0.57845426, g: 0.61572915, b: 0.60872644, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1062,6 +1062,8 @@ MonoBehaviour:
   ContentText: {fileID: 0}
   BookTitleText: {fileID: 0}
   BookContentText: {fileID: 0}
+  wall: {fileID: 0}
+  remy: {fileID: 0}
 --- !u!114 &352366394
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1996,6 +1998,11 @@ PrefabInstance:
       propertyPath: attackPoint
       value: 
       objectReference: {fileID: 1668840137}
+    - target: {fileID: 6188176594581946811, guid: c5efc39a8aaf6e64ea40e9ad573e9b47,
+        type: 3}
+      propertyPath: soundtrack
+      value: 
+      objectReference: {fileID: 8300000, guid: e96e61815a39c7d419656d7d7c2d503d, type: 3}
     - target: {fileID: 7436297375904737504, guid: c5efc39a8aaf6e64ea40e9ad573e9b47,
         type: 3}
       propertyPath: inventory

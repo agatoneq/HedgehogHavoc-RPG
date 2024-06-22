@@ -4,27 +4,40 @@ using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
-    [SerializeField] AudioSource musicSource;
-    [SerializeField] AudioSource SFXSource;
+    public AudioSource musicSource;
+    public AudioSource SFXSource;
     
     public AudioClip soundtrack;
     public AudioClip playerWasHit;
     public AudioClip playerAttack;
     public AudioClip playerHitEnemie;
 
+    public static AudioManager Instance;
+    private void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
     void Start()
     {
         if (soundtrack != null)
         {
-            musicSource.clip = soundtrack; //musyka grana w petli na danej scenie
-            musicSource.Play();
+            Instance.musicSource.clip = soundtrack; //musyka grana w petli na danej scenie
+            Instance.musicSource.Play();
         }
     }
     public void PlaySFX(AudioClip clip) //metoda do odtwarzania pojedynczego dzwieku
     {
         if (clip != null)
         {
-            SFXSource.PlayOneShot(clip); //pojedyncze odtworzenie jednego z dzwiekow zadeklarowanych w polach tej klasy
+            Instance.SFXSource.PlayOneShot(clip); //pojedyncze odtworzenie jednego z dzwiekow zadeklarowanych w polach tej klasy
         }
         else
             Debug.Log("wybrany clip jest nullem!");

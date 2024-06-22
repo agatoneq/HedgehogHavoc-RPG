@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.12672004, g: 0.14577252, b: 0.15337402, a: 1}
+  m_IndirectSpecularColor: {r: 0.12671989, g: 0.14577235, b: 0.1533739, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -998,21 +998,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c26fb95dc2c555429bc871f68901f76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  visualCue: {fileID: 656584413}
-  inkJSON: {fileID: 4900000, guid: 343ce240b89578c4fa2608ba34bb41b3, type: 3}
-  questGiverId: 1
-  character:
-    isAvailable: 0
-    id: 1
-    name: "Wies\u0142awa Wo\u0142obitka"
-    description: "Wies\u0142awa Wo\u0142obitka to twarda i nieustraszona krowa, kt\xF3rej
-      \u017Cycie obraca si\u0119 wok\xF3\u0142 pracy na roli. Znana ze swojej konkretnej
-      postawy i zdolno\u015Bci do wyra\u017Cania swoich pogl\u0105d\xF3w bez ogr\xF3dek,
-      Wies\u0142awa jest filarem spo\u0142eczno\u015Bci Kud\u0142ogrodu. Jej pola
-      uprawne s\u0105 \u017Ar\xF3d\u0142em po\u017Cywienia dla wielu mieszka\u0144c\xF3w,
-      a ona sama nie boi si\u0119 stawi\u0107 czo\u0142a \u017Cadnym wyzwaniom, jakie
-      mog\u0105 pojawi\u0107 si\u0119 na jej drodze. "
-    image: {fileID: 21300000, guid: 31f4f0aa35597d340a3b1161a22ebc9d, type: 3}
 --- !u!1001 &842181049
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1428,6 +1413,11 @@ PrefabInstance:
       propertyPath: attackPoint
       value: 
       objectReference: {fileID: 395009146}
+    - target: {fileID: 6188176594581946811, guid: c5efc39a8aaf6e64ea40e9ad573e9b47,
+        type: 3}
+      propertyPath: soundtrack
+      value: 
+      objectReference: {fileID: 8300000, guid: b310534a5cccf4f40999eece305ac6fe, type: 3}
     - target: {fileID: 7436297375904737504, guid: c5efc39a8aaf6e64ea40e9ad573e9b47,
         type: 3}
       propertyPath: inventory
@@ -1497,6 +1487,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9040976789328319138, guid: c5efc39a8aaf6e64ea40e9ad573e9b47,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1975,6 +1970,26 @@ PrefabInstance:
     - target: {fileID: 8131140101507999601, guid: c9aae71fbe2ea224c980006ccbd85a0d,
         type: 3}
       propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8511962701079002639, guid: c9aae71fbe2ea224c980006ccbd85a0d,
+        type: 3}
+      propertyPath: m_Value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8511962701079002639, guid: c9aae71fbe2ea224c980006ccbd85a0d,
+        type: 3}
+      propertyPath: m_MaxValue
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8511962701079002639, guid: c9aae71fbe2ea224c980006ccbd85a0d,
+        type: 3}
+      propertyPath: m_MinValue
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8511962701079002639, guid: c9aae71fbe2ea224c980006ccbd85a0d,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:

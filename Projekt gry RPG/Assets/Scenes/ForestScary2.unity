@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.12671983, g: 0.14577222, b: 0.15337384, a: 1}
+  m_IndirectSpecularColor: {r: 0.12671989, g: 0.14577235, b: 0.1533739, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -446,6 +446,11 @@ PrefabInstance:
       propertyPath: attackPoint
       value: 
       objectReference: {fileID: 395009146}
+    - target: {fileID: 6188176594581946811, guid: c5efc39a8aaf6e64ea40e9ad573e9b47,
+        type: 3}
+      propertyPath: soundtrack
+      value: 
+      objectReference: {fileID: 8300000, guid: b310534a5cccf4f40999eece305ac6fe, type: 3}
     - target: {fileID: 7436297375904737504, guid: c5efc39a8aaf6e64ea40e9ad573e9b47,
         type: 3}
       propertyPath: inventory
@@ -515,6 +520,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9040976789328319138, guid: c5efc39a8aaf6e64ea40e9ad573e9b47,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -633,6 +643,8 @@ MonoBehaviour:
   ContentText: {fileID: 0}
   BookTitleText: {fileID: 0}
   BookContentText: {fileID: 0}
+  wall: {fileID: 0}
+  remy: {fileID: 0}
 --- !u!114 &1500418890
 MonoBehaviour:
   m_ObjectHideFlags: 0
