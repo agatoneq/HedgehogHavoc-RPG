@@ -38,11 +38,14 @@ TagManager:
   - 
   - 
   - 
-  - 
+  - last
   m_SortingLayers:
   - name: Default
     uniqueID: 0
     locked: 0
   - name: ui
     uniqueID: 2793776515
+    locked: 0
+  - name: last
+    uniqueID: 1013442167
     locked: 0
