@@ -16,6 +16,7 @@ public class AudioManager : MonoBehaviour
     public AudioClip openedBook;
     public AudioClip changedBookPage;
     public AudioClip newQuest;
+    public AudioClip button;
 
     public static AudioManager Instance;
     private void Awake()
