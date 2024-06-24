@@ -11,12 +11,23 @@ public class TeleportToTown : MonoBehaviour
     private bool wasInDifferentScene = false;
     public GameObject loadingPanel;
     public Slider loadingSlider;
-   // public GameObject Hedgehog;
+    // public GameObject Hedgehog;
 
+
+    AudioManager audioManager;
+    private void Start()
+    {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+        if(audioManager == null)
+        {
+            UnityEngine.Debug.Log("audioManager jest nullem");
+        }
+    }
 
     public void OnTriggerEnter(Collider other)
     {
         StartCoroutine(LoadAsynchronously(2));
+        audioManager.PlaySFX(audioManager.playerTeleported);
         //Hedgehog.transform.position = new Vector3(507f, 5.1897f, 229.61f);
 
         // Ustawia rotacjê gracza na (0, -3.4, 0)
@@ -26,6 +37,7 @@ public class TeleportToTown : MonoBehaviour
 
     IEnumerator LoadAsynchronously(int sceneIndex)
     {
+
         UnityEngine.AsyncOperation operation = SceneManager.LoadSceneAsync(sceneIndex);
 
         loadingPanel.SetActive(true);

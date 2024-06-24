@@ -5,7 +5,7 @@ public class Swing : MonoBehaviour
     // Amplituda ruchu wahadła (zakres w stopniach)
     public float amplitude = 60f;
     // Prędkość ruchu wahadła
-    public float speed = 1f;
+    public float speed = 2f;
     // Kąt początkowy
     private float startAngle;
 
@@ -34,7 +34,7 @@ public class Swing : MonoBehaviour
                 {
                     Debug.Log("kłoda boli");
                 
-                    playerStats.TakeDamage(100000.0);
+                    playerStats.TakeDamage(10.0);
                 }
                
     }

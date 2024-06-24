@@ -11,6 +11,12 @@ public class AudioManager : MonoBehaviour
     public AudioClip playerWasHit;
     public AudioClip playerAttack;
     public AudioClip playerHitEnemie;
+    public AudioClip playerTeleported;
+    public AudioClip playerCollectedItem;
+    public AudioClip openedBook;
+    public AudioClip changedBookPage;
+    public AudioClip newQuest;
+    public AudioClip button;
 
     public static AudioManager Instance;
     private void Awake()

@@ -12,6 +12,9 @@ public class HedgehogClothes : MonoBehaviour
     private int currentItem = 0;
     public int nrTab;
 
+    AudioManager audioManager;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -45,7 +48,11 @@ public class HedgehogClothes : MonoBehaviour
                 Armor_breastplate.SetActive(true);
             }
         }
-
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+        if (audioManager == null)
+        {
+            Debug.Log("audioManager jest nullem");
+        }
     }
     public void Change(bool next) //next: true -> przycisk w przod, false -> w tyl
     {
@@ -67,10 +74,12 @@ public class HedgehogClothes : MonoBehaviour
         PlayerManager.characterLook[nrTab] = Items[currentItem].name;  //tablica z wybranymi elementami
         
         Items[currentItem].SetActive(true); //pokazanie wybranego itemku
+        audioManager.PlaySFX(audioManager.button);
     }
     public void OkButton()
     {
         SceneManager.LoadScene("MainTown");
+        audioManager.PlaySFX(audioManager.button);
     }
 
     public void CancelButton()

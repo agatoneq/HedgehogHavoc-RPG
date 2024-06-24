@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028355, g: 0.22571374, b: 0.30692255, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -215,6 +215,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1765293145}
+  - {fileID: 288205633}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &8762442
@@ -496,6 +497,12 @@ MonoBehaviour:
   m_DeselectOnBackgroundClick: 1
   m_PointerBehavior: 0
   m_CursorLockBehavior: 0
+--- !u!4 &288205633 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6920561652759254071, guid: 94627189f2a17a740bf9588da233d691,
+    type: 3}
+  m_PrefabInstance: {fileID: 1620902588}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &377553905
 GameObject:
   m_ObjectHideFlags: 0
@@ -1623,6 +1630,79 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1426983988}
   m_CullTransparentMesh: 1
+--- !u!1001 &1620902588
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 8762441}
+    m_Modifications:
+    - target: {fileID: 1867881954536835753, guid: 94627189f2a17a740bf9588da233d691,
+        type: 3}
+      propertyPath: soundtrack
+      value: 
+      objectReference: {fileID: 8300000, guid: de657b3d9fd18c24a9afcc208e75962f, type: 3}
+    - target: {fileID: 3563716279628011952, guid: 94627189f2a17a740bf9588da233d691,
+        type: 3}
+      propertyPath: m_Name
+      value: AudioManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 6920561652759254071, guid: 94627189f2a17a740bf9588da233d691,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.26
+      objectReference: {fileID: 0}
+    - target: {fileID: 6920561652759254071, guid: 94627189f2a17a740bf9588da233d691,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.48
+      objectReference: {fileID: 0}
+    - target: {fileID: 6920561652759254071, guid: 94627189f2a17a740bf9588da233d691,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -2.41
+      objectReference: {fileID: 0}
+    - target: {fileID: 6920561652759254071, guid: 94627189f2a17a740bf9588da233d691,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6920561652759254071, guid: 94627189f2a17a740bf9588da233d691,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6920561652759254071, guid: 94627189f2a17a740bf9588da233d691,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6920561652759254071, guid: 94627189f2a17a740bf9588da233d691,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6920561652759254071, guid: 94627189f2a17a740bf9588da233d691,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6920561652759254071, guid: 94627189f2a17a740bf9588da233d691,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6920561652759254071, guid: 94627189f2a17a740bf9588da233d691,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 94627189f2a17a740bf9588da233d691, type: 3}
 --- !u!1 &1625038474
 GameObject:
   m_ObjectHideFlags: 0
@@ -1673,14 +1753,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.990566, g: 0.7896493, b: 0.9671527, a: 0.69411767}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.69411767}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 2dd5dc1913ede7a438c0f33e79fde90f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f8522ea1e121b5940b8c6c5997e632df, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

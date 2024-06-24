@@ -31,6 +31,12 @@ public class SpikePush : MonoBehaviour
             {
                 objectB.transform.position += new Vector3(0f, 0.260f, 0f);
             }
+
+                PlayerStats playerStats = other.GetComponent<PlayerStats>();
+                if (playerStats != null)
+                {           
+                    playerStats.TakeDamage(10.0);
+                }
         }
     }
 

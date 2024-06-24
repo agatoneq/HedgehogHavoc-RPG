@@ -180,6 +180,12 @@ MonoBehaviour:
   playerWasHit: {fileID: 8300000, guid: ff4c9ed8751838d438b28676e690b65e, type: 3}
   playerAttack: {fileID: 8300000, guid: 91d07818857a0894aae17ce06b7c654e, type: 3}
   playerHitEnemie: {fileID: 8300000, guid: 546a5edd23579a94d8b3a49978180adc, type: 3}
+  playerTeleported: {fileID: 8300000, guid: 5dc1d148e5eac684397f01b1554f5a0b, type: 3}
+  playerCollectedItem: {fileID: 8300000, guid: b61fe84d36c57444e84bb887a39872a5, type: 3}
+  openedBook: {fileID: 8300000, guid: d92ccd4fd3732ed4494dd35d275cb6b0, type: 3}
+  changedBookPage: {fileID: 8300000, guid: 6877443ab2fcdfd49b4bfe2eb5fc792c, type: 3}
+  newQuest: {fileID: 8300000, guid: 168643182dce10d43ab7bf3b4b165591, type: 3}
+  button: {fileID: 8300000, guid: 7f5d9804280fe5146af1fa7bf39a3ac7, type: 3}
 --- !u!1 &6940564579310353164
 GameObject:
   m_ObjectHideFlags: 0

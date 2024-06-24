@@ -266,6 +266,12 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!4 &28641908 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6920561652759254071, guid: 94627189f2a17a740bf9588da233d691,
+    type: 3}
+  m_PrefabInstance: {fileID: 1456929461}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &66921523 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3763928705417908794, guid: f56c6ef1f63efc6479bcec167e089f62,
@@ -638,6 +644,8 @@ MonoBehaviour:
   - {fileID: 797277332}
   - {fileID: 746947384}
   - {fileID: 1298249466}
+  Armor_helmet: {fileID: 0}
+  Armor_breastplate: {fileID: 0}
   nrTab: 1
 --- !u!1 &279594391 stripped
 GameObject:
@@ -896,6 +904,8 @@ MonoBehaviour:
   Items:
   - {fileID: 279594391}
   - {fileID: 349174474}
+  Armor_helmet: {fileID: 0}
+  Armor_breastplate: {fileID: 0}
   nrTab: 4
 --- !u!1 &508805164
 GameObject:
@@ -990,6 +1000,8 @@ MonoBehaviour:
   Items:
   - {fileID: 66921523}
   - {fileID: 75140833}
+  Armor_helmet: {fileID: 0}
+  Armor_breastplate: {fileID: 0}
   nrTab: 3
 --- !u!1 &691097325
 GameObject:
@@ -1342,6 +1354,8 @@ MonoBehaviour:
   - {fileID: 1359630629}
   - {fileID: 367959415}
   - {fileID: 1169360045}
+  Armor_helmet: {fileID: 0}
+  Armor_breastplate: {fileID: 0}
   nrTab: 2
 --- !u!1 &797277332 stripped
 GameObject:
@@ -1629,6 +1643,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Items: []
+  Armor_helmet: {fileID: 0}
+  Armor_breastplate: {fileID: 0}
   nrTab: 0
 --- !u!1001 &1032115018
 PrefabInstance:
@@ -2134,6 +2150,8 @@ MonoBehaviour:
   - {fileID: 1168922028}
   - {fileID: 1886177641}
   - {fileID: 1712633231}
+  Armor_helmet: {fileID: 0}
+  Armor_breastplate: {fileID: 0}
   nrTab: 0
 --- !u!1 &1359630629 stripped
 GameObject:
@@ -2141,6 +2159,74 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1032115018}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1456929461
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 2054091281}
+    m_Modifications:
+    - target: {fileID: 3563716279628011952, guid: 94627189f2a17a740bf9588da233d691,
+        type: 3}
+      propertyPath: m_Name
+      value: AudioManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 6920561652759254071, guid: 94627189f2a17a740bf9588da233d691,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.26
+      objectReference: {fileID: 0}
+    - target: {fileID: 6920561652759254071, guid: 94627189f2a17a740bf9588da233d691,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.48
+      objectReference: {fileID: 0}
+    - target: {fileID: 6920561652759254071, guid: 94627189f2a17a740bf9588da233d691,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -2.41
+      objectReference: {fileID: 0}
+    - target: {fileID: 6920561652759254071, guid: 94627189f2a17a740bf9588da233d691,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6920561652759254071, guid: 94627189f2a17a740bf9588da233d691,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6920561652759254071, guid: 94627189f2a17a740bf9588da233d691,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6920561652759254071, guid: 94627189f2a17a740bf9588da233d691,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6920561652759254071, guid: 94627189f2a17a740bf9588da233d691,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6920561652759254071, guid: 94627189f2a17a740bf9588da233d691,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6920561652759254071, guid: 94627189f2a17a740bf9588da233d691,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 94627189f2a17a740bf9588da233d691, type: 3}
 --- !u!1 &1603557361
 GameObject:
   m_ObjectHideFlags: 0
@@ -2764,6 +2850,8 @@ MonoBehaviour:
   - {fileID: 1168922028}
   - {fileID: 1886177641}
   - {fileID: 1712633231}
+  Armor_helmet: {fileID: 0}
+  Armor_breastplate: {fileID: 0}
   nrTab: 0
 --- !u!1 &1886177641 stripped
 GameObject:
@@ -2994,7 +3082,8 @@ Transform:
   m_LocalPosition: {x: 744, y: 1, z: -605.8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 28641908}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2054091282

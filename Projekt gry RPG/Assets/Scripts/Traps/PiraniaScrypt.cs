@@ -28,4 +28,14 @@ public class PiraniaScrypt : MonoBehaviour
         // Ustaw nową pozycję obiektu
         transform.position = new Vector3(x, y, z);
     }
+
+            private void OnTriggerEnter(Collider other)
+    {
+                PlayerStats playerStats = other.GetComponent<PlayerStats>();
+                if (playerStats != null)
+                {
+                    playerStats.TakeDamage(10.0);
+                }
+               
+    }
 }
