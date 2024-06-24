@@ -7642,7 +7642,7 @@ MonoBehaviour:
       Jednak Bogdan ma r\xF3wnie\u017C swoje tajemnice - w przesz\u0142o\u015Bci
       by\u0142 zaanga\u017Cowany w budow\u0119 nielegalnych tuneli, co przynios\u0142o
       mu zar\xF3wno uznanie, jak i problemy z prawem."
-    image: {fileID: 21300000, guid: 31f4f0aa35597d340a3b1161a22ebc9d, type: 3}
+    image: {fileID: 21300000, guid: 864a440801ad324498542e5a5a598738, type: 3}
 --- !u!114 &767035340
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9830,7 +9830,7 @@ MonoBehaviour:
       jako przest\u0119pcy sprawia, \u017Ce wiele zwierz\u0105t boi si\u0119 krzy\u017Cowa\u0107
       mu drog\u0119. Bat Wuhan wykonuje zlecenia Remy'ego, dzia\u0142aj\u0105c jako
       jego prawa r\u0119ka i zawsze jest gotowy do wykonywania jego brudnych prac. "
-    image: {fileID: 21300000, guid: 31f4f0aa35597d340a3b1161a22ebc9d, type: 3}
+    image: {fileID: 21300000, guid: 4d7d928e3f6395a40b206b1469fc3847, type: 3}
 --- !u!65 &1014866880
 BoxCollider:
   m_ObjectHideFlags: 0
