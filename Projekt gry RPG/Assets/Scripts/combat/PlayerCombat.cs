@@ -50,6 +50,7 @@ public class PlayerCombat : MonoBehaviour
     {
         //attack animation
         animator.SetTrigger("Attack");
+        audioManager.PlaySFX(audioManager.playerAttack); //dzwiek machania mieczem
         Ray ray = cam.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
         //checking if player is looking at the enemy

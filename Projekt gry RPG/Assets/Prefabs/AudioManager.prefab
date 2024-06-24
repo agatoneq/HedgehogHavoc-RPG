@@ -177,9 +177,9 @@ MonoBehaviour:
   musicSource: {fileID: 1912118844268455306}
   SFXSource: {fileID: 3607023924386910131}
   soundtrack: {fileID: 8300000, guid: 45b566905657cdc4abc6923f6ea80130, type: 3}
-  playerWasHit: {fileID: 8300000, guid: 396ebc16cf54b114891c96e748fdcdb6, type: 3}
-  playerAttack: {fileID: 8300000, guid: 396ebc16cf54b114891c96e748fdcdb6, type: 3}
-  playerHitEnemie: {fileID: 8300000, guid: 396ebc16cf54b114891c96e748fdcdb6, type: 3}
+  playerWasHit: {fileID: 8300000, guid: ff4c9ed8751838d438b28676e690b65e, type: 3}
+  playerAttack: {fileID: 8300000, guid: 91d07818857a0894aae17ce06b7c654e, type: 3}
+  playerHitEnemie: {fileID: 8300000, guid: 546a5edd23579a94d8b3a49978180adc, type: 3}
 --- !u!1 &6940564579310353164
 GameObject:
   m_ObjectHideFlags: 0
