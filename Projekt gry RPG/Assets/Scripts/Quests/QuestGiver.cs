@@ -25,6 +25,17 @@ public class QuestGiver : MonoBehaviour
     public GameObject wall;
     public GameObject remy;
 
+    AudioManager audioManager;
+    private void Start()
+    {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+        if (audioManager == null)
+        {
+            Debug.Log("audioManager jest nullem");
+        }
+    }
+
+
     void ShowPanel()
     {
         newQuestPanel.SetActive(true);
@@ -55,6 +66,7 @@ public class QuestGiver : MonoBehaviour
         BookTitleText.text = Player.Instance.quest.title;
         BookContentText.text = Player.Instance.quest.description;
         StartCoroutine(ActivatePanelWithDelay());
+        audioManager.PlaySFX(audioManager.newQuest);
     }
 
     public void finishQuest()
@@ -62,6 +74,7 @@ public class QuestGiver : MonoBehaviour
         Debug.Log(" zadanie z player sie konczy: " + Player.Instance.quest.id);
         x++;
         Debug.Log("Ukoñczono zadanie: " + Player.Instance.quest.newQuestInfo);
+        audioManager.PlaySFX(audioManager.newQuest); 
         quest.isActive = false;
         TitleText.text = "Gratulacje!";
         ContentText.text = "Ukoñczy³eœ zadanie: " + Player.Instance.quest.title + "!";
