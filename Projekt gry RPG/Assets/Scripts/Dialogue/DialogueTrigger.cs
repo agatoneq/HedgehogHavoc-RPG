@@ -20,9 +20,8 @@ public class DialogueTrigger : MonoBehaviour
     private bool playerInRange;
     private StarterAssets.FirstPersonController firstPersonController;
     private KidnappedMole kidnappedMole;
-    private double currentQuest = Player.Instance.currentQuest;
     private List<Character> characters = Player.Instance.characters;
-    
+
 
     void Start()
     {
@@ -90,7 +89,7 @@ public class DialogueTrigger : MonoBehaviour
         }
 
 
-        if (questGiver != null && questGiverId != 13)
+        if (questGiver != null && questGiverId != 12)
         {
             questGiver.setQuestActive(questGiverId);
         }
@@ -118,12 +117,12 @@ public class DialogueTrigger : MonoBehaviour
     {
         if (playerInRange && !DialogueManager.GetInstance().dialogueIsPlaying)
         {
-                if (Player.Instance.currentQuest == 12 && questGiverId == 13)
+                if (Player.Instance.quest.id == 12 && questGiverId == 13)
                 {
                         questGiver.finishQuest();
                 }
 
-            if (Player.Instance.currentQuest == 13 && questGiverId == 14)
+            if (Player.Instance.quest.id == 13 && questGiverId == 14)
             {
                 questGiver.finishQuest();
             }

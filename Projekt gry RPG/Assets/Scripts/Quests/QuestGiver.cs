@@ -11,7 +11,7 @@ public class QuestGiver : MonoBehaviour
 {
     public float questGiverId;
 
-    private bool executed = false;
+    public bool executed = false;
     private double x = 0.0;
 
     public Quest quest;
@@ -30,7 +30,7 @@ public class QuestGiver : MonoBehaviour
         newQuestPanel.SetActive(true);
     }
 
-    void HidePanel()
+    public void HidePanel()
     {
         newQuestPanel.SetActive(false);
     }
@@ -45,55 +45,66 @@ public class QuestGiver : MonoBehaviour
     public void setQuestActive(double id)
     {
         Debug.Log("Aktywowano zadanie: " + quest.newQuestInfo);
-        Debug.Log(" zadanie z player: " + Player.Instance.currentQuest);
-        Player.Instance.currentQuest = id;
-        Debug.Log(" zadanie z player po przypisaniu: " + Player.Instance.currentQuest);
+        Debug.Log(" zadanie z player: " + Player.Instance.quest.id);
+        Player.Instance.quest = quest;
+        Player.Instance.quest.id = id;
+        Debug.Log(" zadanie z player po przypisaniu: " + Player.Instance.quest.id);
         quest.isActive = true;
         TitleText.text = "Nowe zadanie!";
-        ContentText.text = quest.newQuestInfo;
-        BookTitleText.text = quest.title;
-        BookContentText.text = quest.description;
+        ContentText.text = Player.Instance.quest.newQuestInfo;
+        BookTitleText.text = Player.Instance.quest.title;
+        BookContentText.text = Player.Instance.quest.description;
         StartCoroutine(ActivatePanelWithDelay());
     }
 
     public void finishQuest()
     {
-        Debug.Log(" zadanie z player sie konczy: " + Player.Instance.currentQuest);
+        Debug.Log(" zadanie z player sie konczy: " + Player.Instance.quest.id);
         x++;
-        Debug.Log("Ukoñczono zadanie: " + quest.newQuestInfo);
+        Debug.Log("Ukoñczono zadanie: " + Player.Instance.quest.newQuestInfo);
         quest.isActive = false;
         TitleText.text = "Gratulacje!";
-        ContentText.text = "Ukoñczy³eœ zadanie: " + quest.title + "!";
+        ContentText.text = "Ukoñczy³eœ zadanie: " + Player.Instance.quest.title + "!";
         BookTitleText.text = "ZnajdŸ zadanie";
-        switch(Player.Instance.currentQuest)
+        BookContentText.text = "Nie masz obecnie ¿adnych aktywnych zadañ.";
+        switch (Player.Instance.quest.id)
         {
             case 0:
                 BookContentText.text = "Nie masz obecnie ¿adnych aktywnych zadañ. Spróbuj porozmawiaæ z Krow¹ Wies³aw¹.";
                 ActivateDialogueTrigger(10);
                 break;
             case 11:
-                quest = new Quest("Œladem krecich korytarzy", "Có¿… to chyba nie by³a osoba, która chcia³a dla Ciebie dobrze. Oby nastêpnym razem by³o lepiej. Eksploruj dalej jaskiniê i odnajdŸ prawdziwego sojusznika.", "OdnajdŸ kreciego in¿yniera", 0, 0);
+                Debug.Log("Wykonauje sie koniec zadania 11");
+                Debug.Log("a TO JESt " + questGiverId);
+                quest = new Quest(12, "Œladem krecich korytarzy", "Có¿… to chyba nie by³a osoba, która chcia³a dla Ciebie dobrze. Oby nastêpnym razem by³o lepiej. Eksploruj dalej jaskiniê i odnajdŸ prawdziwego sojusznika.", "OdnajdŸ kreciego in¿yniera", 0, 0);
                 setQuestActive(12);
                 ActivateDialogueTrigger(13);
                 wall.SetActive(false);
-                Vector3 remyPosition = remy.transform.position;
-                remyPosition.y = -5;
+                remy.transform.position = new Vector3(45, -32, -300);
+
                 break;
             case 12:
-                ActivateDialogueTrigger(14);
+                //ActivateDialogueTrigger(14);
                 break;
             case 13:
+                remy.transform.position = new Vector3(45, -32, -300);
                 wall.SetActive(true);
-                remy.SetActive(false);
                 break;
             case 14:
-                quest = new Quest("Wybawiciel", "Bat Wuhan przerwa³ Bogdanowi w momencie, gdy ten chcia³ przekazaæ Ci wa¿ne informacje. Teraz, gdy nietoperz zosta³ pokonany, musisz porozmawiaæ z Bogdanem i dowiedzieæ siê, co wa¿nego chcia³ Ci powiedzieæ.", "Porozmawiaj z Bogdanem", 0, 0);
+                quest = new Quest(15, "Wybawiciel", "Bat Wuhan przerwa³ Bogdanowi w momencie, gdy ten chcia³ przekazaæ Ci wa¿ne informacje. Teraz, gdy nietoperz zosta³ pokonany, musisz porozmawiaæ z Bogdanem i dowiedzieæ siê, co wa¿nego chcia³ Ci powiedzieæ.", "Porozmawiaj z Bogdanem", 0, 0);
                 setQuestActive(15);
                 ActivateDialogueTrigger(16);
                 break;
+            case 15:
+                wall.SetActive(false);
+                ActivateDialogueTrigger(17);
+                break;
+            case 17:
+                wall.SetActive(false);
+                break;
             case 18:
                 BookContentText.text = "Nie masz obecnie ¿adnych aktywnych zadañ. Spróbuj porozmawiaæ z Mam¹ Owc¹.";
-                break; 
+                break;
             case 28:
                 BookContentText.text = "Nie masz obecnie ¿adnych aktywnych zadañ. Spróbuj porozmawiaæ z Kameleonem Zakonnikiem.";
                 break;
@@ -105,10 +116,10 @@ public class QuestGiver : MonoBehaviour
         StartCoroutine(ActivatePanelWithDelay());
 
         // Aktywacja skryptu DialogueTrigger o wartoœci questGiverId równej x
-        
+
     }
 
-    private void ActivateDialogueTrigger(double id)
+    public void ActivateDialogueTrigger(double id)
     {
         DialogueTrigger[] allTriggers = FindObjectsOfType<DialogueTrigger>();
         foreach (DialogueTrigger trigger in allTriggers)

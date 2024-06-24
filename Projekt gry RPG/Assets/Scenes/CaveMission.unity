@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.12731725, g: 0.13414745, b: 0.12107873, a: 1}
+  m_IndirectSpecularColor: {r: 0.12731749, g: 0.13414757, b: 0.1210787, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1448,7 +1448,7 @@ Transform:
   m_Children:
   - {fileID: 1013779201}
   - {fileID: 777256944}
-  m_Father: {fileID: 1013078235}
+  m_Father: {fileID: 1297837956}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &137019287 stripped
 GameObject:
@@ -6946,6 +6946,11 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4607575505401315807, guid: c9aae71fbe2ea224c980006ccbd85a0d,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.25543118
+      objectReference: {fileID: 0}
     - target: {fileID: 4817296881408236229, guid: c9aae71fbe2ea224c980006ccbd85a0d,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -6979,7 +6984,7 @@ PrefabInstance:
     - target: {fileID: 4840605411505462604, guid: c9aae71fbe2ea224c980006ccbd85a0d,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0.5000038
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 5449634564286651035, guid: c9aae71fbe2ea224c980006ccbd85a0d,
         type: 3}
@@ -7568,8 +7573,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   questGiverId: 13
+  executed: 0
   quest:
     isActive: 0
+    id: 99
     title: Porwanie Bogdana
     description: "Co to by\u0142o!? Kret Bogdan ewidentnie chcia\u0142 przekaza\u0107
       Ci co\u015B wa\u017Cnego, a nietoperzowi najwidoczniej bardzo zale\u017Ca\u0142o,
@@ -7585,7 +7592,7 @@ MonoBehaviour:
   BookTitleText: {fileID: 1261468886}
   BookContentText: {fileID: 2077087387}
   wall: {fileID: 218325067}
-  remy: {fileID: 0}
+  remy: {fileID: 1592407831}
 --- !u!65 &767035338
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8294,7 +8301,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &843456980
 Transform:
   m_ObjectHideFlags: 0
@@ -9746,50 +9753,14 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 718478709}
-  - {fileID: 133490029}
   m_Father: {fileID: 803202085}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1013779200 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7707602404002531702, guid: e4d13a2a075fcba4aaa624d7fa2e29b6,
-    type: 3}
-  m_PrefabInstance: {fileID: 1575285816}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1013779201 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8067625586045556168, guid: e4d13a2a075fcba4aaa624d7fa2e29b6,
     type: 3}
   m_PrefabInstance: {fileID: 1575285816}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1013779202
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1013779200}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f1f0640daabc4684cbbe5d08193f0142, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  questGiverId: 14
-  quest:
-    isActive: 0
-    title: Walka o Przyjaciela
-    description: "Bat jest przekonany, \u017Ce nie mo\u017Ce z Tob\u0105 przegra\u0107.
-      Stocz z nim walk\u0119 i poka\u017C mu, \u017Ce si\u0119 myli."
-    newQuestInfo: "Stocz walk\u0119 z Batem Wuhanem"
-    itemsToCollect: 0
-    itemsCollected: 0
-  player: {fileID: 2129070679}
-  newQuestPanel: {fileID: 206117431}
-  TitleText: {fileID: 71296220}
-  ContentText: {fileID: 1559058222}
-  BookTitleText: {fileID: 1261468886}
-  BookContentText: {fileID: 2077087387}
-  wall: {fileID: 0}
-  remy: {fileID: 0}
 --- !u!1 &1014866866 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7707602404002531702, guid: e4d13a2a075fcba4aaa624d7fa2e29b6,
@@ -9815,8 +9786,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   questGiverId: 14
+  executed: 0
   quest:
     isActive: 0
+    id: 99
     title: Walka o Przyjaciela
     description: "Bat jest przekonany, \u017Ce nie mo\u017Ce z Tob\u0105 przegra\u0107.
       Stocz z nim walk\u0119 i poka\u017C mu, \u017Ce si\u0119 myli."
@@ -9937,8 +9910,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   questGiverId: 1
+  executed: 0
   quest:
     isActive: 0
+    id: 99
     title: Skradziona kosa
     description: "Krowa Wies\u0142awa, znana z nieustraszonej postawy i pracowito\u015Bci,
       potrzebuje twojej pomocy. Jej kos\u0119, niezb\u0119dn\u0105 do zbierania plon\xF3w,
@@ -10752,7 +10727,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1097768050
 Transform:
   m_ObjectHideFlags: 0
@@ -12201,7 +12176,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 133490029}
   m_Father: {fileID: 803202085}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1298424099 stripped
@@ -13437,8 +13413,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   questGiverId: 17
+  executed: 0
   quest:
     isActive: 0
+    id: 99
     title: O bogowie, walka!
     description: "No na co czekasz? Krowa Wies\u0142awa musi zebra\u0107 plony! Pokonaj
       tego szczura raz dwa!"
@@ -14950,8 +14928,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   questGiverId: 18
+  executed: 0
   quest:
     isActive: 0
+    id: 99
     title: O bogowie, walka!
     description: "No na co czekasz? Krowa Wies\u0142awa musi zebra\u0107 plony! Pokonaj
       tego szczura raz dwa!"
@@ -15982,8 +15962,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   questGiverId: 16
+  executed: 0
   quest:
     isActive: 0
+    id: 99
     title: Ostateczne poszukiwania
     description: "Teraz ju\u017C wiesz kto stoi za kradzie\u017C\u0105 kosy. Pozosta\u0142o
       Ci odnale\u017A\u0107 tego przebieg\u0142ego szczura i stoczy\u0107 z nim ostateczn\u0105
@@ -16376,11 +16358,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 7707602404002531702, guid: e4d13a2a075fcba4aaa624d7fa2e29b6,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1013779202}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e4d13a2a075fcba4aaa624d7fa2e29b6, type: 3}
 --- !u!1001 &1578354059
 PrefabInstance:
@@ -16508,13 +16486,13 @@ Transform:
   m_GameObject: {fileID: 1578466675}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -44.780636, y: 6.7344027, z: 370.98083}
+  m_LocalPosition: {x: -0.100177765, y: 0.33008003, z: 0.50289917}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1540410377}
   - {fileID: 183785659}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1839479007}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1580866645 stripped
 GameObject:
@@ -19492,7 +19470,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1578466676}
   m_Father: {fileID: 803202085}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1842446263 stripped
@@ -23352,8 +23331,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   questGiverId: 11
+  executed: 0
   quest:
     isActive: 0
+    id: 99
     title: 15 na jednego
     description: "Tw\xF3j nowy przyjaciel pokaza\u0142 Ci bezpieczn\u0105 drog\u0119
       w g\u0142\u0105b jaskini. Ale czy na pewno jest ona bezpieczna..? Twoim zadaniem
@@ -23918,6 +23899,5 @@ SceneRoots:
   - {fileID: 328036142}
   - {fileID: 2029155496}
   - {fileID: 803202085}
-  - {fileID: 1578466676}
   - {fileID: 843456980}
   - {fileID: 1097768050}

@@ -48,7 +48,7 @@ class ItemPickup : Interactable
         if (questGiver != null && questGiver.quest != null)
         {
 
-            if(Player.Instance.currentQuest == 0)
+            if(Player.Instance.quest.id == 0)
             {
                 questGiver.quest.itemsCollected++;
                 Debug.Log("Item Collected: " + questGiver.quest.itemsCollected + "/" + questGiver.quest.itemsToCollect);
