@@ -34,7 +34,7 @@ public class Swing : MonoBehaviour
                 {
                     Debug.Log("kłoda boli");
                 
-                    playerStats.TakeDamage(100000.0);
+                    playerStats.TakeDamage(10.0);
                 }
                
     }
