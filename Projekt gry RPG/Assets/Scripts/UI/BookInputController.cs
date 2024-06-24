@@ -38,6 +38,16 @@ public class BookInputController : MonoBehaviour
 
     private List<Character> characters = Player.Instance.characters;
 
+    AudioManager audioManager;
+    private void Start()
+    {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+        if (audioManager == null)
+        {
+            Debug.Log("audioManager jest nullem");
+        }
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -72,7 +82,7 @@ public class BookInputController : MonoBehaviour
         IsBookOpened = true;
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
-
+        audioManager.PlaySFX(audioManager.openedBook);
     }
 
     public void ShowQuestsPanel()

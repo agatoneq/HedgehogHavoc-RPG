@@ -12,6 +12,8 @@ class ItemPickup : Interactable
     public Item item;
     public string Name { get { return item.name; } set { item.name = value; } }
 
+    AudioManager audioManager;
+
     void Start()
     {
         QuestGiver[] allQuestGivers = FindObjectsOfType<QuestGiver>();
@@ -32,6 +34,12 @@ class ItemPickup : Interactable
         {
             Debug.Log("Nie znaleziono QuestGiver z ID: 0");
         }
+
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+        if (audioManager == null)
+        {
+            Debug.Log("audioManager jest nullem");
+        }
     }
     
     public override void Interact()
@@ -44,6 +52,7 @@ class ItemPickup : Interactable
     {
         Player.Instance.Inventory.AddItemToInv(item);
         Debug.Log("Picked up item: " + item.name);
+        audioManager.PlaySFX(audioManager.playerCollectedItem);
 
         if (questGiver != null && questGiver.quest != null)
         {
