@@ -15,12 +15,20 @@ public class EnemyCombat : MonoBehaviour
     float attackRange;
     double nextAttackTime = 0;
 
+    AudioManager audioManager;
+
     // Start is called before the first frame update
     void Start()
     {
         myStats = GetComponent<EnemyStats>();
         attackRange = (float)myStats.AttackRange;
         animator = GetComponent<Animator>();
+
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+        if (audioManager == null)
+        {
+            Debug.Log("audioManager jest nullem");
+        }
     }
     void Update()
 
@@ -44,6 +52,7 @@ public class EnemyCombat : MonoBehaviour
                 PlayerStats playerStats = player.GetComponent<PlayerStats>();
                 if (playerStats != null)
                 {
+                    audioManager.PlaySFX(audioManager.playerWasHit); //dziwek uderzenia gracza
                     playerStats.TakeDamage(myStats.Damage);
                 }
             }
