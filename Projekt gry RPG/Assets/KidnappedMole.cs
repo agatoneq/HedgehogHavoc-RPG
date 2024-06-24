@@ -35,6 +35,7 @@ public class KidnappedMole : MonoBehaviour
         victimPosition.z -= 10;
         kidnapper.transform.position = victimPosition;
         kidnapper.SetActive(true);
+        questGiver.ActivateDialogueTrigger(14);
     }
 
     float frames = 0;

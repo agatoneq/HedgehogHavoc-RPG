@@ -97,7 +97,7 @@ public class QuestGiver : MonoBehaviour
 
                 break;
             case 12:
-                //ActivateDialogueTrigger(14);
+                
                 break;
             case 13:
                 remy.transform.position = new Vector3(45, -32, -300);
@@ -108,7 +108,7 @@ public class QuestGiver : MonoBehaviour
                 setQuestActive(15);
                 ActivateDialogueTrigger(16);
                 break;
-            case 15:
+            case 16:
                 wall.SetActive(false);
                 ActivateDialogueTrigger(17);
                 break;
