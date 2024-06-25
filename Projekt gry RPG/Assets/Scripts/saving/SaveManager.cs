@@ -13,7 +13,7 @@ public class SaveManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log(Application.persistentDataPath);
+        Debug.Log("Œcie¿ka do zapisu: "+ Application.persistentDataPath);
     }
 
     // Update is called once per frame
@@ -47,7 +47,7 @@ public class SaveManager : MonoBehaviour
         }
         catch (System.Exception)
         {
-            Debug.Log("B³¹d przy zapisywaniu");
+            Debug.LogErrorFormat("B³¹d przy zapisywaniu");
 
         }
     }
@@ -62,8 +62,8 @@ public class SaveManager : MonoBehaviour
     //zapisywanie ukoñczonych  przez gracza zadañ i zadañ aktywnych
     private void Load()
     {
-        //try
-       // {
+       try
+        {
             BinaryFormatter bf = new BinaryFormatter();
 
             FileStream file = File.Open(Application.persistentDataPath + "/" + "SaveTest.dat", FileMode.Open);
@@ -77,12 +77,12 @@ public class SaveManager : MonoBehaviour
             LoadPlayer(data);
             
             Debug.Log("Loading");
-      // }
-      // catch (System.Exception)
-       // {
-            Debug.Log("B³¹d przy wczytywaniu");
+        }
+        catch (System.Exception)
+        {
+            Debug.LogErrorFormat("B³¹d przy wczytywaniu");
 
-        //}
+        }
     }
     private void LoadPlayer(SaveData data)
     {
@@ -93,13 +93,25 @@ public class SaveManager : MonoBehaviour
         player.attackRange = data.MyPlayerData.attackRange;
         player.attackRate = data.MyPlayerData.attackRate;
         player.currentHealth = data.MyPlayerData.currentHealth;
-        Transform playerCapsule = GameObject.Find("PlayerCapsule").transform;
-        Transform capsule = playerCapsule.GetChild(1).transform;
-        Debug.Log(data.MyPlayerData.x);
-        Debug.Log(data.MyPlayerData.y);
-        Debug.Log(data.MyPlayerData.z);
-        playerCapsule.position = new Vector3(data.MyPlayerData.x, data.MyPlayerData.y, data.MyPlayerData.z);
-        capsule.GetComponent<PlayerStats>().updateStats();
+        Transform playerCapsule;
+        if (playerCapsule = GameObject.Find("PlayerCapsule").transform){
+            PlayerStats stats;
+            if(stats = playerCapsule.GetComponent<PlayerStats>())
+            {
+                stats.updateStats();
+            }
+            else
+            {
+                Debug.LogErrorFormat("brak PlayserStats w PlayerCapsule");
+            }
+            //nagle nie dzia³a zmiana pozycji
+            playerCapsule.position = new Vector3(data.MyPlayerData.x, data.MyPlayerData.y, data.MyPlayerData.z);
+        }
+        else
+        {
+            Debug.LogErrorFormat("brak PlayerCapsule");
+        }
+
     }
     //wczytywanie ekwitunku i przedmiotów posiadanych przez gracza
     //wczytywanie ukoñczonych  przez gracza zadañ i zadañ aktywnych
