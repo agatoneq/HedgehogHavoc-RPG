@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.050451107, g: 0.06293309, b: 0.122579046, a: 1}
+  m_IndirectSpecularColor: {r: 0.050451227, g: 0.062933266, b: 0.1225794, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3762,6 +3762,8 @@ MonoBehaviour:
   BookTitleText: {fileID: 0}
   BookContentText: {fileID: 0}
   wall: {fileID: 0}
+  wall2: {fileID: 0}
+  wall3: {fileID: 0}
   remy: {fileID: 0}
 --- !u!114 &825670310
 MonoBehaviour:
@@ -6947,6 +6949,8 @@ MonoBehaviour:
   BookTitleText: {fileID: 0}
   BookContentText: {fileID: 0}
   wall: {fileID: 0}
+  wall2: {fileID: 0}
+  wall3: {fileID: 0}
   remy: {fileID: 0}
 --- !u!114 &1500418890
 MonoBehaviour:

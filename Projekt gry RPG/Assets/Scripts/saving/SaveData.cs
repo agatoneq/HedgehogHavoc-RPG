@@ -8,7 +8,7 @@ using UnityEngine.SceneManagement;
 public class SaveData
 {
     public PlayerData MyPlayerData { get;  set; }
-    public Scene ActiveScene { get; set; }
+    public int ActiveScene { get; set; }
     public SaveData()
     {
 
