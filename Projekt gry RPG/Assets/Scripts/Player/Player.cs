@@ -14,7 +14,7 @@ namespace Assets.Scripts.Player
         //dać wartości bazowe!!
         public Stat damage = new Stat(20);
         public Stat maxhealth = new Stat(100);
-        public double currentHealth { get; private set; }
+        public double currentHealth { get; set; }
         public Quest quest = new Quest();
 
         //public double currentQuest = 0;
