@@ -25,7 +25,8 @@ public class PlayerData
     public double currentHealth { get; set; }
     public float x {  get; set; }
     public float y { get; set; }
-    public PlayerData(Stat damage, Stat maxHealth, Stat armor, Stat attackRange, Stat attackRate,double currentHealth ,Vector2 position)
+    public float z { get; set; }
+    public PlayerData(Stat damage, Stat maxHealth, Stat armor, Stat attackRange, Stat attackRate,double currentHealth ,Vector3 position)
     {
         this.damage = damage;
         this.maxHealth = maxHealth;

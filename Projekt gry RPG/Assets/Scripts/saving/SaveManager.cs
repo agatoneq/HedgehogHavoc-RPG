@@ -5,6 +5,7 @@ using System.Runtime.Serialization.Formatters.Binary;
 using UnityEngine;
 using Assets.Scripts.Player;
 using UnityEngine.SceneManagement;
+using UnityEngine.UIElements;
 
 public class SaveManager : MonoBehaviour
 {
@@ -42,8 +43,9 @@ public class SaveManager : MonoBehaviour
     private void SavePlayer(SaveData data)
     {
         player = Player.Instance;
+        Vector3 position = GameObject.Find("PlayerCapsule").transform.position;
         data.MyPlayerData = new PlayerData(player.damage, player.maxhealth, 
-            player.armor,player.attackRange,player.attackRate,player.currentHealth);
+            player.armor,player.attackRange,player.attackRate,player.currentHealth, position);
     }
     private void Load()
     {
@@ -73,5 +75,6 @@ public class SaveManager : MonoBehaviour
         player.attackRange = data.MyPlayerData.attackRange;
         player.attackRate = data.MyPlayerData.attackRate;
         player.currentHealth = data.MyPlayerData.currentHealth;
+        GameObject.Find("PlayerCapsule").transform.position = new Vector3(data.MyPlayerData.x, data.MyPlayerData.y, data.MyPlayerData.z);
     }
 }
