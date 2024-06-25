@@ -17,6 +17,7 @@ public class PlayerStats : CharacterStats
         attackRange = player.attackRange;
         attackRate = player.attackRate;
         maxhealth = player.maxhealth;
+        currentHealth = player.currentHealth;
         player.Equipment.onEquipmentChanged += EquipmentChanged;
     }
 
@@ -49,7 +50,7 @@ public override void Die()
     public override void Hurt()
     {
         base.Hurt();
-
+        Player.Instance.currentHealth = currentHealth;
         //hurt animation
         // animator.SetTrigger("Hurt");
         if (OnHealthChanged != null)
