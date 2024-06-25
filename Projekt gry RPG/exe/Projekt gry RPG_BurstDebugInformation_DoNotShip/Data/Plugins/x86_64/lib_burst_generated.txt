@@ -14,8 +14,8 @@ Library: C:\Users\agata\source\repos\ProjektRPG\Projekt gry RPG\Temp\BurstOutput
 --assembly-defines=Unity.RenderPipelines.Core.Runtime;
 --assembly-defines=Unity.AI.Navigation;
 --assembly-defines=Unity.ProBuilder.Stl;
---assembly-defines=Unity.RenderPipelines.Universal.Config.Runtime;
 --assembly-defines=Unity.ProBuilder.Csg;
+--assembly-defines=Unity.RenderPipelines.Universal.Config.Runtime;
 --assembly-defines=Unity.VisualScripting.Flow;
 --assembly-defines=Unity.RenderPipelines.Core.ShaderLibrary;
 --assembly-defines=Ink-Libraries;
@@ -84,8 +84,8 @@ Library: C:\Users\agata\source\repos\ProjektRPG\Projekt gry RPG\Temp\BurstOutput
 --assembly-defines=Unity.RenderPipelines.Core.Runtime;
 --assembly-defines=Unity.AI.Navigation;
 --assembly-defines=Unity.ProBuilder.Stl;
---assembly-defines=Unity.RenderPipelines.Universal.Config.Runtime;
 --assembly-defines=Unity.ProBuilder.Csg;
+--assembly-defines=Unity.RenderPipelines.Universal.Config.Runtime;
 --assembly-defines=Unity.VisualScripting.Flow;
 --assembly-defines=Unity.RenderPipelines.Core.ShaderLibrary;
 --assembly-defines=Ink-Libraries;
@@ -152,8 +152,8 @@ Library: C:\Users\agata\source\repos\ProjektRPG\Projekt gry RPG\Temp\BurstOutput
 --assembly-defines=Unity.RenderPipelines.Core.Runtime;
 --assembly-defines=Unity.AI.Navigation;
 --assembly-defines=Unity.ProBuilder.Stl;
---assembly-defines=Unity.RenderPipelines.Universal.Config.Runtime;
 --assembly-defines=Unity.ProBuilder.Csg;
+--assembly-defines=Unity.RenderPipelines.Universal.Config.Runtime;
 --assembly-defines=Unity.VisualScripting.Flow;
 --assembly-defines=Unity.RenderPipelines.Core.ShaderLibrary;
 --assembly-defines=Ink-Libraries;
@@ -226,8 +226,8 @@ Library: C:\Users\agata\source\repos\ProjektRPG\Projekt gry RPG\Temp\BurstOutput
 --assembly-defines=Unity.RenderPipelines.Core.Runtime;
 --assembly-defines=Unity.AI.Navigation;
 --assembly-defines=Unity.ProBuilder.Stl;
---assembly-defines=Unity.RenderPipelines.Universal.Config.Runtime;
 --assembly-defines=Unity.ProBuilder.Csg;
+--assembly-defines=Unity.RenderPipelines.Universal.Config.Runtime;
 --assembly-defines=Unity.VisualScripting.Flow;
 --assembly-defines=Unity.RenderPipelines.Core.ShaderLibrary;
 --assembly-defines=Ink-Libraries;

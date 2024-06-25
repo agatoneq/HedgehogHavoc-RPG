@@ -80,22 +80,32 @@ public class DialogueTrigger : MonoBehaviour
 
     private void OnDialogueEnd()
     {
-        if (questGiver != null && questGiverId == 13)
+        if (Player.Instance.quest.id == 19)
         {
-            if (kidnappedMole != null)
-            {
-                kidnappedMole.enabled = true;
-            }
-        }
-
-        if (Player.Instance.quest.id == 15)
-        {
+            Debug.Log("Tak, to jst 19.");
             questGiver.finishQuest();
         }
-
-        if (questGiver != null && questGiverId != 12)
+        else
         {
-            questGiver.setQuestActive(questGiverId);
+            
+
+            if (questGiver != null && questGiverId == 13)
+            {
+                if (kidnappedMole != null)
+                {
+                    kidnappedMole.enabled = true;
+                }
+            }
+
+            if (Player.Instance.quest.id == 15)
+            {
+                questGiver.finishQuest();
+            }
+
+            if (questGiver != null && questGiverId != 12)
+            {
+                questGiver.setQuestActive(questGiverId);
+            }
         }
 
         visualCue.SetActive(false);

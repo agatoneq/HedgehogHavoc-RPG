@@ -47,6 +47,10 @@ namespace Assets.Scripts.Player
             onInventoryChanged();
             return item;
         }
+        public bool HasItem(string itemName)
+        {
+            return Items.Any(x => x.name == itemName);
+        }
 
     }
 }

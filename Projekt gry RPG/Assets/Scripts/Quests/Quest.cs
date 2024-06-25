@@ -18,7 +18,7 @@ public class Quest
 
     public Quest()
     {
-        id = 99.0;
+        id = 19.0;
         title = "New Quest";
         description = "Description of the quest.";
         newQuestInfo = "Info about the new quest.";

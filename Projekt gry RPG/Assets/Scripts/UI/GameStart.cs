@@ -11,6 +11,8 @@ public class GameStart : MonoBehaviour
     private int x = 0;
     public QuestGiver questGiver;
 
+    private bool hasFoundCowsScythe = false;
+
     void Start()
     {
         QuestGiver[] allQuestGivers = FindObjectsOfType<QuestGiver>();
@@ -29,36 +31,62 @@ public class GameStart : MonoBehaviour
             Debug.Log("Nie znaleziono QuestGiver z ID: 11");
         }
 
-        switch (Player.Instance.quest.id)
+        double piqID = Player.Instance.quest.id;
+
+        Debug.Log("Twoje obecne zadanie to:" + piqID);
+
+        if (piqID == 0 || piqID == -1)
         {
-            case 0:
-                questGiver.ActivateDialogueTrigger(0);
-                break;
-            case 10:
-                questGiver.ActivateDialogueTrigger(11);
-                break;
-            case 19:
-                questGiver.ActivateDialogueTrigger(19);
-                break;
-            case 19.5:
-                questGiver.ActivateDialogueTrigger(20);
-                break;
+            questGiver.ActivateDialogueTrigger(0);
         }
-    }
-/*    void Update()
-    {
-        if (!executed && SceneManager.GetActiveScene().name == "MainTown")
+        else if (piqID >= 10 && piqID <= 18)
         {
-            Invoke("ShowPanel", 5f);
+            questGiver.ActivateDialogueTrigger(11);
+        }
+        else if (piqID == 19)
+        {
+            if (Player.Instance.Inventory.HasItem("Cow's Scythe"))
+            {
+                questGiver.ActivateDialogueTrigger(19);
+            }
+        }
+        else if (piqID == 19.5)
+        {
+            questGiver.ActivateDialogueTrigger(20);
         }
     }
 
-    void ShowPanel()
+
+    void Update()
     {
-        if (SceneManager.GetActiveScene().name == "MainTown")
+        if (!hasFoundCowsScythe)
         {
-            questGiver.setQuestActive();
-            executed = true;
+            CheckForCowsScythe();
+        }
+    }
+
+    public void CheckForCowsScythe()
+    {
+        if (Player.Instance.Inventory.HasItem("Cow's Scythe"))
+        {
+            Debug.Log("Je¿ ma kosê");
+            questGiver.ActivateDialogueTrigger(19);
+            //DisableQuestGiverWithId(10);
+            hasFoundCowsScythe = true; // Ustaw flagê na true, aby przestaæ sprawdzaæ
+        }
+    }
+
+/*    private void DisableQuestGiverWithId(int questGiverId)
+    {
+        QuestGiver[] allQuestGivers = FindObjectsOfType<QuestGiver>();
+        foreach (QuestGiver qg in allQuestGivers)
+        {
+            if (qg.questGiverId == questGiverId)
+            {
+                qg.enabled = false;
+                Debug.Log("QuestGiver with ID " + questGiverId + " has been disabled.");
+                break;
+            }
         }
     }*/
 }

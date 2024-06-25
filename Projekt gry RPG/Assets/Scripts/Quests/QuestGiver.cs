@@ -57,6 +57,7 @@ public class QuestGiver : MonoBehaviour
 
     public void setQuestActive(double id)
     {
+        
         Debug.Log("Aktywowano zadanie: " + quest.newQuestInfo);
         Debug.Log(" zadanie z player: " + Player.Instance.quest.id);
         Player.Instance.quest = quest;
@@ -69,6 +70,7 @@ public class QuestGiver : MonoBehaviour
         BookContentText.text = Player.Instance.quest.description;
         StartCoroutine(ActivatePanelWithDelay());
         audioManager.PlaySFX(audioManager.newQuest);
+        
     }
 
     public void finishQuest()
@@ -125,6 +127,7 @@ public class QuestGiver : MonoBehaviour
                 setQuestActive(19);
                 break;
             case 19:
+                Player.Instance.Inventory.TakeItem("Cow's Scythe");
                 BookContentText.text = "Nie masz obecnie ¿adnych aktywnych zadañ. Spróbuj porozmawiaæ z Mam¹ Owc¹.";
                 ActivateDialogueTrigger(20);
                 Player.Instance.quest.id = 19.5;
