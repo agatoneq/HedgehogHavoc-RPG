@@ -9707,7 +9707,7 @@ GameObject:
   - component: {fileID: 1702024158372931418}
   - component: {fileID: 3132028107614971705}
   - component: {fileID: 6736677221440145855}
-  - component: {fileID: 2059775029105795837}
+  - component: {fileID: 7464211915922168795}
   m_Layer: 0
   m_Name: TeleportationZone
   m_TagString: Untagged
@@ -9838,7 +9838,7 @@ CapsuleCollider:
   m_Height: 1
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &2059775029105795837
+--- !u!114 &7464211915922168795
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -9847,11 +9847,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 8942260862590141585}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8e8dc5ea9cdc7534daf860497fba21ee, type: 3}
+  m_Script: {fileID: 11500000, guid: 00d5fd6d1dd59c2459e168036383ad0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   loadingPanel: {fileID: 0}
   loadingSlider: {fileID: 0}
+  sceneId: 0
 --- !u!1 &9021921462300848171
 GameObject:
   m_ObjectHideFlags: 0

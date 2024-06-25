@@ -11,19 +11,36 @@ public class DeathScreen : MonoBehaviour
 
     public GameObject loadingPanel;
     public Slider loadingSlider;
+    public int sceneId = 2;
 
     private bool PanelIsActive;
-    // Start is called before the first frame update
+
+    private PauseMenu pauseMenu;
+
+    void Start()
+    {
+        pauseMenu = FindObjectOfType<PauseMenu>();
+
+        if (pauseMenu != null)
+        {
+            Debug.Log("Znaleziono PauseMenu");
+        }
+        else
+        {
+            Debug.Log("Nie znaleziono PauseMenu");
+        }
+    }
+
 
     void Update()
     {
         if(DeathPanel.activeSelf)
-         {
+        {
             Pause();
-         }
-
+        }
     }
-        void Pause()
+
+    void Pause()
     {
         DeathPanel.SetActive(true);
         Time.timeScale = 0f;
@@ -34,9 +51,9 @@ public class DeathScreen : MonoBehaviour
 
     public void RestartGame()
     {
-        StartCoroutine(LoadAsynchronously(2));
+        pauseMenu.Resume();
+        StartCoroutine(LoadAsynchronously(sceneId));
     }
-
 
     IEnumerator LoadAsynchronously(int sceneIndex)
     {
@@ -52,6 +69,7 @@ public class DeathScreen : MonoBehaviour
 
             yield return null;
         }
+
     }
 
 
