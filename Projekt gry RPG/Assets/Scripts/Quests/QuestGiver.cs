@@ -126,6 +126,8 @@ public class QuestGiver : MonoBehaviour
                 break;
             case 19:
                 BookContentText.text = "Nie masz obecnie ¿adnych aktywnych zadañ. Spróbuj porozmawiaæ z Mam¹ Owc¹.";
+                ActivateDialogueTrigger(20);
+                Player.Instance.quest.id = 19.5;
                 break;
             case 28:
                 BookContentText.text = "Nie masz obecnie ¿adnych aktywnych zadañ. Spróbuj porozmawiaæ z Kameleonem Zakonnikiem.";

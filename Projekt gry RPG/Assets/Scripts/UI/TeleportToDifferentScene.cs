@@ -43,9 +43,5 @@ public class TeleportToDifferentScene : MonoBehaviour
 
             yield return null;
         }
-
     }
-
-
-
 }
