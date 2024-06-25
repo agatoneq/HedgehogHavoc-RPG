@@ -10,11 +10,18 @@ public class PiraniaScrypt : MonoBehaviour
     public float speed = 1f;
     // Punkt środkowy półkola
     private Vector3 center;
+    AudioManager audioManager;
+
 
     void Start()
     {
         // Ustaw środek półkola na aktualną pozycję obiektu
         center = transform.position;
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+        if (audioManager == null)
+        {
+            Debug.Log("audioManager jest nullem");
+        }
     }
 
     void Update()
@@ -29,13 +36,13 @@ public class PiraniaScrypt : MonoBehaviour
         transform.position = new Vector3(x, y, z);
     }
 
-            private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
-                PlayerStats playerStats = other.GetComponent<PlayerStats>();
-                if (playerStats != null)
-                {
-                    playerStats.TakeDamage(10.0);
-                }
-               
+        PlayerStats playerStats = other.GetComponent<PlayerStats>();
+        if (playerStats != null)
+        {
+            playerStats.TakeDamage(10.0);
+            audioManager.PlaySFX(audioManager.piranhaBite);
+        }
     }
 }

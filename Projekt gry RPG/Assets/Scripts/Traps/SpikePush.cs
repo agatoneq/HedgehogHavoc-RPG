@@ -11,12 +11,19 @@ public class SpikePush : MonoBehaviour
     // Zmienna do przechowywania początkowej pozycji obiektu b
     private Vector3 initialPositionB;
 
+    AudioManager audioManager;
+
     void Start()
     {
         // Zapisz początkową pozycję obiektu b
         if (objectB != null)
         {
             initialPositionB = objectB.transform.position;
+        }
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+        if (audioManager == null)
+        {
+            Debug.Log("audioManager jest nullem");
         }
     }
 
@@ -32,11 +39,12 @@ public class SpikePush : MonoBehaviour
                 objectB.transform.position += new Vector3(0f, 0.260f, 0f);
             }
 
-                PlayerStats playerStats = other.GetComponent<PlayerStats>();
-                if (playerStats != null)
-                {           
-                    playerStats.TakeDamage(10.0);
-                }
+            PlayerStats playerStats = other.GetComponent<PlayerStats>();
+            if (playerStats != null)
+            {
+                playerStats.TakeDamage(10.0);
+                audioManager.PlaySFX(audioManager.spikeTrap);
+            }
         }
     }
 
