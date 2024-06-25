@@ -33,10 +33,6 @@ public class CharacterStats : MonoBehaviour
             {StatType.Damage, damage }
         };
     }
-    private void Awake()
-    {
-        currentHealth = maxhealth.getValue();
-    }
 
     public void TakeDamage(double damage)
     {

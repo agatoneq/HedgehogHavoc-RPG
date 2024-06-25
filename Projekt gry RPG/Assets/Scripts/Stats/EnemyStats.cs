@@ -10,6 +10,10 @@ public class EnemyStats : CharacterStats
     public QuestGiver questGiver;
 
     public event System.Action<double, double> OnHealthChanged;
+    private void Awake()
+    {
+        currentHealth = maxhealth.getValue();
+    }
     private void Start()
     {
         animator = GetComponent<Animator>();

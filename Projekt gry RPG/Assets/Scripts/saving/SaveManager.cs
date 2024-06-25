@@ -13,13 +13,22 @@ public class SaveManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        Debug.Log(Application.persistentDataPath);
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.F5))
+        {
+            Save();
+            Debug.Log("Saved");
+        }
+        else if (Input.GetKeyDown(KeyCode.F6))
+        {
+            Load();
+            Debug.Log("Loaded");
+        }
     }
     private void Save()
     {
@@ -31,13 +40,15 @@ public class SaveManager : MonoBehaviour
             SaveData data = new SaveData();
             data.ActiveScene = SceneManager.GetActiveScene();
             SavePlayer(data);
+            bf.Serialize(file, data);
 
             file.Close();
+            Debug.Log("Saving");
         }
         catch (System.Exception)
         {
+            Debug.Log("B³¹d przy zapisywaniu");
 
-            
         }
     }
     private void SavePlayer(SaveData data)
@@ -59,10 +70,11 @@ public class SaveManager : MonoBehaviour
             file.Close();
             LoadPlayer(data);
             SceneManager.SetActiveScene(data.ActiveScene);
+            Debug.Log("Loading");
         }
         catch (System.Exception)
         {
-
+            Debug.Log("B³¹d przy wczytywaniu");
 
         }
     }
@@ -75,6 +87,11 @@ public class SaveManager : MonoBehaviour
         player.attackRange = data.MyPlayerData.attackRange;
         player.attackRate = data.MyPlayerData.attackRate;
         player.currentHealth = data.MyPlayerData.currentHealth;
-        GameObject.Find("PlayerCapsule").transform.position = new Vector3(data.MyPlayerData.x, data.MyPlayerData.y, data.MyPlayerData.z);
+        Transform capsule = GameObject.Find("PlayerCapsule").transform;
+        Debug.Log(data.MyPlayerData.x);
+        Debug.Log(data.MyPlayerData.y);
+        Debug.Log(data.MyPlayerData.z);
+        capsule.position = new Vector3(data.MyPlayerData.x, data.MyPlayerData.y, data.MyPlayerData.z);
+        capsule.GetComponent<PlayerStats>().updateStats();
     }
 }

@@ -36,6 +36,7 @@ public class PlayerData
         this.currentHealth = currentHealth;
         this.x = position.x;
         this.y = position.y;
+        this.z = position.z;
     }
 }
 
