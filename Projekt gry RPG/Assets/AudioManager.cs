@@ -17,6 +17,10 @@ public class AudioManager : MonoBehaviour
     public AudioClip changedBookPage;
     public AudioClip newQuest;
     public AudioClip button;
+    public AudioClip spikeTrap;
+    public AudioClip swingTrap_1;
+    public AudioClip swingTrap_2;
+    public AudioClip piranhaBite;
 
     public static AudioManager Instance;
     private void Awake()
