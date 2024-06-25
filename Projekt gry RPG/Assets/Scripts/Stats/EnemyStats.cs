@@ -69,16 +69,20 @@ public class EnemyStats : CharacterStats
             else if (Player.Instance.quest.id == 14)
             {
                 if (transform.name == "BatEvil")
+                {
                     Debug.LogError("Enemy Stats koniec zadania 14.");
-                Debug.Log("Zginal: " + transform.name);
-                questGiver.finishQuest();
+                    Debug.Log("Zginal: " + transform.name);
+                    questGiver.finishQuest();
+                }
             }
-            else if (Player.Instance.quest.id == 16)
+            else if (Player.Instance.quest.id == 18)
             {
-                if (transform.name == "RatEvil")
-                    Debug.LogError("Enemy Stats koniec zadania 16.");
-                Debug.Log("Zginal: " + transform.name);
-                questGiver.finishQuest();
+                if (transform.name == "Rat18")
+                {
+                    Debug.LogError("Enemy Stats koniec zadania 18.");
+                    Debug.Log("Zginal: " + transform.name);
+                    questGiver.finishQuest();
+                }
             }
 
         }

@@ -88,6 +88,10 @@ public class DialogueTrigger : MonoBehaviour
             }
         }
 
+        if (Player.Instance.quest.id == 15)
+        {
+            questGiver.finishQuest();
+        }
 
         if (questGiver != null && questGiverId != 12)
         {

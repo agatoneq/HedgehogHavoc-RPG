@@ -23,6 +23,8 @@ public class QuestGiver : MonoBehaviour
     public TMP_Text BookContentText;
 
     public GameObject wall;
+    public GameObject wall2;
+    public GameObject wall3;
     public GameObject remy;
 
     AudioManager audioManager;
@@ -87,8 +89,8 @@ public class QuestGiver : MonoBehaviour
                 ActivateDialogueTrigger(10);
                 break;
             case 11:
-                Debug.Log("Wykonauje sie koniec zadania 11");
-                Debug.Log("a TO JESt " + questGiverId);
+                Debug.Log("Wykonuje sie koniec zadania 11");
+                Debug.Log("a to jest " + questGiverId);
                 quest = new Quest(12, "Œladem krecich korytarzy", "Có¿… to chyba nie by³a osoba, która chcia³a dla Ciebie dobrze. Oby nastêpnym razem by³o lepiej. Eksploruj dalej jaskiniê i odnajdŸ prawdziwego sojusznika.", "OdnajdŸ kreciego in¿yniera", 0, 0);
                 setQuestActive(12);
                 ActivateDialogueTrigger(13);
@@ -108,14 +110,21 @@ public class QuestGiver : MonoBehaviour
                 setQuestActive(15);
                 ActivateDialogueTrigger(16);
                 break;
-            case 16:
-                wall.SetActive(false);
-                ActivateDialogueTrigger(17);
+            case 15:
+                Debug.Log("QG to jest " + questGiverId);
+                wall2.SetActive(false);
+                ActivateDialogueTrigger(18);
+                Player.Instance.quest.id = 17;
                 break;
             case 17:
-                wall.SetActive(false);
                 break;
             case 18:
+                Debug.Log("QG18 to jest " + questGiverId);
+                wall3.SetActive(false);
+                quest = new Quest(19, "Oddanie zguby", "Krowa Wies³awa nadal czeka na swoj¹ kosê. Musisz odnaleŸæ kosê ukryt¹ przez Remy'ego i oddaæ j¹ Wo³obitce.", "Oddaj kosê Krowie Wo³obitce", 0, 0);
+                setQuestActive(19);
+                break;
+            case 19:
                 BookContentText.text = "Nie masz obecnie ¿adnych aktywnych zadañ. Spróbuj porozmawiaæ z Mam¹ Owc¹.";
                 break;
             case 28:
