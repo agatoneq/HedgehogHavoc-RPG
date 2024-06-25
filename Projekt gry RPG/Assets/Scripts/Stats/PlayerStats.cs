@@ -9,7 +9,7 @@ public class PlayerStats : CharacterStats
     Player player;
     public event System.Action<double, double> OnHealthChanged;
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         player = Player.Instance;
         armor = player.armor;
@@ -21,6 +21,17 @@ public class PlayerStats : CharacterStats
         player.Equipment.onEquipmentChanged += EquipmentChanged;
     }
 
+    public void updateStats()
+    {
+        player = Player.Instance;
+        armor = player.armor;
+        damage = player.damage;
+        attackRange = player.attackRange;
+        attackRate = player.attackRate;
+        maxhealth = player.maxhealth;
+        Debug.Log(player.currentHealth);
+        currentHealth = player.currentHealth;
+    }
     void EquipmentChanged(EquipmentItem newItem, EquipmentItem oldItem)
     {
         if (newItem != null)
