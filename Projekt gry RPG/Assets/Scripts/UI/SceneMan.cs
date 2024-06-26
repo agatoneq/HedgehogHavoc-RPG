@@ -4,6 +4,8 @@ using System.ComponentModel;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using System.IO;
+using Unity.VisualScripting;
 
 public class SceneMan : MonoBehaviour
 {
@@ -35,7 +37,9 @@ public class SceneMan : MonoBehaviour
     
     public void ClickContinueButton()
     {
-        StartCoroutine(LoadAsynchronously(2));
+        Object sceneManager = GameObject.Find("SceneManager");
+        // StartCoroutine(LoadAsynchronously(2));
+        sceneManager.GetComponent<SaveManager>().Load();
     }
 
     public void ClickSettingsButton()

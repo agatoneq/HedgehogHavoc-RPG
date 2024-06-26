@@ -26,7 +26,8 @@ public class PlayerData
     public float x {  get; set; }
     public float y { get; set; }
     public float z { get; set; }
-    public PlayerData(Stat damage, Stat maxHealth, Stat armor, Stat attackRange, Stat attackRate,double currentHealth ,Vector3 position)
+    public Quest quest { get; set; }
+    public PlayerData(Stat damage, Stat maxHealth, Stat armor, Stat attackRange, Stat attackRate,double currentHealth ,Vector3 position, Quest quest)
     {
         this.damage = damage;
         this.maxHealth = maxHealth;
@@ -37,6 +38,7 @@ public class PlayerData
         this.x = position.x;
         this.y = position.y;
         this.z = position.z;
+        this.quest = quest;
     }
 }
 

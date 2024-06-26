@@ -56,27 +56,32 @@ public class SaveManager : MonoBehaviour
         player = Player.Instance;
         Vector3 position = GameObject.Find("PlayerCapsule").transform.position;
         data.MyPlayerData = new PlayerData(player.damage, player.maxhealth, 
-            player.armor,player.attackRange,player.attackRate,player.currentHealth, position);
+            player.armor,player.attackRange,player.attackRate,player.currentHealth, position, player.quest);
     }
-    //zapisywanie ekwitunku i przedmiot�w posiadanych przez gracza
-    //zapisywanie uko�czonych  przez gracza zada� i zada� aktywnych
-    private void Load()
+    //zapisywanie ekwipunku i przedmiot�w posiadanych przez gracza
+    public void Load()
     {
        try
         {
             BinaryFormatter bf = new BinaryFormatter();
-
-            FileStream file = File.Open(Application.persistentDataPath + "/" + "SaveTest.dat", FileMode.Open);
-            SaveData data = (SaveData)bf.Deserialize(file);
-           
-            file.Close();
-            if (SceneManager.GetActiveScene().buildIndex != data.ActiveScene)
+            if (File.Exists(Application.persistentDataPath + "/" + "SaveTest.dat")) 
             {
-                SceneManager.LoadScene(data.ActiveScene);
+                FileStream file = File.Open(Application.persistentDataPath + "/" + "SaveTest.dat", FileMode.Open);
+                SaveData data = (SaveData)bf.Deserialize(file);
+
+                file.Close();
+                if (SceneManager.GetActiveScene().buildIndex != data.ActiveScene)
+                {
+                    SceneManager.LoadScene(data.ActiveScene);
+                }
+                LoadPlayer(data);
+
+                Debug.Log("Loading");
             }
-            LoadPlayer(data);
-            
-            Debug.Log("Loading");
+            else
+            {
+                Debug.Log("No save file");
+            }
         }
         catch (System.Exception)
         {
@@ -93,12 +98,13 @@ public class SaveManager : MonoBehaviour
         player.attackRange = data.MyPlayerData.attackRange;
         player.attackRate = data.MyPlayerData.attackRate;
         player.currentHealth = data.MyPlayerData.currentHealth;
+        player.quest = data.MyPlayerData.quest;
         Transform playerCapsule;
         if (playerCapsule = GameObject.Find("PlayerCapsule").transform){
             PlayerStats stats;
             if(stats = playerCapsule.GetComponent<PlayerStats>())
             {
-              //  stats.updateStats();
+                stats.updateStats();
             }
             else
             {
@@ -113,6 +119,6 @@ public class SaveManager : MonoBehaviour
         }
 
     }
-    //wczytywanie ekwitunku i przedmiot�w posiadanych przez gracza
-    //wczytywanie uko�czonych  przez gracza zada� i zada� aktywnych
+ 
+    //wczytywanie ekwipunku i przedmiot�w posiadanych przez gracza
 }
