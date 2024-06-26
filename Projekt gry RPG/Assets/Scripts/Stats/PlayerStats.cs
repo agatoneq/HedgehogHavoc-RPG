@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 using Assets.Scripts.Player;
 
 public class PlayerStats : CharacterStats
@@ -8,6 +9,10 @@ public class PlayerStats : CharacterStats
     [SerializeField] private GameObject DeathPanel;
     Player player;
     public event System.Action<double, double> OnHealthChanged;
+
+    [SerializeField]
+    private TMP_Text HealthText, DamageText, ArmorText, RangeText, SpeedText;
+
     // Start is called before the first frame update
     void Awake()
     {
@@ -19,10 +24,12 @@ public class PlayerStats : CharacterStats
         maxhealth = player.maxhealth;
         currentHealth = player.currentHealth;
         player.Equipment.onEquipmentChanged += EquipmentChanged;
+
         player.SkillpointEvent += updateStats;
+        updateStatsInInventory();
     }
 
-    public void updateStats()
+    public void updateStats(Player player)
     {
         player = Player.Instance;
         armor = player.armor;
@@ -32,7 +39,21 @@ public class PlayerStats : CharacterStats
         maxhealth = player.maxhealth;
         Debug.Log(player.currentHealth);
         currentHealth = player.currentHealth;
+
+        updateStatsInInventory(player);
     }
+
+    public void updateStatsInInventory()
+    {
+        ArmorText.text = Armor.ToString();
+        DamageText.text = Damage.ToString();
+        RangeText.text = AttackRange.ToString();
+        SpeedText.text = AttackRate.ToString();
+
+        HealthText.text = MaxHealth.ToString() + "/" + currentHealth.ToString() ;
+
+    }
+
     void EquipmentChanged(EquipmentItem newItem, EquipmentItem oldItem)
     {
         if (newItem != null)

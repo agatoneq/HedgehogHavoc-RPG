@@ -13,7 +13,7 @@ public class SaveManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log("Œcie¿ka do zapisu: "+ Application.persistentDataPath);
+        Debug.Log("ï¿½cieï¿½ka do zapisu: "+ Application.persistentDataPath);
     }
 
     // Update is called once per frame
@@ -47,7 +47,7 @@ public class SaveManager : MonoBehaviour
         }
         catch (System.Exception)
         {
-            Debug.LogErrorFormat("B³¹d przy zapisywaniu");
+            Debug.LogErrorFormat("Bï¿½ï¿½d przy zapisywaniu");
 
         }
     }
@@ -58,8 +58,8 @@ public class SaveManager : MonoBehaviour
         data.MyPlayerData = new PlayerData(player.damage, player.maxhealth, 
             player.armor,player.attackRange,player.attackRate,player.currentHealth, position);
     }
-    //zapisywanie ekwitunku i przedmiotów posiadanych przez gracza
-    //zapisywanie ukoñczonych  przez gracza zadañ i zadañ aktywnych
+    //zapisywanie ekwitunku i przedmiotï¿½w posiadanych przez gracza
+    //zapisywanie ukoï¿½czonych  przez gracza zadaï¿½ i zadaï¿½ aktywnych
     private void Load()
     {
        try
@@ -80,7 +80,7 @@ public class SaveManager : MonoBehaviour
         }
         catch (System.Exception)
         {
-            Debug.LogErrorFormat("B³¹d przy wczytywaniu");
+            Debug.LogErrorFormat("Bï¿½ï¿½d przy wczytywaniu");
 
         }
     }
@@ -98,13 +98,13 @@ public class SaveManager : MonoBehaviour
             PlayerStats stats;
             if(stats = playerCapsule.GetComponent<PlayerStats>())
             {
-                stats.updateStats();
+              //  stats.updateStats();
             }
             else
             {
                 Debug.LogErrorFormat("brak PlayserStats w PlayerCapsule");
             }
-            //nagle nie dzia³a zmiana pozycji
+            //nagle nie dziaï¿½a zmiana pozycji
             playerCapsule.position = new Vector3(data.MyPlayerData.x, data.MyPlayerData.y, data.MyPlayerData.z);
         }
         else
@@ -113,6 +113,6 @@ public class SaveManager : MonoBehaviour
         }
 
     }
-    //wczytywanie ekwitunku i przedmiotów posiadanych przez gracza
-    //wczytywanie ukoñczonych  przez gracza zadañ i zadañ aktywnych
+    //wczytywanie ekwitunku i przedmiotï¿½w posiadanych przez gracza
+    //wczytywanie ukoï¿½czonych  przez gracza zadaï¿½ i zadaï¿½ aktywnych
 }
