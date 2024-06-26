@@ -15,8 +15,8 @@ namespace Assets.Scripts.Player
         public Equipment()
         {
             UISlots = new Dictionary<EquipmentSlot, EqInventorySlot>();
-            EquipmentSlots = new Dictionary<EquipmentSlot, EquipmentItem>() 
-            { 
+            EquipmentSlots = new Dictionary<EquipmentSlot, EquipmentItem>()
+            {
                 {EquipmentSlot.MainHand, null}
                 ,{EquipmentSlot.OffHand, null}
                 ,{ EquipmentSlot.Armour, null}
@@ -24,17 +24,27 @@ namespace Assets.Scripts.Player
         }
         public Item ChangeEquipment(EquipmentItem newItem, EquipmentSlot targetSlot)
         {
-            //na razie uproszczona wersja
+            var inventory = Player.Instance.Inventory;
             var oldItem = EquipmentSlots[targetSlot];
-            UISlots[targetSlot]?.AddItem(newItem);
-            Debug.Log("change Started");
-            EquipmentSlots[targetSlot] = newItem;
-            Debug.Log("change Started");
+            inventory.AddItemToInv(oldItem);    //odłożenie starego item do inv
+            if (newItem == null)
+            {
+                Debug.Log("UnEquip");
+                EquipmentSlots[targetSlot] = null;
+                UISlots[targetSlot]?.ClearSlot();
+            }
+            else
+            {
 
-            //onEquipmentChanged(newItem, oldItem);
+                Debug.Log("Equip");
+                UISlots[targetSlot]?.AddItem(newItem);
+                EquipmentSlots[targetSlot] = newItem;
+                inventory.TakeItem(newItem);
+            }
+
+            onEquipmentChanged(newItem, oldItem);
             Debug.Log("change Compleate");
             return oldItem;
         }
-        
     }
 }

@@ -11,5 +11,10 @@ public class EqInventorySlot : InventorySlot
     {
         Player.Instance.Equipment.UISlots[slotType] = this;
     }
+    public override void Use()
+    {
+        var a = (EquipmentItem)item;
+        a.DeEquip();
+    }
 
 }

@@ -21,6 +21,8 @@ namespace Assets.Scripts.Player
         }
         public bool AddItemToInv(Item item)
         {
+            if (item == null)
+                return false;
             Debug.Log(item.name + " added to inventory");
             if (UsedSpace >= Capacity)
             {
@@ -43,6 +45,12 @@ namespace Assets.Scripts.Player
         public Item TakeItem(string name)
         {
             var item = Items.First(x => x.name == name);
+            Items.Remove(item);
+            onInventoryChanged();
+            return item;
+        }
+        public Item TakeItem(Item item)
+        {
             Items.Remove(item);
             onInventoryChanged();
             return item;

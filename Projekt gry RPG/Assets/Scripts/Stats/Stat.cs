@@ -31,7 +31,7 @@ public class Stat
     //removing modifiers from equipment
     public void removeModifier (Modifier modifier) 
     {
-        if (modifier != null) modifiers.Remove(modifier);
+        if (modifier != null && modifiers.Contains(modifier)) modifiers.Remove(modifier);
     }
 }
 

@@ -8,6 +8,7 @@ using UnityEngine;
 [System.Serializable]
 
 
+[CreateAssetMenu(fileName = "New Item", menuName = "Inventory/Armour")]
 class Armour: EquipmentItem
 {
     [SerializeField]

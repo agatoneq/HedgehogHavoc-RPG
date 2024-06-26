@@ -9,10 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 76b127a60e7038646a7f36ce2cb878c6, type: 3}
-  m_Name: Bron
+  m_Script: {fileID: 11500000, guid: 1b5ab39bc46498245b02d57cb454dbd7, type: 3}
+  m_Name: Miecz
   m_EditorClassIdentifier: 
-  name: "Bro\u0144"
+  name: Miecz
   icon: {fileID: 21300000, guid: ec205633da46b9846b0186df8ad6d5ff, type: 3}
   isDefaultItem: 0
-  Desc: "to jest bro\u0144"
+  Desc: To jest miecz, przekonuje innych do twojego zdania
+  DamageValue: 0
+  isTwoHanded: 0

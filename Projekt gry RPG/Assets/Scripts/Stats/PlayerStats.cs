@@ -39,7 +39,7 @@ public class PlayerStats : CharacterStats
         attackRate = player.attackRate;
         maxhealth = player.maxhealth;
         Debug.Log(player.currentHealth);
-        currentHealth = player.currentHealth;
+        currentHealth = Math.Min(currentHealth,maxhealth.getValue());
 
         updateStatsInInventory();
     }
@@ -57,21 +57,21 @@ public class PlayerStats : CharacterStats
 
     void EquipmentChanged(EquipmentItem newItem, EquipmentItem oldItem)
     {
+        if (oldItem != null)
+        {
+            foreach (var m in oldItem?.ModifierList)
+            {
+                Stats[m.AffectedStatType]?.removeModifier(m);
+            }
+        }
         if (newItem != null)
         {
-            foreach (var m in newItem.ModifierList)
+            foreach (var m in newItem?.ModifierList)
             {
-                Stats[m.AffectedStatType].addModifier(m);
+                Stats[m.AffectedStatType]?.addModifier(m);
             }
         }
         
-        if (oldItem != null)
-        {
-            foreach (var m in newItem.ModifierList)
-            {
-                Stats[m.AffectedStatType].removeModifier(m);
-            }
-        }
     }
 
     //implementacja metody Die()

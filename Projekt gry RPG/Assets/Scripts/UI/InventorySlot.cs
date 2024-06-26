@@ -9,7 +9,7 @@ public class InventorySlot : MonoBehaviour, IHasToolTip
 {
     // Start is called before the first frame update
     public Image icon;
-    Item item;
+    protected Item item;
     public void AddItem (Item newItem)
     {
         item = newItem;
@@ -25,9 +25,9 @@ public class InventorySlot : MonoBehaviour, IHasToolTip
         item = null;
     }
 
-    public void Use()
+    public virtual void Use()
     {
-        item?.OnUse(this);
+        item?.OnUse();
     }
 
     public void OnPointerEnter(PointerEventData eventData)

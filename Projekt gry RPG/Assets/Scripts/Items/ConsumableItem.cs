@@ -13,10 +13,9 @@ namespace Assets.Scripts.Items
         [SerializeField]
         public AItemEffect EffectScript;
 
-        public override void OnUse(InventorySlot slot)
+        public override void OnUse()
         {
             base.OnUse();
-            slot.ClearSlot();
             EffectScript.MakeEffect();
         }
     }

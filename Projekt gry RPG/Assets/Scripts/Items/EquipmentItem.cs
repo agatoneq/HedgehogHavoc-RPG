@@ -6,27 +6,27 @@ using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "New Item", menuName = "Inventory/EquipmentItem")]
 public class EquipmentItem : Item
 {
     public EquipmentSlot EquipmentType { get; protected set; }
     public List<EquipmentSlot> OtherSlotBlock { get; private set; } = new List<EquipmentSlot>();
     public List<Modifier> ModifierList { get; private set; } = new List<Modifier>();
 
-    public override void OnUse(InventorySlot slot)
+    public override void OnUse()
     {
         Debug.Log("EquipmentItem - try to equip");
         base.OnUse();
-        var newItem = Equip();
-        if (newItem != null)
-            slot.AddItem(newItem);
-        else
-            slot.ClearSlot();
+        Equip();
     }
 
     public Item Equip()
     {
         return Player.Instance.Equipment.ChangeEquipment(this, EquipmentType);
+    }
+    public void DeEquip()
+    {
+        Player.Instance.Equipment.ChangeEquipment(null, EquipmentType);
+
     }
 }
 public enum EquipmentSlot
