@@ -50,7 +50,7 @@ public class PlayerStats : CharacterStats
         RangeText.text = AttackRange.ToString();
         SpeedText.text = AttackRate.ToString();
 
-        HealthText.text = MaxHealth.ToString() + "/" + currentHealth.ToString() ;
+        HealthText.text = currentHealth.ToString() + "/" + MaxHealth.ToString()   ;
 
     }
 
