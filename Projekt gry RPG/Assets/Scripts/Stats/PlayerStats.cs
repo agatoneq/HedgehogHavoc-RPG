@@ -57,6 +57,7 @@ public class PlayerStats : CharacterStats
 
     void EquipmentChanged(EquipmentItem newItem, EquipmentItem oldItem)
     {
+        Debug.Log("Remoding"+ newItem+"and "+ oldItem);
         if (oldItem != null)
         {
             foreach (var m in oldItem?.ModifierList)
@@ -68,10 +69,11 @@ public class PlayerStats : CharacterStats
         {
             foreach (var m in newItem?.ModifierList)
             {
-                Stats[m.AffectedStatType]?.addModifier(m);
+                Debug.Log("addedMod- " + m);
+                Stats[m.AffectedStatType].addModifier(m);
             }
         }
-        
+        updateStats();
     }
 
     //implementacja metody Die()

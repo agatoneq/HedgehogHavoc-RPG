@@ -42,7 +42,7 @@ namespace Assets.Scripts.Player
                 inventory.TakeItem(newItem);
             }
 
-            onEquipmentChanged(newItem, oldItem);
+            onEquipmentChanged.Invoke(newItem, oldItem);
             Debug.Log("change Compleate");
             return oldItem;
         }
