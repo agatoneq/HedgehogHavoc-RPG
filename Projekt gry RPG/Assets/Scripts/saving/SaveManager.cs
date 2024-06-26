@@ -13,7 +13,7 @@ public class SaveManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log("�cie�ka do zapisu: "+ Application.persistentDataPath);
+        Debug.Log("Path to save: "+ Application.persistentDataPath);
     }
 
     // Update is called once per frame
@@ -32,8 +32,8 @@ public class SaveManager : MonoBehaviour
     }
     private void Save()
     {
-        //try
-        //{
+        try
+        {
             BinaryFormatter bf = new BinaryFormatter();
 
             FileStream file = File.Open(Application.persistentDataPath+"/"+ "SaveTest.dat", FileMode.Create);
@@ -45,12 +45,12 @@ public class SaveManager : MonoBehaviour
 
             file.Close();
             Debug.Log("Saving");
-        //}
-        //catch (System.Exception)
-        //{
-            Debug.LogErrorFormat("B��d przy zapisywaniu");
+        }
+        catch (System.Exception)
+        {
+            Debug.LogErrorFormat("error while saving");
 
-        //}
+        }
     }
     private void SavePlayer(SaveData data)
     {
@@ -77,8 +77,8 @@ public class SaveManager : MonoBehaviour
     }
     public void Load()
     {
-      // try
-       // {
+        try
+        {
             BinaryFormatter bf = new BinaryFormatter();
             if (File.Exists(Application.persistentDataPath + "/" + "SaveTest.dat")) 
             {
@@ -98,12 +98,12 @@ public class SaveManager : MonoBehaviour
             {
                 Debug.Log("No save file");
             }
-       // }
-        //catch (System.Exception)
-        //{
-            Debug.LogErrorFormat("B��d przy wczytywaniu");
+        }
+        catch (System.Exception)
+        {
+            Debug.LogErrorFormat("error while loading");
 
-        //}
+        }
     }
     private void LoadPlayer(SaveData data)
     {
@@ -121,14 +121,14 @@ public class SaveManager : MonoBehaviour
             }
             else
             {
-                Debug.LogErrorFormat("brak PlayserStats w PlayerCapsule");
+                Debug.LogErrorFormat("no PlayserStats in Capsule");
             }
             //nagle nie dzia�a zmiana pozycji
            // playerCapsule.position = new Vector3(data.MyPlayerData.x, data.MyPlayerData.y, data.MyPlayerData.z);
         }
         else
         {
-            Debug.LogErrorFormat("brak PlayerCapsule");
+            Debug.LogErrorFormat("no PlayerCapsule");
         }
 
     }
