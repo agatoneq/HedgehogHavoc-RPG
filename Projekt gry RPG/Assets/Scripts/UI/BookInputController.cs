@@ -74,6 +74,8 @@ public class BookInputController : MonoBehaviour
         BookPanel.SetActive(false);
         IsBookOpened = false;
         Cursor.visible = false;
+
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     public void OpenBook()
