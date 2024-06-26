@@ -12,6 +12,9 @@ public class EquipmentItem : Item
     public List<EquipmentSlot> OtherSlotBlock { get; private set; } = new List<EquipmentSlot>();
     public List<Modifier> ModifierList { get; private set; } = new List<Modifier>();
 
+    public EquipmentItem(string name, Sprite icon, bool isDefaultItem, string desc) : base(name, icon, isDefaultItem, desc)
+    {
+    }
     public override void OnUse()
     {
         Debug.Log("EquipmentItem - try to equip");

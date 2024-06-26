@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Unity.VisualScripting;
 using UnityEngine;
 
 namespace Assets.Scripts.Items
@@ -12,7 +13,10 @@ namespace Assets.Scripts.Items
     {
         [SerializeField]
         public AItemEffect EffectScript;
-
+        
+        public ConsumableItem(string name, Sprite icon, bool isDefaultItem, string desc) : base(name, icon, isDefaultItem, desc)
+        {
+        }
         public override void OnUse()
         {
             base.OnUse();

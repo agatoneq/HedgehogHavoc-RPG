@@ -13,6 +13,13 @@ public class Item : ScriptableObject
     public bool isDefaultItem = false;
     public string Desc  = "Ten przedmiot nic nie robi.";
 
+    public Item(string name, Sprite icon, bool isDefaultItem, string desc)
+    {
+        this.name = name;
+        this.icon = icon;
+        this.isDefaultItem = isDefaultItem;
+        this.Desc = desc;
+    }
     public virtual void OnUse()
     {
         Debug.Log("Item: " + name + " used");

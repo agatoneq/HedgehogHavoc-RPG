@@ -40,6 +40,7 @@ public class SaveManager : MonoBehaviour
             SaveData data = new SaveData();
             data.ActiveScene = SceneManager.GetActiveScene().buildIndex;
             SavePlayer(data);
+            SaveInventory(data);
             bf.Serialize(file, data);
 
             file.Close();
@@ -57,9 +58,23 @@ public class SaveManager : MonoBehaviour
         Vector3 position = GameObject.Find("PlayerCapsule").transform.position;
         data.MyPlayerData = new PlayerData(player.damage, player.maxhealth, 
             player.armor,player.attackRange,player.attackRate,player.currentHealth, position,
-            player.quest,/*player.Inventory, player.Equipment,*/ player.SkillPoint, player.Level, player.CurrentExp, player.NeededExp);
+            player.quest, player.SkillPoint, player.Level, player.CurrentExp, player.NeededExp);
     }
     //zapisywanie ekwipunku i przedmiot�w posiadanych przez gracza
+    private void SaveInventory(SaveData data)
+    {
+        player = Player.Instance;
+        data.MyInventoryData = new InventoryData();
+        foreach (Item i in player.Inventory.Items)
+        {
+            data.MyInventoryData.addItemsData(i.name, i.icon, i.isDefaultItem, i.Desc);
+        }
+
+    }
+    private void SaveEquipment(SaveData data)
+    {
+
+    }
     public void Load()
     {
        try
@@ -95,7 +110,7 @@ public class SaveManager : MonoBehaviour
         player = Player.Instance;
         player.PlayerLoad(data.MyPlayerData.damage, data.MyPlayerData.maxHealth,
             data.MyPlayerData.armor, data.MyPlayerData.attackRange, data.MyPlayerData.attackRate, data.MyPlayerData.currentHealth,
-            data.MyPlayerData.quest, /*data.MyPlayerData.Inventory, data.MyPlayerData.Equipment,*/ data.MyPlayerData.SkillPoint, 
+            data.MyPlayerData.quest, data.MyPlayerData.SkillPoint, 
             data.MyPlayerData.Level, data.MyPlayerData.CurrentExp, data.MyPlayerData.NeededExp);
         Transform playerCapsule;
         if (playerCapsule = GameObject.Find("PlayerCapsule").transform){
@@ -117,6 +132,20 @@ public class SaveManager : MonoBehaviour
         }
 
     }
- 
+
     //wczytywanie ekwipunku i przedmiot�w posiadanych przez gracza
+    private void LoadInventory(SaveData data)
+    {
+        player = Player.Instance;
+        player.Inventory.ClearItemsFromInv();
+        foreach(ItemData iD in data.MyInventoryData.items) 
+        {
+            Item item = new Item(iD.name, iD.icon, iD.isDefaultItem, iD.Desc);
+            player.Inventory.AddItemToInv(item);
+        }
+    }
+    private void LoadEquipment(SaveData data)
+    {
+
+    }
 }

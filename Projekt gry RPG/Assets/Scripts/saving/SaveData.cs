@@ -2,6 +2,7 @@ using Assets.Scripts.Player;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -9,6 +10,8 @@ using UnityEngine.SceneManagement;
 public class SaveData
 {
     public PlayerData MyPlayerData { get;  set; }
+    public InventoryData MyInventoryData { get; set; }
+    public EquipmentData MyEquipmentData { get; set; }
     public int ActiveScene { get; set; }
     public SaveData()
     {
@@ -28,14 +31,12 @@ public class PlayerData
     public float y { get; set; }
     public float z { get; set; }
     public Quest quest { get; set; }
-    //public Inventory Inventory { get; }
-   // public Equipment Equipment { get; }
     public int SkillPoint { get; private set; }
     public int Level { get; private set; }
     public int CurrentExp { get; private set; }
     public int NeededExp { get; private set; }
     public PlayerData(Stat damage, Stat maxHealth, Stat armor, Stat attackRange, Stat attackRate,double currentHealth ,
-        Vector3 position, Quest quest, /*Inventory inventory, Equipment equipment,*/ int skillPoint, int level, int currentExp, int neededExp)
+        Vector3 position, Quest quest, int skillPoint, int level, int currentExp, int neededExp)
     {
         this.damage = damage;
         this.maxHealth = maxHealth;
@@ -44,12 +45,50 @@ public class PlayerData
         this.armor = armor;
         this.attackRange = attackRange;
         this.attackRate = attackRate;
-        //this.Inventory = inventory;
-        //this.Equipment = equipment;
         this.SkillPoint = skillPoint;
         this.Level = level;
         this.CurrentExp = currentExp;
         this.NeededExp = neededExp;
+    }
+}
+[Serializable]
+public class InventoryData
+{
+
+    public List<ItemData> items {  get; private set; }
+    public InventoryData()
+    {
+        items = new List<ItemData>();
+    }
+    public void addItemsData(string name, Sprite icon, bool isDefaultItem, string desc)
+    {
+        ItemData item = new ItemData(name, icon, isDefaultItem, desc);
+        items.Add(item);
+    }
+}
+[Serializable]
+
+public class ItemData
+{
+    public string name { get;  set; }
+    public Sprite icon { get; set; }
+    public bool isDefaultItem { get; set; }
+    public string Desc { get; set; }
+    public ItemData(string name, Sprite icon, bool isDefaultItem, string desc)
+    {
+        this.name = name;
+        this.icon = icon;
+        this.isDefaultItem = isDefaultItem;
+        this.Desc = desc;
+    }
+}
+
+[Serializable]
+public class EquipmentData
+{
+    public EquipmentData()
+    {
+
     }
 }
 

@@ -13,7 +13,7 @@ class Armour: EquipmentItem
 {
     [SerializeField]
     public double ArmourValue;
-    public Armour()
+    public Armour(string name, Sprite icon, bool isDefaultItem, string desc) : base(name, icon, isDefaultItem, desc)
     {
         base.EquipmentType = EquipmentSlot.Armour;
 

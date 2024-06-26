@@ -15,7 +15,7 @@ class Weapon : EquipmentItem
     public double DamageValue;
     [SerializeField]
     public bool isTwoHanded =false;
-    public Weapon()
+    public Weapon(string name, Sprite icon, bool isDefaultItem, string desc) : base(name, icon, isDefaultItem, desc)
     {
         base.EquipmentType = EquipmentSlot.MainHand;
         if (isTwoHanded)

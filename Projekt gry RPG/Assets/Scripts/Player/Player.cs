@@ -47,7 +47,7 @@ namespace Assets.Scripts.Player
 
         }
         public void PlayerLoad(Stat damage, Stat maxHealth, Stat armor, Stat attackRange, Stat attackRate, double currentHealth,
-         Quest quest, /*Inventory inventory, Equipment equipment,*/ int skillPoint, int level, int currentExp, int neededExp)
+         Quest quest, int skillPoint, int level, int currentExp, int neededExp)
         {
             this.damage = damage;
             this.maxhealth = maxHealth;
@@ -56,8 +56,6 @@ namespace Assets.Scripts.Player
             this.armor = armor;
             this.attackRange = attackRange;
             this.attackRate = attackRate;
-            //this.Inventory = inventory;
-            //this.Equipment = equipment;
             this.SkillPoint = skillPoint;
             this.Level = level;
             this.CurrentExp = currentExp;

@@ -37,6 +37,10 @@ namespace Assets.Scripts.Player
                 return true;
             }
         }
+        public void ClearItemsFromInv()
+        {
+            Items.Clear();
+        }
         public Item FindItem(string name)
         {
             var item = Items.First(x => x.name==name);
