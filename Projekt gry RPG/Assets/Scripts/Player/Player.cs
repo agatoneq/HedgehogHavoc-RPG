@@ -11,6 +11,7 @@ namespace Assets.Scripts.Player
 {
     public class Player
     {
+        public event Action SkillpointEvent;
         //dać wartości bazowe!!
         public Stat damage = new Stat(20);
         public Stat maxhealth = new Stat(100);
@@ -28,6 +29,11 @@ namespace Assets.Scripts.Player
         public List<Character> characters = new List<Character>();
         public List<GameObject> charactersPanels = new List<GameObject>();
 
+        public int Vitality, Strength, Dexterity;
+        public int SkillPoint { get; private set; }
+        public int Level { get; private set; }
+        public int CurrentExp { get; private set; }
+        public int NeededExp { get; private set; } = 1000;
         public static Player Instance
         {
             get
@@ -46,6 +52,16 @@ namespace Assets.Scripts.Player
             Inventory = new Inventory();
             Equipment = new Equipment();
         }
-
+        public void AwardExp(int amount)
+        {
+            CurrentExp += amount;
+            if (NeededExp <= CurrentExp)
+            {
+                CurrentExp -= NeededExp;
+                Level++;
+                NeededExp *= (int)(1 + (Level - 1) * 0.5);//z każdym levelem kolejny jest droższy dla lvl = 1 -> 100, lvl = 2 -> 150 ...
+                SkillPoint += 2;
+            }
+        }
     }
 }

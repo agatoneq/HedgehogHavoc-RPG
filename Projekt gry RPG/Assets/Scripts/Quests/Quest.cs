@@ -15,6 +15,7 @@ public class Quest
 
     public int itemsToCollect;
     public int itemsCollected;
+    public int ExpReward;
 
     public Quest()
     {
@@ -26,7 +27,7 @@ public class Quest
         itemsCollected = 0;
     }
 
-    public Quest(double id, string title, string description, string newQuestInfo, int itemsToCollect, int itemsCollected)
+    public Quest(double id, string title, string description, string newQuestInfo, int itemsToCollect, int itemsCollected, int expReward= 1000)
     {
         this.id = id;
         this.title = title;
@@ -34,6 +35,7 @@ public class Quest
         this.newQuestInfo = newQuestInfo;
         this.itemsToCollect = itemsToCollect;
         this.itemsCollected = itemsCollected;
+        this.ExpReward = expReward;
     }
 
 }

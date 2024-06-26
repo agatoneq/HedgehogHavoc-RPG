@@ -14,6 +14,7 @@ public class Item : ScriptableObject
 
     public virtual void OnUse()
     {
+        Debug.Log("Item: " + name + " used");
     }
     public virtual void Tooltip()
     {

@@ -75,16 +75,18 @@ public class QuestGiver : MonoBehaviour
 
     public void finishQuest()
     {
-        Debug.Log(" zadanie z player sie konczy: " + Player.Instance.quest.id);
+        var playerInstance = Player.Instance;
+        Debug.Log(" zadanie z player sie konczy: " + playerInstance.quest.id);
         x++;
-        Debug.Log("Ukoñczono zadanie: " + Player.Instance.quest.newQuestInfo);
+        Debug.Log("Ukoñczono zadanie: " + playerInstance.quest.newQuestInfo);
         audioManager.PlaySFX(audioManager.newQuest); 
         quest.isActive = false;
+        playerInstance.AwardExp(quest.ExpReward);
         TitleText.text = "Gratulacje!";
-        ContentText.text = "Ukoñczy³eœ zadanie: " + Player.Instance.quest.title + "!";
+        ContentText.text = "Ukoñczy³eœ zadanie: " + playerInstance.quest.title + "!";
         BookTitleText.text = "ZnajdŸ zadanie";
         BookContentText.text = "Nie masz obecnie ¿adnych aktywnych zadañ.";
-        switch (Player.Instance.quest.id)
+        switch (playerInstance.quest.id)
         {
             case 0:
                 BookContentText.text = "Nie masz obecnie ¿adnych aktywnych zadañ. Spróbuj porozmawiaæ z Krow¹ Wies³aw¹.";
@@ -116,7 +118,7 @@ public class QuestGiver : MonoBehaviour
                 Debug.Log("QG to jest " + questGiverId);
                 wall2.SetActive(false);
                 ActivateDialogueTrigger(18);
-                Player.Instance.quest.id = 17;
+                playerInstance.quest.id = 17;
                 break;
             case 17:
                 break;
@@ -127,10 +129,10 @@ public class QuestGiver : MonoBehaviour
                 setQuestActive(19);
                 break;
             case 19:
-                Player.Instance.Inventory.TakeItem("Cow's Scythe");
+                playerInstance.Inventory.TakeItem("Cow's Scythe");
                 BookContentText.text = "Nie masz obecnie ¿adnych aktywnych zadañ. Spróbuj porozmawiaæ z Mam¹ Owc¹.";
                 ActivateDialogueTrigger(20);
-                Player.Instance.quest.id = 19.5;
+                playerInstance.quest.id = 19.5;
                 break;
             case 28:
                 BookContentText.text = "Nie masz obecnie ¿adnych aktywnych zadañ. Spróbuj porozmawiaæ z Kameleonem Zakonnikiem.";

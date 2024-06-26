@@ -19,6 +19,7 @@ public class PlayerStats : CharacterStats
         maxhealth = player.maxhealth;
         currentHealth = player.currentHealth;
         player.Equipment.onEquipmentChanged += EquipmentChanged;
+        player.SkillpointEvent += updateStats;
     }
 
     public void updateStats()
@@ -50,9 +51,9 @@ public class PlayerStats : CharacterStats
             }
         }
     }
-    
+
     //implementacja metody Die()
-public override void Die()
+    public override void Die()
 {
     DeathPanel.SetActive(true);
 }
