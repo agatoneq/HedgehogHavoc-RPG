@@ -15,7 +15,7 @@ public class PlayerHealthBar : MonoBehaviour
     void Start()
     {
         //object of whole player UI
-        UI = GameObject.Find("PlayerUI").transform;
+        UI = GameObject.Find("PlayerUI 1").transform;
         if (UI != null)
         {
         }

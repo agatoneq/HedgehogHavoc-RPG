@@ -31,6 +31,7 @@ public class GameStart : MonoBehaviour
         else
         {
             Debug.Log("Nie znaleziono QuestGiver z ID: 11");
+            return;
         }
 
         double piqID = Player.Instance.quest.id;

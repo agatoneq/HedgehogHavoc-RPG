@@ -16,3 +16,4 @@ MonoBehaviour:
   icon: {fileID: 0}
   isDefaultItem: 0
   Desc: Ten przedmiot nic nie robi.
+  EffectScript: {fileID: 11400000, guid: 677952c25cddb7741a69e63af9be0dae, type: 2}
