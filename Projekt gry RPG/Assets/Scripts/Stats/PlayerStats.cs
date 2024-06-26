@@ -25,7 +25,7 @@ public class PlayerStats : CharacterStats
         currentHealth = player.currentHealth;
         player.Equipment.onEquipmentChanged += EquipmentChanged;
 
-        player.SkillpointEvent += updateStats;
+        player.StatsUpdateEvent += updateStats;
         updateStatsInInventory();
     }
 

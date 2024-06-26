@@ -12,7 +12,7 @@ public class CharacterStats : MonoBehaviour
     public double Damage { get { return damage.getValue(); }}
     public Stat maxhealth ;
     public double MaxHealth { get { return maxhealth.getValue(); } }
-    public double currentHealth {get; set;}
+    public double currentHealth { get { return currentHealth; } set { currentHealth = value > MaxHealth ? MaxHealth : value; } }
     //armor not implemented yet
     public Stat armor ;
     public double Armor { get { return armor.getValue(); } }

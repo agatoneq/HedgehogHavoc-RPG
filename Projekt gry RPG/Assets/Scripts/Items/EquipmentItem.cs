@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using UnityEngine;
 
-
+[CreateAssetMenu(fileName = "New Item", menuName = "Inventory/EquipmentItem")]
 public class EquipmentItem : Item
 {
     public EquipmentSlot EquipmentType { get; protected set; }

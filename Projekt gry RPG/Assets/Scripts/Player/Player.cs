@@ -11,7 +11,7 @@ namespace Assets.Scripts.Player
 {
     public class Player
     {
-        public event Action SkillpointEvent;
+        public event Action StatsUpdateEvent;
         //dać wartości bazowe!!
         public Stat damage = new Stat(20);
         public Stat maxhealth = new Stat(100);
