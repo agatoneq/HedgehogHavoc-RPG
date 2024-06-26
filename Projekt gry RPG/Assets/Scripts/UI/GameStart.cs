@@ -15,6 +15,8 @@ public class GameStart : MonoBehaviour
 
     void Start()
     {
+        Screen.fullScreen = true;
+
         QuestGiver[] allQuestGivers = FindObjectsOfType<QuestGiver>();
         foreach (QuestGiver qg in allQuestGivers)
         {
