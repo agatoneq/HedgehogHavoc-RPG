@@ -16,7 +16,7 @@ public class EffectHealPlayer : AItemEffect
             var stats = player?.GetComponentInChildren<PlayerStats>();
             if (stats != null)
             {
-                Debug.LogError("uleczono gracza o 10");
+                Debug.Log("uleczono gracza o 10");
                 stats.currentHealth += HealValue;
             }
             else

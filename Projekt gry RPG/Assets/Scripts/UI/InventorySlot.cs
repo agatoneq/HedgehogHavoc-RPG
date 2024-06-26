@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class InventorySlot : MonoBehaviour, IHasToolTip, IPointerClickHandler
+public class InventorySlot : MonoBehaviour, IHasToolTip
 {
     // Start is called before the first frame update
     public Image icon;
@@ -23,7 +23,7 @@ public class InventorySlot : MonoBehaviour, IHasToolTip, IPointerClickHandler
         item = null;
     }
 
-    public void OnPointerClick(PointerEventData eventData)
+    public void Use()
     {
         item?.OnUse();
     }

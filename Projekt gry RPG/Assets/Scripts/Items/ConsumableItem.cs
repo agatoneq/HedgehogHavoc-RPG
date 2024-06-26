@@ -16,6 +16,7 @@ namespace Assets.Scripts.Items
         public override void OnUse()
         {
             base.OnUse();
+            EffectScript.MakeEffect();
         }
     }
 }
