@@ -1,3 +1,4 @@
+using Assets.Scripts.Player;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,12 +13,13 @@ public class InventorySlot : MonoBehaviour, IHasToolTip
     public void AddItem (Item newItem)
     {
         item = newItem;
-
+        Debug.Log("InventorySlot - item added: "+ item);
         icon.sprite = item.icon;
         icon.enabled = true;
     }
-    public void ClearSlot() 
+    public void ClearSlot()
     {
+        Debug.Log("InventorySlot cleared");
         icon.sprite = null;
         icon.enabled = false;
         item = null;
@@ -25,7 +27,7 @@ public class InventorySlot : MonoBehaviour, IHasToolTip
 
     public void Use()
     {
-        item?.OnUse();
+        item?.OnUse(this);
     }
 
     public void OnPointerEnter(PointerEventData eventData)
