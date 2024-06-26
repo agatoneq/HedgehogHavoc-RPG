@@ -8,6 +8,7 @@ public class EnemyStats : CharacterStats
 {
     Animator animator;
     public QuestGiver questGiver;
+    public int ExpOnKill { get; set; }
 
     public event System.Action<double, double> OnHealthChanged;
     private void Awake()
@@ -94,7 +95,7 @@ public class EnemyStats : CharacterStats
         {
             Debug.LogError("Enemy Stats QuestGiver or quest is not set.");
         }
-
+        Player.Instance.AwardExp(ExpOnKill);
 
 
 
