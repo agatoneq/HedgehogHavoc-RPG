@@ -86,6 +86,7 @@ public class PlayerStats : CharacterStats
         Player.Instance.currentHealth = currentHealth;
         //hurt animation
         // animator.SetTrigger("Hurt");
+        HealthText.text = MaxHealth.ToString() + "/" + currentHealth.ToString() ;
         if (OnHealthChanged != null)
         {
             OnHealthChanged(MaxHealth, currentHealth);
