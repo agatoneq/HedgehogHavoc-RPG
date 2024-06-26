@@ -76,12 +76,15 @@ public class PlayerStats : CharacterStats
     //implementacja metody Die()
     public override void Die()
 {
+    currentHealth = MaxHealth;
     DeathPanel.SetActive(true);
 }
 
     //implementacja metody Hurt()
     public override void Hurt()
     {
+
+        {
         base.Hurt();
         Player.Instance.currentHealth = currentHealth;
         //hurt animation
@@ -89,7 +92,28 @@ public class PlayerStats : CharacterStats
         HealthText.text = MaxHealth.ToString() + "/" + currentHealth.ToString() ;
         if (OnHealthChanged != null)
         {
+                    Debug.Log("jest pasek przesyłanie obrażeń");
             OnHealthChanged(MaxHealth, currentHealth);
         }
+        }
+
+    }
+
+
+        public override void TakeDamage(double damage)
+    {
+
+
+        currentHealth -= damage;
+        Hurt();
+
+             player = Player.Instance;
+             player.currentHealth = player.maxhealth.getValue();
+
+
+           if(currentHealth <= 0)
+           {
+             Die();
+           }
     }
 }

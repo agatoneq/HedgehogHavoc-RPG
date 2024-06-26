@@ -4,14 +4,22 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
+
 public class DeathScreen : MonoBehaviour
 {
+
+Scene currentScene;
+int sceneId;
 
     [SerializeField] private GameObject DeathPanel;
 
     public GameObject loadingPanel;
     public Slider loadingSlider;
-    public int sceneId = 2;
+
+    private PlayerStats playerStats;
+    GameObject player;
+    private Collider playerCollider;
+
 
     private bool PanelIsActive;
 
@@ -19,6 +27,16 @@ public class DeathScreen : MonoBehaviour
 
     void Start()
     {
+
+         player = GameObject.Find("Capsule");
+         playerCollider = player.GetComponent<Collider>();
+
+
+       currentScene = SceneManager.GetActiveScene();
+       sceneId = currentScene.buildIndex;
+    
+    playerStats = FindObjectOfType<PlayerStats>();
+
         pauseMenu = FindObjectOfType<PauseMenu>();
 
         if (pauseMenu != null)
@@ -36,7 +54,7 @@ public class DeathScreen : MonoBehaviour
     {
         if(DeathPanel.activeSelf)
         {
-            Pause();
+            Pause();           
         }
     }
 
@@ -51,12 +69,18 @@ public class DeathScreen : MonoBehaviour
 
     public void RestartGame()
     {
+
+ playerStats.currentHealth = playerStats.MaxHealth;
         pauseMenu.Resume();
+   
+ playerStats.currentHealth = playerStats.MaxHealth;
+
         StartCoroutine(LoadAsynchronously(sceneId));
     }
 
     IEnumerator LoadAsynchronously(int sceneIndex)
     {
+        
         UnityEngine.AsyncOperation operation = SceneManager.LoadSceneAsync(sceneIndex);
 
         loadingPanel.SetActive(true);

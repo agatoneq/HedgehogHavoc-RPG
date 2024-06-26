@@ -34,7 +34,7 @@ public class CharacterStats : MonoBehaviour
         };
     }
 
-    public void TakeDamage(double damage)
+    public virtual void TakeDamage(double damage)
     {
         //when armor is implemented 
         /*
@@ -48,6 +48,7 @@ public class CharacterStats : MonoBehaviour
         Hurt();
         if (currentHealth <= 0)
         {
+            
             Die();
         }
     }
