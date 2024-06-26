@@ -24,8 +24,8 @@ namespace Assets.Scripts.Player
         public Stat attackRange = new Stat(3);
         public Stat attackRate = new Stat(1);
         private static Player instance;
-        public Inventory Inventory { get; }
-        public Equipment Equipment { get; }
+        public Inventory Inventory { get; set; }
+        public Equipment Equipment { get; set; }
         public List<Character> characters = new List<Character>();
         public List<GameObject> charactersPanels = new List<GameObject>();
 
@@ -46,7 +46,23 @@ namespace Assets.Scripts.Player
             }
 
         }
-
+        public void PlayerLoad(Stat damage, Stat maxHealth, Stat armor, Stat attackRange, Stat attackRate, double currentHealth,
+         Quest quest, /*Inventory inventory, Equipment equipment,*/ int skillPoint, int level, int currentExp, int neededExp)
+        {
+            this.damage = damage;
+            this.maxhealth = maxHealth;
+            this.currentHealth = currentHealth;
+            this.quest = quest;
+            this.armor = armor;
+            this.attackRange = attackRange;
+            this.attackRate = attackRate;
+            //this.Inventory = inventory;
+            //this.Equipment = equipment;
+            this.SkillPoint = skillPoint;
+            this.Level = level;
+            this.CurrentExp = currentExp;
+            this.NeededExp = neededExp;
+        }
         private Player()
         {
             Inventory = new Inventory();

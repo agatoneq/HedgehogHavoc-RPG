@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using Assets.Scripts.Player;
+using System;
 
 public class PlayerStats : CharacterStats
 {

@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 using UnityEngine;
 using Assets.Scripts.Player;
 
-
 public class InventoryUI: MonoBehaviour
 {
     Inventory inventory = Player.Instance.Inventory;

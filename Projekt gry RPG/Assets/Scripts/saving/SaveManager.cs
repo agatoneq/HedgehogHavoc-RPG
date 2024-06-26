@@ -56,7 +56,8 @@ public class SaveManager : MonoBehaviour
         player = Player.Instance;
         Vector3 position = GameObject.Find("PlayerCapsule").transform.position;
         data.MyPlayerData = new PlayerData(player.damage, player.maxhealth, 
-            player.armor,player.attackRange,player.attackRate,player.currentHealth, position, player.quest);
+            player.armor,player.attackRange,player.attackRate,player.currentHealth, position,
+            player.quest,/*player.Inventory, player.Equipment,*/ player.SkillPoint, player.Level, player.CurrentExp, player.NeededExp);
     }
     //zapisywanie ekwipunku i przedmiot�w posiadanych przez gracza
     public void Load()
@@ -92,17 +93,14 @@ public class SaveManager : MonoBehaviour
     private void LoadPlayer(SaveData data)
     {
         player = Player.Instance;
-        player.damage = data.MyPlayerData.damage;
-        player.maxhealth = data.MyPlayerData.maxHealth;
-        player.armor = data.MyPlayerData.armor;
-        player.attackRange = data.MyPlayerData.attackRange;
-        player.attackRate = data.MyPlayerData.attackRate;
-        player.currentHealth = data.MyPlayerData.currentHealth;
-        player.quest = data.MyPlayerData.quest;
+        player.PlayerLoad(data.MyPlayerData.damage, data.MyPlayerData.maxHealth,
+            data.MyPlayerData.armor, data.MyPlayerData.attackRange, data.MyPlayerData.attackRate, data.MyPlayerData.currentHealth,
+            data.MyPlayerData.quest, /*data.MyPlayerData.Inventory, data.MyPlayerData.Equipment,*/ data.MyPlayerData.SkillPoint, 
+            data.MyPlayerData.Level, data.MyPlayerData.CurrentExp, data.MyPlayerData.NeededExp);
         Transform playerCapsule;
         if (playerCapsule = GameObject.Find("PlayerCapsule").transform){
             PlayerStats stats;
-            if(stats = playerCapsule.GetComponent<PlayerStats>())
+            if(stats = playerCapsule.GetChild(1).transform.GetComponent<PlayerStats>())
             {
                 stats.updateStats();
             }
@@ -111,7 +109,7 @@ public class SaveManager : MonoBehaviour
                 Debug.LogErrorFormat("brak PlayserStats w PlayerCapsule");
             }
             //nagle nie dzia�a zmiana pozycji
-            playerCapsule.position = new Vector3(data.MyPlayerData.x, data.MyPlayerData.y, data.MyPlayerData.z);
+           // playerCapsule.position = new Vector3(data.MyPlayerData.x, data.MyPlayerData.y, data.MyPlayerData.z);
         }
         else
         {
