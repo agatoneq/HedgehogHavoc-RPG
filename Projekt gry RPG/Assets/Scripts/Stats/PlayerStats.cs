@@ -29,7 +29,7 @@ public class PlayerStats : CharacterStats
         updateStatsInInventory();
     }
 
-    public void updateStats(Player player)
+    public void updateStats()
     {
         player = Player.Instance;
         armor = player.armor;
@@ -40,7 +40,7 @@ public class PlayerStats : CharacterStats
         Debug.Log(player.currentHealth);
         currentHealth = player.currentHealth;
 
-        updateStatsInInventory(player);
+        updateStatsInInventory();
     }
 
     public void updateStatsInInventory()
