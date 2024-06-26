@@ -26,6 +26,10 @@ public class EquipmentItem : Item
     {
         return Player.Instance.Equipment.ChangeEquipment(this, EquipmentType);
     }
+    public virtual List<Modifier> makeMods()
+    {
+        return null;
+    }
     public void DeEquip()
     {
         Player.Instance.Equipment.ChangeEquipment(null, EquipmentType);

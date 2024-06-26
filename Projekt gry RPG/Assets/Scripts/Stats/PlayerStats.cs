@@ -13,7 +13,9 @@ public class PlayerStats : CharacterStats
 
     [SerializeField]
     private TMP_Text HealthText, DamageText, ArmorText, RangeText, SpeedText;
-
+    public PlayerStats() : base()
+    {
+    }
     // Start is called before the first frame update
     void Awake()
     {
@@ -24,10 +26,9 @@ public class PlayerStats : CharacterStats
         attackRate = player.attackRate;
         maxhealth = player.maxhealth;
         currentHealth = player.currentHealth;
-        player.Equipment.onEquipmentChanged += EquipmentChanged;
 
         player.StatsUpdateEvent += updateStats;
-        updateStatsInInventory();
+        updateStats();
     }
 
     public void updateStats()
@@ -40,7 +41,6 @@ public class PlayerStats : CharacterStats
         maxhealth = player.maxhealth;
         Debug.Log(player.currentHealth);
         currentHealth = Math.Min(currentHealth,maxhealth.getValue());
-
         updateStatsInInventory();
     }
 
@@ -53,27 +53,6 @@ public class PlayerStats : CharacterStats
 
         HealthText.text = currentHealth.ToString() + "/" + MaxHealth.ToString()   ;
 
-    }
-
-    void EquipmentChanged(EquipmentItem newItem, EquipmentItem oldItem)
-    {
-        Debug.Log("Remoding"+ newItem+"and "+ oldItem);
-        if (oldItem != null)
-        {
-            foreach (var m in oldItem?.ModifierList)
-            {
-                Stats[m.AffectedStatType]?.removeModifier(m);
-            }
-        }
-        if (newItem != null)
-        {
-            foreach (var m in newItem?.ModifierList)
-            {
-                Debug.Log("addedMod- " + m);
-                Stats[m.AffectedStatType].addModifier(m);
-            }
-        }
-        updateStats();
     }
 
     //implementacja metody Die()

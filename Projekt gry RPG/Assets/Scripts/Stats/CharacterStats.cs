@@ -8,17 +8,17 @@ using UnityEngine;
 
 public class CharacterStats : MonoBehaviour
 {
-    public Stat damage ;
+    public Stat damage;
     public double Damage { get { return damage.getValue(); }}
-    public Stat maxhealth ;
+    public Stat maxhealth;
     public double MaxHealth { get { return maxhealth.getValue(); } }
     public double currentHealth {get; set;}
     //armor not implemented yet
-    public Stat armor ;
+    public Stat armor;
     public double Armor { get { return armor.getValue(); } }
     public Stat attackRange;
     public double AttackRange { get { return attackRange.getValue(); } }
-    public Stat attackRate ;
+    public Stat attackRate;
     public double AttackRate { get { return attackRate.getValue(); } }
     public Dictionary<StatType,Stat> Stats;
 

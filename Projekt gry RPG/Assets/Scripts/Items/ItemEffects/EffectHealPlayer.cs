@@ -18,7 +18,7 @@ public class EffectHealPlayer : AItemEffect
             {
                 Debug.Log("uleczono gracza o 10");
                 stats.currentHealth += HealValue;
-                stats.updateStats();
+                stats.updateStatsInInventory();
             }
             else
                 Debug.LogError("Nie znaleziono Capsule->PlayerStats");

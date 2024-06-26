@@ -16,5 +16,5 @@ MonoBehaviour:
   icon: {fileID: 21300000, guid: ec205633da46b9846b0186df8ad6d5ff, type: 3}
   isDefaultItem: 0
   Desc: To jest miecz, przekonuje innych do twojego zdania
-  DamageValue: 0
+  DamageValue: 20
   isTwoHanded: 0

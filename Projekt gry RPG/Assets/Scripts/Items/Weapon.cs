@@ -12,7 +12,7 @@ using UnityEngine;
 class Weapon : EquipmentItem
 {
     [SerializeField]
-    public double DamageValue;
+    public int DamageValue= 10;
     [SerializeField]
     public bool isTwoHanded =false;
     public Weapon(string name, Sprite icon, bool isDefaultItem, string desc) : base(name, icon, isDefaultItem, desc)
@@ -21,7 +21,14 @@ class Weapon : EquipmentItem
         if (isTwoHanded)
             base.OtherSlotBlock.Add( EquipmentSlot.OffHand);
 
-        ModifierList.Add(new Modifier(StatType.Damage, DamageValue));
+    }
+    public override List<Modifier> makeMods()
+    {
+        var list = new List<Modifier>();
+
+        list.Add(new Modifier(StatType.Damage, DamageValue));
+        Debug.Log(name + "dodano mod o wartości " + DamageValue);
+        return list;
     }
 }
 

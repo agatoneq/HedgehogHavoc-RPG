@@ -26,6 +26,8 @@ namespace Assets.Scripts.Player
         private static Player instance;
         public Inventory Inventory { get; set; }
         public Equipment Equipment { get; set; }
+        public Dictionary<StatType, Stat> Stats { get;  set; }
+
         public List<Character> characters = new List<Character>();
         public List<GameObject> charactersPanels = new List<GameObject>();
 
@@ -34,6 +36,7 @@ namespace Assets.Scripts.Player
         public int Level { get; private set; }
         public int CurrentExp { get; private set; }
         public int NeededExp { get; private set; } = 1000;
+
         public static Player Instance
         {
             get
@@ -65,6 +68,15 @@ namespace Assets.Scripts.Player
         {
             Inventory = new Inventory();
             Equipment = new Equipment();
+            Stats = new Dictionary<StatType, Stat>()
+            {
+            {StatType.AttackRange, attackRange },
+            {StatType.AttackRate, attackRate },
+            {StatType.Armour, armor },
+            {StatType.MaxHealth, maxhealth },
+            {StatType.Damage, damage }
+            };
+            Equipment.onEquipmentChanged += Equipmentupdate;
         }
         public void AwardExp(int amount)
         {
@@ -76,6 +88,38 @@ namespace Assets.Scripts.Player
                 NeededExp *= (int)(1 + (Level - 1) * 0.5);//z każdym levelem kolejny jest droższy dla lvl = 1 -> 100, lvl = 2 -> 150 ...
                 SkillPoint += 2;
             }
+        }
+
+        void EquipmentChanged(EquipmentItem newItem, EquipmentItem oldItem)
+        {
+            if (oldItem != null)
+            {
+                foreach (var m in oldItem?.makeMods())
+                {
+                    Stats[m.AffectedStatType].removeModifier(m);
+                }
+            }
+            if (newItem != null)
+            {
+                Debug.Log(newItem.name);
+                foreach (var m in newItem.makeMods())
+                {
+                    var a = Stats[m.AffectedStatType];
+                    Stats[m.AffectedStatType].addModifier(m);
+                }
+            }
+        }
+        public void Equipmentupdate()
+        {
+            foreach (var stat in Stats)
+            {
+                stat.Value.clearModifiers();
+            }
+            foreach (var eq in Equipment.EquipmentSlots)
+            {
+                EquipmentChanged(eq.Value, null);
+            }
+            StatsUpdateEvent.Invoke();
         }
     }
 }

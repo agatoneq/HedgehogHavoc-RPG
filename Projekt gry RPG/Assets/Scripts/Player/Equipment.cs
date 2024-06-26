@@ -9,7 +9,7 @@ namespace Assets.Scripts.Player
 {
     public class Equipment
     {
-        public event System.Action<EquipmentItem, EquipmentItem> onEquipmentChanged;
+        public event System.Action onEquipmentChanged;
         public Dictionary<EquipmentSlot, EquipmentItem> EquipmentSlots { get; private set; }
         public Dictionary<EquipmentSlot, EqInventorySlot> UISlots { get; private set; } //możliwe że do zmiany w przyszłości
         public Equipment()
@@ -42,7 +42,7 @@ namespace Assets.Scripts.Player
                 inventory.TakeItem(newItem);
             }
 
-            onEquipmentChanged.Invoke(newItem, oldItem);
+            onEquipmentChanged.Invoke();
             Debug.Log("change Compleate");
             return oldItem;
         }
