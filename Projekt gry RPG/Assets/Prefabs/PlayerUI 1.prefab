@@ -4447,7 +4447,7 @@ GameObject:
   - component: {fileID: 5754723842807730933}
   - component: {fileID: 5577686374187228229}
   m_Layer: 5
-  m_Name: Desc
+  m_Name: ToolDesc
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

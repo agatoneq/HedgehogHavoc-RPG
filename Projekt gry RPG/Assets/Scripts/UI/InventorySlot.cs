@@ -4,12 +4,25 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
+using TMPro;
 
 public class InventorySlot : MonoBehaviour, IHasToolTip
 {
     // Start is called before the first frame update
     public Image icon;
     protected Item item;
+
+    private GameObject ToolDesc;
+    TextMeshProUGUI textMeshPro;
+
+    public void Start()
+    {
+        ToolDesc = GameObject.Find("ToolDesc");
+
+        if(ToolDesc != null) textMeshPro = ToolDesc.GetComponent<TextMeshProUGUI>();
+        else Debug.Log("Obiekt opsiu nie znaleziono");
+    }
+
     public void AddItem (Item newItem)
     {
         item = newItem;
@@ -41,6 +54,6 @@ public class InventorySlot : MonoBehaviour, IHasToolTip
 
     public void ShowTooltip()
     {        
-        item?.GetTooltip();
+        if(item != null) textMeshPro.text = item?.GetTooltip();
     }
 }
