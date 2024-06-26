@@ -4,7 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
-
+using UnityEngine.UI;
+[Serializable]
 [CreateAssetMenu(fileName = "New Item", menuName = "Inventory/Item")]
 public class Item : ScriptableObject
 {
@@ -19,6 +20,10 @@ public class Item : ScriptableObject
         this.icon = icon;
         this.isDefaultItem = isDefaultItem;
         this.Desc = desc;
+    }
+    public Item()
+    {
+
     }
     public virtual void OnUse()
     {

@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
-
+[Serializable]
 public class EquipmentItem : Item
 {
     public EquipmentSlot EquipmentType { get; protected set; }

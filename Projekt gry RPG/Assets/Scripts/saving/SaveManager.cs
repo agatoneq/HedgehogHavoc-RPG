@@ -32,8 +32,8 @@ public class SaveManager : MonoBehaviour
     }
     private void Save()
     {
-        try
-        {
+        //try
+        //{
             BinaryFormatter bf = new BinaryFormatter();
 
             FileStream file = File.Open(Application.persistentDataPath+"/"+ "SaveTest.dat", FileMode.Create);
@@ -45,12 +45,12 @@ public class SaveManager : MonoBehaviour
 
             file.Close();
             Debug.Log("Saving");
-        }
-        catch (System.Exception)
-        {
+        //}
+        //catch (System.Exception)
+        //{
             Debug.LogErrorFormat("B��d przy zapisywaniu");
 
-        }
+        //}
     }
     private void SavePlayer(SaveData data)
     {
@@ -77,8 +77,8 @@ public class SaveManager : MonoBehaviour
     }
     public void Load()
     {
-       try
-        {
+      // try
+       // {
             BinaryFormatter bf = new BinaryFormatter();
             if (File.Exists(Application.persistentDataPath + "/" + "SaveTest.dat")) 
             {
@@ -91,19 +91,19 @@ public class SaveManager : MonoBehaviour
                     SceneManager.LoadScene(data.ActiveScene);
                 }
                 LoadPlayer(data);
-
+                LoadInventory(data);
                 Debug.Log("Loading");
             }
             else
             {
                 Debug.Log("No save file");
             }
-        }
-        catch (System.Exception)
-        {
+       // }
+        //catch (System.Exception)
+        //{
             Debug.LogErrorFormat("B��d przy wczytywaniu");
 
-        }
+        //}
     }
     private void LoadPlayer(SaveData data)
     {
@@ -140,7 +140,7 @@ public class SaveManager : MonoBehaviour
         player.Inventory.ClearItemsFromInv();
         foreach(ItemData iD in data.MyInventoryData.items) 
         {
-            Item item = new Item(iD.name, iD.icon, iD.isDefaultItem, iD.Desc);
+            Item item = new Item(iD.name, SpriteDeserializer.Deserialize(iD.icon) , iD.isDefaultItem, iD.Desc);
             player.Inventory.AddItemToInv(item);
         }
     }

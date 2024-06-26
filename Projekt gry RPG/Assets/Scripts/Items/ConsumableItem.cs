@@ -8,6 +8,7 @@ using UnityEngine;
 
 namespace Assets.Scripts.Items
 {
+    [Serializable]
     [CreateAssetMenu(fileName = "New Item", menuName = "Inventory/ConsumableItem")]
     public class ConsumableItem : Item
     {

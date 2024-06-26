@@ -60,9 +60,9 @@ public class InventoryData
     {
         items = new List<ItemData>();
     }
-    public void addItemsData(string name, Sprite icon, bool isDefaultItem, string desc)
+    public void addItemsData(string name, Sprite icon,  bool isDefaultItem, string desc)
     {
-        ItemData item = new ItemData(name, icon, isDefaultItem, desc);
+        ItemData item = new ItemData(name, icon,  isDefaultItem, desc);
         items.Add(item);
     }
 }
@@ -71,13 +71,13 @@ public class InventoryData
 public class ItemData
 {
     public string name { get;  set; }
-    public Sprite icon { get; set; }
+    public byte[] icon { get; set; }
     public bool isDefaultItem { get; set; }
     public string Desc { get; set; }
     public ItemData(string name, Sprite icon, bool isDefaultItem, string desc)
     {
         this.name = name;
-        this.icon = icon;
+        this.icon = SpriteSerializer.Serialize(icon);
         this.isDefaultItem = isDefaultItem;
         this.Desc = desc;
     }
