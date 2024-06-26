@@ -17,6 +17,10 @@ public class Item : ScriptableObject
     {
         Debug.Log("Item: " + name + " used");
     }
+    public virtual void OnUse(InventorySlot slot)
+    {
+        OnUse();
+    }
     public virtual string GetTooltip()
     {
         Debug.Log("Item: " + name + " type:"+this.GetType());
