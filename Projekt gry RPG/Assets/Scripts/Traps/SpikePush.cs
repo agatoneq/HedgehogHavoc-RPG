@@ -39,12 +39,17 @@ public class SpikePush : MonoBehaviour
                 objectB.transform.position += new Vector3(0f, 0.260f, 0f);
             }
 
-            PlayerStats playerStats = other.GetComponent<PlayerStats>();
+            PlayerStats playerStats = other.GetComponentInChildren<PlayerStats>();
+         
+            Debug.Log("Kolceeeee boli");
             if (playerStats != null)
             {
+                Debug.Log("Kolceeeee obrzenia");
                 playerStats.TakeDamage(10.0);
                 audioManager.PlaySFX(audioManager.spikeTrap);
             }
+            else
+            Debug.Log("Nie ma obrażeń?????????");
         }
     }
 
@@ -59,6 +64,7 @@ public class SpikePush : MonoBehaviour
             {
                 objectB.transform.position = initialPositionB;
             }
+            else Debug.Log("Ała");
         }
     }
 }

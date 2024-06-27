@@ -29,7 +29,7 @@ public class Swing : MonoBehaviour
         private void OnTriggerEnter(Collider other)
     {
                  Debug.Log("Ała kłoda");
-                PlayerStats playerStats = other.GetComponent<PlayerStats>();
+                PlayerStats playerStats = other.GetComponentInChildren<PlayerStats>();
                 if (playerStats != null)
                 {
                     Debug.Log("kłoda boli");

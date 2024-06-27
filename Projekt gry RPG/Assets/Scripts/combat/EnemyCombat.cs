@@ -44,10 +44,11 @@ public class EnemyCombat : MonoBehaviour
 
             //detect enemies in range
             Collider[] hitPlayer = Physics.OverlapSphere(attackPoint.position, attackRange, enemyLayers);
-
             //damage to enemies
             foreach (Collider player in hitPlayer)
             {
+
+                Debug.Log(player);
                 Debug.Log(player.name + " was hit");
                 PlayerStats playerStats = player.GetComponent<PlayerStats>();
                 if (playerStats != null)
