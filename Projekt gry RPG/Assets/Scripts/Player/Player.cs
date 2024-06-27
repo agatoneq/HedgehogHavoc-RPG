@@ -37,10 +37,6 @@ namespace Assets.Scripts.Player
         public int CurrentExp { get; private set; }
         public int NeededExp { get; private set; } = 1000;
 
-        public Resolution currentResolution;
-        public int currentResolutionId = 0;
-        public bool isResolutionSet = false;
-
         public static Player Instance
         {
             get

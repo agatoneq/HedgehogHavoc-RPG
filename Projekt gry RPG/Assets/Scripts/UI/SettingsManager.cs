@@ -1,11 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel.Design;
+using System.Diagnostics;
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.UI;
 using TMPro;
-using Assets.Scripts.Player;
 
 public class SettingsManager : MonoBehaviour
 {
@@ -18,12 +18,10 @@ public class SettingsManager : MonoBehaviour
     void Start()
     {
         resolutions = Screen.resolutions;
-        
-        
         ResolutionDropdown.ClearOptions();
         List<string> options = new List<string>();
 
-        int currentResolutionIndex = Player.Instance.currentResolutionId;
+        int currentResolutionIndex = 0;
 
         for (int i=0; i<resolutions.Length; i++)
             {
@@ -69,9 +67,6 @@ public class SettingsManager : MonoBehaviour
     {
         Resolution resolution = resolutions[resolutionIndex];
         Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreen);
-
-        Player.Instance.currentResolution = resolution;
-    Player.Instance.currentResolutionId = resolutionIndex;
     }
 
 }
