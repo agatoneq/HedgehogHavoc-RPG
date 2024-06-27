@@ -16,7 +16,7 @@ public class SceneMan : MonoBehaviour
     private void Start()
     {
         Debug.Log("Starting scene");
-        SettingsManager.SetResolution();
+        //SettingsManager.SetResolution();
     }
     public void ClickPlayButton()
     {
