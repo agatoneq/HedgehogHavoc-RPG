@@ -86,7 +86,7 @@ public class PlayerStats : CharacterStats
 
 
         public override void TakeDamage(double damage)
-    {
+        {
 
 
         currentHealth -= (damage- Armor);
