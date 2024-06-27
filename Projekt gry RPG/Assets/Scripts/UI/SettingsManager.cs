@@ -7,13 +7,17 @@ using UnityEngine.Audio;
 using UnityEngine.UI;
 using TMPro;
 
-public class SettingsManager : MonoBehaviour
+public  class SettingsManager : MonoBehaviour
 {
     public AudioMixer audioMixer;
 
     public TMP_Dropdown ResolutionDropdown;
 
-    Resolution[] resolutions;
+    public  Resolution[] resolutions;
+    public static Resolution chosenResolution;
+    public static bool isPicked=false;
+    public static bool FullScreenEnabled=false;
+    public static int currentResolutionIndex = 0;
 
     void Start()
     {
@@ -23,6 +27,12 @@ public class SettingsManager : MonoBehaviour
 
         int currentResolutionIndex = 0;
 
+=======
+        UnityEngine.Debug.Log("res0 set to" + chosenResolution);
+        ResolutionDropdown.ClearOptions();
+        List<string> options = new List<string>();
+
+>>>>>>> Stashed changes
         for (int i=0; i<resolutions.Length; i++)
             {
                 string option = resolutions[i].width + " x " + resolutions[i].height;
@@ -40,7 +50,8 @@ public class SettingsManager : MonoBehaviour
         ResolutionDropdown.AddOptions(options);
         ResolutionDropdown.value = currentResolutionIndex;
         ResolutionDropdown.RefreshShownValue();
-
+        if(isPicked)
+            Screen.SetResolution(chosenResolution.width, chosenResolution.height, FullScreenEnabled);
 
     }
 
