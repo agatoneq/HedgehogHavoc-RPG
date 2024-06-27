@@ -27,12 +27,9 @@ public  class SettingsManager : MonoBehaviour
 
         int currentResolutionIndex = 0;
 
-=======
         UnityEngine.Debug.Log("res0 set to" + chosenResolution);
         ResolutionDropdown.ClearOptions();
-        List<string> options = new List<string>();
 
->>>>>>> Stashed changes
         for (int i=0; i<resolutions.Length; i++)
             {
                 string option = resolutions[i].width + " x " + resolutions[i].height;
@@ -78,6 +75,9 @@ public  class SettingsManager : MonoBehaviour
     {
         Resolution resolution = resolutions[resolutionIndex];
         Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreen);
+    }
+    public static void SetResolution()
+    {
     }
 
 }
