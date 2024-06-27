@@ -50,6 +50,7 @@ public class InventorySlot : MonoBehaviour, IHasToolTip
 
     public void OnPointerExit(PointerEventData eventData)
     {
+        if (item != null) textMeshPro.text = "";
     }
 
     public void ShowTooltip()
