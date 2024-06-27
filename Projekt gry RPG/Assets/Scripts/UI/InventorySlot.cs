@@ -15,7 +15,7 @@ public class InventorySlot : MonoBehaviour, IHasToolTip
     private GameObject ToolDesc;
     TextMeshProUGUI textMeshPro;
 
-    public void Start()
+    public virtual void Start()
     {
         ToolDesc = GameObject.Find("ToolDesc");
 

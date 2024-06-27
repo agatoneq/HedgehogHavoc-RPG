@@ -19,5 +19,13 @@ class Armour: EquipmentItem
 
         ModifierList.Add(new Modifier(StatType.Armour, ArmourValue));
     }
+    public override List<Modifier> makeMods()
+    {
+        var list = new List<Modifier>();
+
+        list.Add(new Modifier(StatType.Armour, ArmourValue));
+        Debug.Log(name + "dodano mod o wartości " + ArmourValue);
+        return list;
+    }
 }
 

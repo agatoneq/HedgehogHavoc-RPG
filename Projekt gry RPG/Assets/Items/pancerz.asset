@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1607e7f24d7f06e4aadffba324228c46, type: 3}
+  m_Name: pancerz
+  m_EditorClassIdentifier: 
+  name: Pancerz
+  icon: {fileID: 498143092, guid: 9ab127cfa7b294048b92c46c3f5dc82d, type: 3}
+  isDefaultItem: 0
+  Desc: "Podstawowy pancerz, chroni przed lekkimi obra\u017Ceniami"
+  ArmourValue: 5

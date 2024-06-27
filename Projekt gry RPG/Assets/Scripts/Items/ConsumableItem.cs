@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Unity.VisualScripting;
+using Assets.Scripts.Player;
 using UnityEngine;
 
 namespace Assets.Scripts.Items
@@ -22,6 +23,7 @@ namespace Assets.Scripts.Items
         {
             base.OnUse();
             EffectScript.MakeEffect();
+            Assets.Scripts.Player.Player.Instance.Inventory.TakeItem(this);
         }
     }
 }

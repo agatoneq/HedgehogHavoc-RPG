@@ -89,7 +89,7 @@ public class PlayerStats : CharacterStats
     {
 
 
-        currentHealth -= damage;
+        currentHealth -= (damage- Armor);
         Hurt();
 
              player = Player.Instance;

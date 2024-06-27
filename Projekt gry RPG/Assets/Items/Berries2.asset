@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 400208a3ab97437429e4e6d55c682038, type: 3}
   m_Name: Berries2
   m_EditorClassIdentifier: 
-  name: New Item
-  icon: {fileID: 0}
+  name: berries
+  icon: {fileID: 21300000, guid: 8705b5eabe1cefa4681c6656508b89d8, type: 3}
   isDefaultItem: 0
-  Desc: Ten przedmiot nic nie robi.
+  Desc: "Niesmaczne bor\xF3wki - zabieraj\u0105 10 pkt zdrowia"
   EffectScript: {fileID: 11400000, guid: 677952c25cddb7741a69e63af9be0dae, type: 2}

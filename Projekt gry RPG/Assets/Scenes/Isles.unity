@@ -4166,6 +4166,11 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3942279226837715722, guid: c9aae71fbe2ea224c980006ccbd85a0d,
+        type: 3}
+      propertyPath: m_text
+      value: "Zbroja            Bro\u0144"
+      objectReference: {fileID: 0}
     - target: {fileID: 4134037538543956772, guid: c9aae71fbe2ea224c980006ccbd85a0d,
         type: 3}
       propertyPath: m_AnchorMax.x
