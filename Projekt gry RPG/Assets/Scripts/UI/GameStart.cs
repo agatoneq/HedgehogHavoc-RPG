@@ -15,6 +15,7 @@ public class GameStart : MonoBehaviour
 
     void Start()
     {
+        Screen.SetResolution(Player.Instance.currentResolution.width, Player.Instance.currentResolution.height, Screen.fullScreen);
         Screen.fullScreen = true;
 
         QuestGiver[] allQuestGivers = FindObjectsOfType<QuestGiver>();
