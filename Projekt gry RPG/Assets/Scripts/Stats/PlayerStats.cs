@@ -12,7 +12,7 @@ public class PlayerStats : CharacterStats
     public event System.Action<double, double> OnHealthChanged;
 
     [SerializeField]
-    private TMP_Text HealthText, DamageText, ArmorText, RangeText, SpeedText;
+    private TMP_Text HealthText, DamageText, ArmorText, RangeText, SpeedText, levltext, exptext;
     public PlayerStats() : base()
     {
     }
@@ -50,6 +50,9 @@ public class PlayerStats : CharacterStats
         DamageText.text = Damage.ToString();
         RangeText.text = AttackRange.ToString();
         SpeedText.text = AttackRate.ToString();
+        RangeText.text = AttackRange.ToString();
+        levltext.text = player.Level.ToString();
+        exptext.text = player.CurrentExp + "/" + player.NeededExp.ToString();
 
         HealthText.text = currentHealth.ToString() + "/" + MaxHealth.ToString()   ;
 

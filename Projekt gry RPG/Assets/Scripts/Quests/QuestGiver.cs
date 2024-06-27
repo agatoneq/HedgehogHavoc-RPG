@@ -81,7 +81,7 @@ public class QuestGiver : MonoBehaviour
         Debug.Log("Ukoñczono zadanie: " + playerInstance.quest.newQuestInfo);
         audioManager.PlaySFX(audioManager.newQuest); 
         quest.isActive = false;
-        playerInstance.AwardExp(quest.ExpReward);
+        playerInstance.AwardExp(1000);//na razie flat
         TitleText.text = "Gratulacje!";
         ContentText.text = "Ukoñczy³eœ zadanie: " + playerInstance.quest.title + "!";
         BookTitleText.text = "ZnajdŸ zadanie";

@@ -7,7 +7,7 @@ using UnityEngine;
 public class Stat 
 {
     [SerializeField]
-    private double baseValue;
+    public double baseValue;
 
     //List of modifiers from equipment
     private List<Modifier> modifiers = new List<Modifier>();

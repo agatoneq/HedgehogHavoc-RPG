@@ -80,14 +80,20 @@ namespace Assets.Scripts.Player
         }
         public void AwardExp(int amount)
         {
+            Debug.Log("Awarding exp:" + amount);
             CurrentExp += amount;
             if (NeededExp <= CurrentExp)
             {
+                Debug.Log("new level");
                 CurrentExp -= NeededExp;
                 Level++;
                 NeededExp *= (int)(1 + (Level - 1) * 0.5);//z każdym levelem kolejny jest droższy dla lvl = 1 -> 100, lvl = 2 -> 150 ...
-                SkillPoint += 2;
+                SkillPoint += 2; //nie używane
+                damage.baseValue += 5;
+                maxhealth.baseValue += 10;
+
             }
+            StatsUpdateEvent.Invoke();
         }
 
         void EquipmentChanged(EquipmentItem newItem, EquipmentItem oldItem)

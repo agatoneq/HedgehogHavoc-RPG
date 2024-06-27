@@ -15,7 +15,7 @@ public class Quest
 
     public int itemsToCollect;
     public int itemsCollected;
-    public int ExpReward;
+    public int ExpReward=1000;
 
     public Quest()
     {
