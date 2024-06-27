@@ -13,11 +13,7 @@ public class SceneMan : MonoBehaviour
     public Slider loadingSlider;
 
     private int previousSceneIndex;
-    private void Start()
-    {
-        Debug.Log("Starting scene");
-        SettingsManager.SetResolution();
-    }
+
     public void ClickPlayButton()
     {
         StartCoroutine(LoadAsynchronously(4));
