@@ -9,7 +9,7 @@ Explore towns, forests, caves and islands. Complete quests, defeat enemies, coll
 ![image](https://github.com/user-attachments/assets/8637b8d9-3ec3-46af-8159-36f18355baaf)
 <p align="center">
   <img src="https://github.com/user-attachments/assets/0707858a-f569-4695-b553-552b090bff73" width="45%" />
-  <img src="https://github.com/user-attachments/assets/7565ee15-e177-4bc5-8d0a-481a29a83cfb" width="45%" />
+  <img src="https://github.com/user-attachments/assets/aa1156ea-7669-4636-982d-07f5e3de9c54" width="45%" />
 </p>
 
 ## 🧠 Features
