@@ -45,11 +45,11 @@ Explore towns, forests, caves and islands. Complete quests, defeat enemies, coll
 
 ## 👥 Project Team
 
-Agata Sobczyk – [GitHub](https://github.com/agatoneq)  
-Karolina Barszcz – [GitHub](https://github.com/karolinab11)  
-Kamila Młynarczyk – [GitHub](https://github.com/KamilaMlyn)  
-Eustachy Lisiński – [GitHub](https://github.com/EustachyL)  
-Miłosz Wojtanek – [GitHub](https://github.com/ElMilos)
+- Agata Sobczyk – [GitHub](https://github.com/agatoneq)  
+- Karolina Barszcz – [GitHub](https://github.com/karolinab11)  
+- Kamila Młynarczyk – [GitHub](https://github.com/KamilaMlyn)  
+- Eustachy Lisiński – [GitHub](https://github.com/EustachyL)  
+- Miłosz Wojtanek – [GitHub](https://github.com/ElMilos)
 
 
 ## 🧑‍💻 My contributions (Agata Sobczyk)
