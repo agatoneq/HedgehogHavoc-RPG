@@ -33,16 +33,6 @@ Explore towns, forests, caves and islands. Complete quests, defeat enemies, coll
 - **Dialog System:** Ink
 - **Sound:** Pixabay, Audacity
 
-## 🧑‍💻 My contributions (Agata Sobczyk)
-
-- Main menu, pause menu, loading screen
-- Game settings panel
-- Quest system & quest book UI
-- Portal system for scene transitions
-- Storyline and NPC dialog design
-- Game UI architecture
-- Project documentation
-
 ## 🚀 How to Run
 
 1. Clone the repository:
@@ -55,15 +45,22 @@ Explore towns, forests, caves and islands. Complete quests, defeat enemies, coll
 
 ## 👥 Project Team
 
-- Agata Sobczyk  
-- Eustachy Lisiński
-- Kamila Młynarczyk  
-- Karolina Barszcz  
-- Miłosz Wojtanek
+Agata Sobczyk – [GitHub](https://github.com/agatoneq)  
+Karolina Barszcz – [GitHub](https://github.com/karolinab11)  
+Kamila Młynarczyk – [GitHub](https://github.com/KamilaMlyn)  
+Eustachy Lisiński – [GitHub](https://github.com/EustachyL)  
+Miłosz Wojtanek – [GitHub](https://github.com/ElMilos)
 
-## 🎮 Screenshots
 
-*(Add gameplay screenshots here if available)*
+## 🧑‍💻 My contributions (Agata Sobczyk)
+
+- Main menu, pause menu, loading screen
+- Game settings panel
+- Quest system & quest book UI
+- Portal system for scene transitions
+- Storyline and NPC dialog design
+- Game UI architecture
+
 
 ## 📜 License
 
